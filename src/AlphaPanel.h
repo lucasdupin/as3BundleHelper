@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <QuartzCore/QuartzCore.h>
 
-
-@interface AlphaPanel : NSPanel {
-
+@interface AlphaPanel : NSView {
+	NSTrackingRectTag rectTag;
 }
 
 @end

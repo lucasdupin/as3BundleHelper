@@ -11,23 +11,31 @@
 
 @implementation AlphaPanel
 
-- (id) init
-{
-	NSLog(@"INITTTTTT");
-	self = [super init];
-	if (self != nil) {
-		NSLog(@"init");
-	}
-	return self;
+- (void)viewDidMoveToWindow {
+	
+//	//Prepare for animations
+//	CAAnimation *anim = [CABasicAnimation animation];
+//    [anim setDelegate:self];
+//	[self.window setAnimations:[NSDictionary dictionaryWithObject:anim forKey:@"alphaValue"]];
+	
+}
+
+- (void)setFrame:(NSRect)frame {
+	NSLog(@"Frame set");
+    [super setFrame:frame];
+    [self removeTrackingRect:rectTag];
+	rectTag = [self addTrackingRect:[self visibleRect] owner:self userData:NULL assumeInside:NO];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent
 {
 	NSLog(@"Mouse Entered");
+	[[[self window] animator] setAlphaValue:1];
 }
 - (void)mouseExited:(NSEvent *)theEvent
 {
-	NSLog(@"Mouse Entered");
+	NSLog(@"Mouse Exit");
+	[[[self window] animator] setAlphaValue:0.3];
 }
 
 @end

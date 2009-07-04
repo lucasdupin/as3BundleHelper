@@ -11,6 +11,7 @@
 
 @implementation AlphaPanel
 
+
 - (void)viewDidMoveToWindow {
 	
 //	//Prepare for animations
@@ -35,7 +36,12 @@
 - (void)mouseExited:(NSEvent *)theEvent
 {
 	NSLog(@"Mouse Exit");
-	[[[self window] animator] setAlphaValue:0.3];
+	if(autoAlpha)
+		[[[self window] animator] setAlphaValue:0.3];
+}
+
+- (void) setAutoAlpha: (BOOL)value{
+	autoAlpha = value;
 }
 
 @end

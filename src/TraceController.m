@@ -22,6 +22,9 @@
 	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", filePath, nil]];
 	[tailTask startProcess];
 	
+	//Setting auto-aulpha
+	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
+	
 	//Quit app after closing this window
 	[NSApp setDelegate: self];
 }
@@ -34,6 +37,11 @@
 {
 	[field setString:[[field string] stringByAppendingString: @"\n\n"]];
 	[field scrollPageDown:self];
+}
+
+- (IBAction) setAutoAlpha: (id)sender
+{
+	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
 }
 
 

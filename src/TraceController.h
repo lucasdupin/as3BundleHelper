@@ -7,15 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AlphaPanel.h"
 #import "TaskWrapper.h"
 
 @interface TraceController : NSObject <TaskWrapperController> {
 	IBOutlet NSTextView *field;
+	IBOutlet NSButton *autoAlphaButton;
+	IBOutlet AlphaPanel * mainView;
 	TaskWrapper *tailTask;
 }
 
 - (IBAction) clear: (id)sender;
 - (IBAction) separate: (id)sender;
+- (IBAction) setAutoAlpha: (id)sender;
 
 - (void)processStarted;
 - (void)processFinished;

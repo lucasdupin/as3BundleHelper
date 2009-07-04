@@ -11,6 +11,9 @@
 
 @interface AlphaPanel : NSView {
 	NSTrackingRectTag rectTag;
+	BOOL autoAlpha;
 }
+
+- (void) setAutoAlpha: (BOOL)value;
 
 @end

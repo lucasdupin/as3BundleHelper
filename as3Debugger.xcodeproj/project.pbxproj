@@ -10,7 +10,7 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
-		72CEA06A0FFFD73100E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0690FFFD73100E24A1F /* AlphaPanel.m */; };
+		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -41,8 +41,8 @@
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* TraceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TraceController.h; path = src/TraceController.h; sourceTree = "<group>"; };
 		72B3C1890FF65052004C58DC /* TraceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TraceController.m; path = src/TraceController.m; sourceTree = "<group>"; };
-		72CEA0680FFFD73100E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaPanel.h; sourceTree = "<group>"; };
-		72CEA0690FFFD73100E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaPanel.m; sourceTree = "<group>"; };
+		72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlphaPanel.m; path = src/AlphaPanel.m; sourceTree = "<group>"; };
+		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,12 +62,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */,
+				72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */,
 				72B3C1860FF65052004C58DC /* TaskWrapper.h */,
 				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
 				72B3C1880FF65052004C58DC /* TraceController.h */,
 				72B3C1890FF65052004C58DC /* TraceController.m */,
-				72CEA0680FFFD73100E24A1F /* AlphaPanel.h */,
-				72CEA0690FFFD73100E24A1F /* AlphaPanel.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */,
 				72B3C18C0FF65052004C58DC /* TraceController.m in Sources */,
-				72CEA06A0FFFD73100E24A1F /* AlphaPanel.m in Sources */,
+				72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

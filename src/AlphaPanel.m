@@ -11,17 +11,23 @@
 
 @implementation AlphaPanel
 
-- (id)initWithFrame:(NSRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-		NSLog(@"init!");
-    }
-    return self;
+- (id) init
+{
+	NSLog(@"INITTTTTT");
+	self = [super init];
+	if (self != nil) {
+		NSLog(@"init");
+	}
+	return self;
 }
 
-- (void)drawRect:(NSRect)rect {
-    // Drawing code here.
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+	NSLog(@"Mouse Entered");
+}
+- (void)mouseExited:(NSEvent *)theEvent
+{
+	NSLog(@"Mouse Entered");
 }
 
 @end

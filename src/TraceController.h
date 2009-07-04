@@ -11,8 +11,6 @@
 
 @interface TraceController : NSObject <TaskWrapperController> {
 	IBOutlet NSTextView *field;
-	IBOutlet NSView *mainWindow;
-	
 	TaskWrapper *tailTask;
 }
 

@@ -11,18 +11,21 @@
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
 		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
+		72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
+		72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		720B0D520FD4B8A8004FB299 /* CopyFiles */ = {
+		72CEA0DE0FFFE31700E24A1F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +46,7 @@
 		72B3C1890FF65052004C58DC /* TraceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TraceController.m; path = src/TraceController.m; sourceTree = "<group>"; };
 		72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlphaPanel.m; path = src/AlphaPanel.m; sourceTree = "<group>"; };
 		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
+		72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -53,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +137,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -148,7 +154,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				720B0D520FD4B8A8004FB299 /* CopyFiles */,
+				72CEA0DE0FFFE31700E24A1F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -232,6 +238,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../rubyCocoa/bghudappkit-read-only/build/Release\"",
 					"\"$(SRCROOT)/frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -254,6 +261,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../rubyCocoa/bghudappkit-read-only/build/Release\"",
 					"\"$(SRCROOT)/frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

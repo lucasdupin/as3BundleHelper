@@ -15,5 +15,6 @@
 }
 
 - (void) setAutoAlpha: (BOOL)value;
+- (void) createTrackingRect;
 
 @end

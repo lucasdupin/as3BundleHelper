@@ -22,22 +22,34 @@
 }
 
 - (void)setFrame:(NSRect)frame {
-	NSLog(@"Frame set");
+	//NSLog(@"Frame set");
     [super setFrame:frame];
-    [self removeTrackingRect:rectTag];
-	rectTag = [self addTrackingRect:[self visibleRect] owner:self userData:NULL assumeInside:NO];
+	
+	[self createTrackingRect];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent
 {
-	NSLog(@"Mouse Entered");
+	//NSLog(@"Mouse Entered");
 	[[[self window] animator] setAlphaValue:1];
 }
 - (void)mouseExited:(NSEvent *)theEvent
 {
-	NSLog(@"Mouse Exit");
+	//NSLog(@"Mouse Exit");
 	if(autoAlpha)
 		[[[self window] animator] setAlphaValue:0.3];
+	
+	[self createTrackingRect];
+}
+
+-(void) createTrackingRect
+{
+	NSRect trackRect = [self visibleRect];
+	//Adding the border of the window
+	trackRect.size.height += 20;
+	
+    [self removeTrackingRect:rectTag];
+	rectTag = [self addTrackingRect:trackRect owner:self userData:NULL assumeInside:NO];
 }
 
 - (void) setAutoAlpha: (BOOL)value{

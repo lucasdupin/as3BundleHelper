@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>72CEA2580FFFF71800E24A1F</string>
+						<string>7207A976100A257300D3235B</string>
 						<key>history</key>
 						<array>
-							<string>72CEA1910FFFF04400E24A1F</string>
+							<string>72CEA25E0FFFF93900E24A1F</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -371,12 +371,9 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>72CEA2570FFFF71800E24A1F</string>
+										<string>7207A973100A257300D3235B</string>
 										<key>history</key>
 										<array>
-											<string>72CCD1F40FD626F20070A67A</string>
-											<string>72CCD2170FD627E90070A67A</string>
-											<string>72B3C19B0FF6516E004C58DC</string>
 											<string>72B3C19C0FF6516E004C58DC</string>
 											<string>72CEA0B20FFFDED300E24A1F</string>
 											<string>72CEA1080FFFE83300E24A1F</string>
@@ -384,13 +381,10 @@
 											<string>72CEA2490FFFF6E800E24A1F</string>
 											<string>72CEA24A0FFFF6E800E24A1F</string>
 											<string>72CEA24B0FFFF6E800E24A1F</string>
-											<string>72CEA24C0FFFF6E800E24A1F</string>
+											<string>72CEA25D0FFFF93900E24A1F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
-											<string>72CCD1B80FD624ED0070A67A</string>
-											<string>72CCD1D50FD6268E0070A67A</string>
-											<string>72B3C1A00FF6516E004C58DC</string>
 											<string>72B3C1A10FF6516E004C58DC</string>
 											<string>72B3C1A20FF6516E004C58DC</string>
 											<string>72B3C1A30FF6516E004C58DC</string>
@@ -399,35 +393,6 @@
 											<string>72CEA0B80FFFDED300E24A1F</string>
 											<string>72CEA0B90FFFDED300E24A1F</string>
 											<string>72CEA0F00FFFE70E00E24A1F</string>
-											<string>72CEA1AB0FFFF1A600E24A1F</string>
-											<string>72CEA1AC0FFFF1A600E24A1F</string>
-											<string>72CEA1AD0FFFF1A600E24A1F</string>
-											<string>72CEA1AE0FFFF1A600E24A1F</string>
-											<string>72CEA1AF0FFFF1A600E24A1F</string>
-											<string>72CEA1BF0FFFF23300E24A1F</string>
-											<string>72CEA1E50FFFF31200E24A1F</string>
-											<string>72CEA1E60FFFF31200E24A1F</string>
-											<string>72CEA1E70FFFF31200E24A1F</string>
-											<string>72CEA1E80FFFF31200E24A1F</string>
-											<string>72CEA1E90FFFF31200E24A1F</string>
-											<string>72CEA2110FFFF53700E24A1F</string>
-											<string>72CEA2120FFFF53700E24A1F</string>
-											<string>72CEA2130FFFF53700E24A1F</string>
-											<string>72CEA2140FFFF53700E24A1F</string>
-											<string>72CEA2150FFFF53700E24A1F</string>
-											<string>72CEA2160FFFF53700E24A1F</string>
-											<string>72CEA21C0FFFF56900E24A1F</string>
-											<string>72CEA2280FFFF60900E24A1F</string>
-											<string>72CEA2290FFFF60900E24A1F</string>
-											<string>72CEA23D0FFFF66600E24A1F</string>
-											<string>72CEA23E0FFFF66600E24A1F</string>
-											<string>72CEA23F0FFFF66600E24A1F</string>
-											<string>72CEA24D0FFFF6E800E24A1F</string>
-											<string>72CEA24E0FFFF6E800E24A1F</string>
-											<string>72CEA24F0FFFF6E800E24A1F</string>
-											<string>72CEA2500FFFF6E800E24A1F</string>
-											<string>72CEA2510FFFF6E800E24A1F</string>
-											<string>72CEA2520FFFF6E800E24A1F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -485,9 +450,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>72CEA1B10FFFF1A600E24A1F</string>
+				<string>7207A974100A257300D3235B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>72CEA1B20FFFF1A600E24A1F</string>
+				<string>7207A975100A257300D3235B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -621,14 +586,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>72CEA1F60FFFF3E500E24A1F</string>
-		<string>72CEA1CE0FFFF24D00E24A1F</string>
-		<string>72CEA1CF0FFFF24D00E24A1F</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>72CEA1380FFFEB3900E24A1F</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/lucasdupin/Desktop/as3BundleHelper/as3Debugger.xcodeproj</string>
-		<string>720B0D140FD4B7DF004FB299</string>
 	</array>
 	<key>WindowString</key>
 	<string>169 76 972 702 0 0 1280 778 </string>
@@ -721,7 +680,7 @@
 			<key>WindowToolGUID</key>
 			<string>720B0D140FD4B7DF004FB299</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

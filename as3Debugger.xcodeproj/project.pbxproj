@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.m */; };
-		72443CE4101CD969000D76CE /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CE3101CD969000D76CE /* ApplicationController.m */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
 		72C1A9CF101CB27F00EAD900 /* TB_Step.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9CE101CB27F00EAD900 /* TB_Step.png */; };
@@ -48,8 +47,6 @@
 		32CA4F630368D1EE00C91783 /* as3Debugger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = as3Debugger_Prefix.pch; sourceTree = "<group>"; };
 		72443CD5101CCFD6000D76CE /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggingViewController.h; sourceTree = "<group>"; };
 		72443CD6101CCFD6000D76CE /* DebuggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggingViewController.m; sourceTree = "<group>"; };
-		72443CE2101CD969000D76CE /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
-		72443CE3101CD969000D76CE /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* TraceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TraceController.h; path = src/TraceController.h; sourceTree = "<group>"; };
@@ -85,8 +82,6 @@
 				72443CD1101CCF78000D76CE /* LogViewer */,
 				72B3C1860FF65052004C58DC /* TaskWrapper.h */,
 				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
-				72443CE2101CD969000D76CE /* ApplicationController.h */,
-				72443CE3101CD969000D76CE /* ApplicationController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -255,7 +250,6 @@
 				72B3C18C0FF65052004C58DC /* TraceController.m in Sources */,
 				72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */,
 				72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */,
-				72443CE4101CD969000D76CE /* ApplicationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

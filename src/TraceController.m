@@ -15,6 +15,7 @@
 	[field setTextColor: [NSColor blackColor]];
 	[field setString: [@"Reading: " stringByAppendingString: [NSString stringWithUTF8String:flashlog]]];
 	[field setString:[[field string] stringByAppendingString: @"\n"]];
+	[field setUsesFontPanel:YES];
 	[field setEditable:NO];
 	
 	//Start reading
@@ -29,16 +30,20 @@
 	[NSApp setDelegate: self];
 }
 
+//Clear the text field
 - (IBAction) clear: (id)sender
 {
 	[field setString: @" "];
 }
+
+//Make the text black
 - (IBAction) separate: (id)sender
 {
 	[field setString:[[field string] stringByAppendingString: @"\n\n"]];
 	[field scrollPageDown:self];
 }
 
+//Set auto alpha on Mouse Events
 - (IBAction) setAutoAlpha: (id)sender
 {
 	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
@@ -61,11 +66,6 @@
 {
 	[super dealloc];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
-{
-	return YES;
 }
 
 @end

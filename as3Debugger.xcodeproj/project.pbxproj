@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.m */; };
+		72443CE4101CD969000D76CE /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CE3101CD969000D76CE /* ApplicationController.m */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
+		72C1A9CF101CB27F00EAD900 /* TB_Step.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9CE101CB27F00EAD900 /* TB_Step.png */; };
+		72C1A9DE101CB2F200EAD900 /* TB_Run.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DB101CB2F200EAD900 /* TB_Run.png */; };
+		72C1A9DF101CB2F200EAD900 /* TB_Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DC101CB2F200EAD900 /* TB_Stop.png */; };
+		72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */; };
 		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
 		72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
 		72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
@@ -40,10 +46,18 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* as3Debugger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = as3Debugger_Prefix.pch; sourceTree = "<group>"; };
+		72443CD5101CCFD6000D76CE /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggingViewController.h; sourceTree = "<group>"; };
+		72443CD6101CCFD6000D76CE /* DebuggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggingViewController.m; sourceTree = "<group>"; };
+		72443CE2101CD969000D76CE /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
+		72443CE3101CD969000D76CE /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* TraceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TraceController.h; path = src/TraceController.h; sourceTree = "<group>"; };
 		72B3C1890FF65052004C58DC /* TraceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TraceController.m; path = src/TraceController.m; sourceTree = "<group>"; };
+		72C1A9CE101CB27F00EAD900 /* TB_Step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Step.png; path = Resources/icons/TB_Step.png; sourceTree = "<group>"; };
+		72C1A9DB101CB2F200EAD900 /* TB_Run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Run.png; path = Resources/icons/TB_Run.png; sourceTree = "<group>"; };
+		72C1A9DC101CB2F200EAD900 /* TB_Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Stop.png; path = Resources/icons/TB_Stop.png; sourceTree = "<group>"; };
+		72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_StepOver.png; path = Resources/icons/TB_StepOver.png; sourceTree = "<group>"; };
 		72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlphaPanel.m; path = src/AlphaPanel.m; sourceTree = "<group>"; };
 		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
 		72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
@@ -67,12 +81,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */,
-				72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */,
+				72443CD2101CCF93000D76CE /* DebuggingView */,
+				72443CD1101CCF78000D76CE /* LogViewer */,
 				72B3C1860FF65052004C58DC /* TaskWrapper.h */,
 				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
-				72B3C1880FF65052004C58DC /* TraceController.h */,
-				72B3C1890FF65052004C58DC /* TraceController.m */,
+				72443CE2101CD969000D76CE /* ApplicationController.h */,
+				72443CE3101CD969000D76CE /* ApplicationController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72C1A9E2101CB2F600EAD900 /* Icons */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -142,6 +157,37 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72443CD1101CCF78000D76CE /* LogViewer */ = {
+			isa = PBXGroup;
+			children = (
+				72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */,
+				72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */,
+				72B3C1880FF65052004C58DC /* TraceController.h */,
+				72B3C1890FF65052004C58DC /* TraceController.m */,
+			);
+			name = LogViewer;
+			sourceTree = "<group>";
+		};
+		72443CD2101CCF93000D76CE /* DebuggingView */ = {
+			isa = PBXGroup;
+			children = (
+				72443CD5101CCFD6000D76CE /* DebuggingViewController.h */,
+				72443CD6101CCFD6000D76CE /* DebuggingViewController.m */,
+			);
+			name = DebuggingView;
+			sourceTree = "<group>";
+		};
+		72C1A9E2101CB2F600EAD900 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				72C1A9DB101CB2F200EAD900 /* TB_Run.png */,
+				72C1A9DC101CB2F200EAD900 /* TB_Stop.png */,
+				72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */,
+				72C1A9CE101CB27F00EAD900 /* TB_Step.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +236,10 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				72C1A9CF101CB27F00EAD900 /* TB_Step.png in Resources */,
+				72C1A9DE101CB2F200EAD900 /* TB_Run.png in Resources */,
+				72C1A9DF101CB2F200EAD900 /* TB_Stop.png in Resources */,
+				72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +254,8 @@
 				72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */,
 				72B3C18C0FF65052004C58DC /* TraceController.m in Sources */,
 				72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */,
+				72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */,
+				72443CE4101CD969000D76CE /* ApplicationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

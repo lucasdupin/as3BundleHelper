@@ -5,22 +5,23 @@
 
 - (void)awakeFromNib
 {
-	//Searching for the flashlog.txt in the envirinment
-	char * flashlog = getenv("FLASHLOG");
-	if(flashlog==NULL){
-		flashlog = strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt");
+	//Did we receive a flashlog variable in de commandline?
+	NSString * flashlog;
+	NSString * logParam = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
+	if(logParam == NULL) {
+		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 	}
+	printf("Flashlog is : %s", flashlog);
 	
 	//Telling wich file we're reading
 	[field setTextColor: [NSColor blackColor]];
-	[field setString: [@"Reading: " stringByAppendingString: [NSString stringWithUTF8String:flashlog]]];
+	[field setString: [@"Reading: " stringByAppendingString: flashlog]];
 	[field setString:[[field string] stringByAppendingString: @"\n"]];
 	[field setUsesFontPanel:YES];
 	[field setEditable:NO];
 	
 	//Start reading
-	NSString *filePath = [NSString stringWithUTF8String:flashlog];
-	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", filePath, nil]];
+	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", flashlog, nil]];
 	[tailTask startProcess];
 	
 	//Setting auto-aulpha

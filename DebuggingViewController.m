@@ -24,8 +24,9 @@
 		id element;
 		while ((element = [it nextObject])) {
 			[((NSToolbarItem *) element) setEnabled:NO];
-			NSLog(@"found something");
 		}
+		
+		return;
 	}
 	
 }

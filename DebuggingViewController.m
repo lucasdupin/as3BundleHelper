@@ -14,14 +14,41 @@
 - (void)awakeFromNib
 {
 	//Did we receive a project path?
-	char * flashlog;
-	NSString * logParam = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	if(logParam == NULL) {
-		flashlog = strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt");
-	} else {
-		flashlog = [logParam UTF8String];
+	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
+	if(projectPath == NULL) {
+		NSLog(@"No project, disabling window");
+		
+		
+		NSArray * items = [[debugWindow toolbar] items];
+		NSEnumerator *it = [items objectEnumerator];
+		id element;
+		while ((element = [it nextObject])) {
+			[((NSToolbarItem *) element) setEnabled:NO];
+			NSLog(@"found something");
+		}
 	}
-	printf("Flashlog is : %s", flashlog);
+	
+}
+- (IBAction) connect: (id)sender
+{
+	
+}
+
+- (IBAction) step: (id)sender
+{
+	
+}
+- (IBAction) stepOut: (id)sender
+{
+	
+}
+- (IBAction) continueTilNextBreakPoint: (id)sender
+{
+	
+}
+- (IBAction) dettach: (id)sender
+{
+	
 }
 
 @end

@@ -10,6 +10,7 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.m */; };
 		72443D33101CE652000D76CE /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443D32101CE652000D76CE /* PreferencesController.m */; };
+		72443E00101D12B9000D76CE /* wait_for_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 72443DFF101D12B9000D76CE /* wait_for_player.png */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
 		72C1A9CF101CB27F00EAD900 /* TB_Step.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9CE101CB27F00EAD900 /* TB_Step.png */; };
@@ -50,6 +51,7 @@
 		72443CD6101CCFD6000D76CE /* DebuggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggingViewController.m; sourceTree = "<group>"; };
 		72443D31101CE652000D76CE /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		72443D32101CE652000D76CE /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		72443DFF101D12B9000D76CE /* wait_for_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wait_for_player.png; path = Resources/icons/wait_for_player.png; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* TraceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TraceController.h; path = src/TraceController.h; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				72C1A9DB101CB2F200EAD900 /* TB_Run.png */,
+				72443DFF101D12B9000D76CE /* wait_for_player.png */,
 				72C1A9DC101CB2F200EAD900 /* TB_Stop.png */,
 				72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */,
 				72C1A9CE101CB27F00EAD900 /* TB_Step.png */,
@@ -248,6 +251,7 @@
 				72C1A9DE101CB2F200EAD900 /* TB_Run.png in Resources */,
 				72C1A9DF101CB2F200EAD900 /* TB_Stop.png in Resources */,
 				72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */,
+				72443E00101D12B9000D76CE /* wait_for_player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

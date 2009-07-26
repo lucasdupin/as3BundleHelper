@@ -11,7 +11,16 @@
 
 
 @interface DebuggingViewController : NSObject {
-
+	IBOutlet NSWindow *debugWindow;
+	
+	NSString * projectPath;
 }
+
+- (IBAction) connect: (id)sender;
+
+- (IBAction) step: (id)sender;
+- (IBAction) stepOut: (id)sender;
+- (IBAction) continueTilNextBreakPoint: (id)sender;
+- (IBAction) dettach: (id)sender;
 
 @end

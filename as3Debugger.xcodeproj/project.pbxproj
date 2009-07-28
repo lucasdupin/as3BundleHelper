@@ -83,6 +83,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				72D86234101EAB1100C07914 /* lib */,
 				72443D30101CE62F000D76CE /* Prefences */,
 				72443CD2101CCF93000D76CE /* DebuggingView */,
 				72443CD1101CCF78000D76CE /* LogViewer */,
@@ -199,6 +200,13 @@
 				72C1A9CE101CB27F00EAD900 /* TB_Step.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		72D86234101EAB1100C07914 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

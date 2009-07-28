@@ -7,13 +7,24 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import "TaskWrapper.h"
+#import "TaskWrapper.h"
 
 
-@interface DebuggingViewController : NSObject {
+@interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *debugWindow;
 	
+	//Toolbar buttons
+	IBOutlet NSToolbarItem *connectButton;
+	IBOutlet NSToolbarItem *dettachButton;
+	IBOutlet NSToolbarItem *continueTilNextBreakPointButton;
+	IBOutlet NSToolbarItem *stepButton;
+	IBOutlet NSToolbarItem *stepIntoButton;
+	IBOutlet NSToolbarItem *stepOutButton;
+	
 	NSString * projectPath;
+	NSString * fdbPath;
+	NSString * flexPath;
+	TaskWrapper * fdbTask;
 }
 
 - (IBAction) connect: (id)sender;
@@ -22,5 +33,10 @@
 - (IBAction) stepOut: (id)sender;
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
+
+//TaskWrapperController
+- (void)appendOutput:(NSString *)output;
+- (void)processStarted;
+- (void)processFinished;
 
 @end

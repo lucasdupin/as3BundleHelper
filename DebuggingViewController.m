@@ -15,7 +15,8 @@
 {
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	if(projectPath == NULL) {
+	projectPath = @"/Users/lucasdupin/Desktop/jun";
+	if(projectPath == NULL || [projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
 		
 		
@@ -25,13 +26,35 @@
 		while ((element = [it nextObject])) {
 			[((NSToolbarItem *) element) setEnabled:NO];
 		}
-		
+
 		return;
+	} else {
+		flexPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flex"];
+		fdbPath = [flexPath stringByAppendingString: @"/fdb"];
+		
+		NSLog([@"FDB command is: " stringByAppendingString:fdbPath]);
+		
+		//Enabling ONLY connect button
+		[connectButton setEnabled:YES];
+		[dettachButton setEnabled:NO];
+		[stepButton setEnabled:NO];
+		[stepOutButton setEnabled:NO];
+		[continueTilNextBreakPointButton setEnabled:NO];
 	}
 	
 }
 - (IBAction) connect: (id)sender
 {
+	NSLog(@"Starting FDB");
+	if(fdbTask != NULL)
+		[fdbTask stopProcess];
+	
+	//[[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", flashlog, nil]];
+	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects: fdbPath, nil]];
+	[fdbTask setLaunchPath: flexPath];
+	[fdbTask startProcess];
+	
+	[fdbTask sendData:@"run"];
 	
 }
 
@@ -51,5 +74,21 @@
 {
 	
 }
+
+- (void)appendOutput:(NSString *)output
+{
+	NSLog(@"FDB says:");
+	NSLog(output);
+	
+	
+	/*******
+	 What did fdb mean?
+	 *******/
+	
+	//Did it find an SWF?
+	
+}
+- (void)processStarted{};
+- (void)processFinished{};
 
 @end

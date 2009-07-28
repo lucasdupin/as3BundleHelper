@@ -11,7 +11,7 @@
 	if(logParam == NULL) {
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 	}
-	printf("Flashlog is : %s", flashlog);
+	NSLog([@"Flashlog is : " stringByAppendingString: flashlog]);
 	
 	//Telling wich file we're reading
 	[field setTextColor: [NSColor blackColor]];
@@ -66,6 +66,7 @@
 -(void)dealloc
 {
 	[super dealloc];
+	[tailTask stopProcess];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

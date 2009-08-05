@@ -84,7 +84,7 @@
 		if([regexHidden evaluateWithObject:file] == YES || [regexHiddenPath evaluateWithObject:file] == YES)
 			continue;
 		
-		NSString *thisPath = [NSString stringWithFormat:@"%@/%@",path,file];
+		NSString *thisPath = [[NSString alloc] initWithFormat:@"%@/%@",path,file];
 		BOOL isDirectory=NO;
 		[[NSFileManager defaultManager] fileExistsAtPath:thisPath isDirectory:&isDirectory];
 		
@@ -93,18 +93,19 @@
 			//Is it an .as file?
 			NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
 			if([regexASFile evaluateWithObject:file]) {
-				NSLog(thisPath);
-				getBookmarksForFile: thisPath;
+				NSDictionary * bookmarks = [self getBookmarksForFile: thisPath];
+				NSLog(@"yeah %@", bookmarks);
+				
 				//[breakpoints addObject: file];
 			}
 		}
+		[thisPath release];
 	}
 }
 
 //Gets the bookmark list for the file given
-- (NSPropertyListSerialization*) getBookmarksForFile: (NSString*)path
+- (id) getBookmarksForFile: (NSString*)path
 {
-	NSLog(@"%@ has bookmarks", path);
 	const char * key = "com.macromates.bookmarked_lines";
 	ssize_t len = getxattr([path UTF8String], key, NULL, 0, 0, 0);
 	if(len <= 0)
@@ -131,12 +132,12 @@
 			dest.swap(v);
 		}
 	}
-	NSPropertyListSerialization* res = [NSPropertyListSerialization propertyListFromData: 
+	NSArray* bookmarks = [NSPropertyListSerialization propertyListFromData: 
 		   [NSData dataWithBytes:&v[0] length:v.size()]  
 										   mutabilityOption:NSPropertyListImmutable format:nil  
 										   errorDescription:NULL];
 	
-	return res;
+	return bookmarks;
 }
 
 - (IBAction) step: (id)sender

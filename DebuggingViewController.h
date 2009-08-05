@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "TaskWrapper.h"
 
+//C
+#include <sys/xattr.h>
+#include <zlib.h>
+#include <vector>
 
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *debugWindow;
@@ -21,10 +25,12 @@
 	IBOutlet NSToolbarItem *stepIntoButton;
 	IBOutlet NSToolbarItem *stepOutButton;
 	
-	NSString * projectPath;
-	NSString * fdbCommandPath;
-	NSString * flexPath;
-	TaskWrapper * fdbTask;
+	NSString *projectPath;
+	NSString *fdbCommandPath;
+	NSString *flexPath;
+	TaskWrapper *fdbTask;
+	
+	NSMutableArray *breakpoints;
 }
 
 - (IBAction) connect: (id)sender;
@@ -34,6 +40,7 @@
 - (IBAction) dettach: (id)sender;
 
 - (void) setBreakpointsForPath: (NSString *)path;
+- (NSPropertyListSerialization *) getBookmarksForFile: (NSString*)path;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

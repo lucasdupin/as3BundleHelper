@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.m */; };
+		72443CD7101CCFD6000D76CE /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */; };
 		72443D33101CE652000D76CE /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443D32101CE652000D76CE /* PreferencesController.m */; };
 		72443E00101D12B9000D76CE /* wait_for_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 72443DFF101D12B9000D76CE /* wait_for_player.png */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
@@ -48,7 +48,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* as3Debugger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = as3Debugger_Prefix.pch; sourceTree = "<group>"; };
 		72443CD5101CCFD6000D76CE /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggingViewController.h; sourceTree = "<group>"; };
-		72443CD6101CCFD6000D76CE /* DebuggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggingViewController.m; sourceTree = "<group>"; };
+		72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DebuggingViewController.mm; sourceTree = "<group>"; };
 		72443D31101CE652000D76CE /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		72443D32101CE652000D76CE /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		72443DFF101D12B9000D76CE /* wait_for_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wait_for_player.png; path = Resources/icons/wait_for_player.png; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				72443CD5101CCFD6000D76CE /* DebuggingViewController.h */,
-				72443CD6101CCFD6000D76CE /* DebuggingViewController.m */,
+				72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 				72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */,
 				72B3C18C0FF65052004C58DC /* TraceController.m in Sources */,
 				72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */,
-				72443CD7101CCFD6000D76CE /* DebuggingViewController.m in Sources */,
+				72443CD7101CCFD6000D76CE /* DebuggingViewController.mm in Sources */,
 				72443D33101CE652000D76CE /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +354,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lz";
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -366,6 +367,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-lz";
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};

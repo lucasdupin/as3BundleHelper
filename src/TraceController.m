@@ -40,8 +40,10 @@
 //Make the text black
 - (IBAction) separate: (id)sender
 {
-	[field setString:[[field string] stringByAppendingString: @"\n\n"]];
-	[field scrollPageDown:self];
+	if([field string] != NULL){
+		[field setString:[[field string] stringByAppendingString: @"\n\n"]];
+		[field scrollPageDown:self];
+	}
 }
 
 //Set auto alpha on Mouse Events

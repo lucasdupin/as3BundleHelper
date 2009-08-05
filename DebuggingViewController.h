@@ -22,17 +22,18 @@
 	IBOutlet NSToolbarItem *stepOutButton;
 	
 	NSString * projectPath;
-	NSString * fdbPath;
+	NSString * fdbCommandPath;
 	NSString * flexPath;
 	TaskWrapper * fdbTask;
 }
 
 - (IBAction) connect: (id)sender;
-
 - (IBAction) step: (id)sender;
 - (IBAction) stepOut: (id)sender;
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
+
+- (void) setBreakpointsForPath: (NSString *)path;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

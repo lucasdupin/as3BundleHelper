@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>720E0613102CB1AE00D5395B</string>
+										<string>720E0655102CB92C00D5395B</string>
 										<key>history</key>
 										<array>
 											<string>72B3C19C0FF6516E004C58DC</string>
@@ -353,8 +353,8 @@
 											<string>729ED70D102919AF00EFB53D</string>
 											<string>729ED70E102919AF00EFB53D</string>
 											<string>729ED75110291EE300EFB53D</string>
-											<string>720E060B102CB13900D5395B</string>
-											<string>720E060C102CB13900D5395B</string>
+											<string>720E0651102CB92C00D5395B</string>
+											<string>720E0652102CB92C00D5395B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -378,6 +378,8 @@
 											<string>720E060E102CB13900D5395B</string>
 											<string>720E060F102CB13900D5395B</string>
 											<string>720E0610102CB13900D5395B</string>
+											<string>720E0653102CB92C00D5395B</string>
+											<string>720E0654102CB92C00D5395B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -573,6 +575,7 @@
 	<array>
 		<string>720B0D140FD4B7DF004FB299</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/lucasdupin/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -920,7 +923,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {861, 403}}</string>
 								<key>RubberWindowFrame</key>
-								<string>160 147 861 444 0 0 1280 778 </string>
+								<string>376 314 861 444 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -943,17 +946,17 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>729ED7021029173F00EFB53D</string>
+				<string>720E0618102CB3B400D5395B</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>160 147 861 444 0 0 1280 778 </string>
+			<string>376 314 861 444 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -14,8 +14,8 @@
 {
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk";
-	projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk";
+	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
+	projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
 	
 	if(projectPath == NULL || [projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
@@ -33,7 +33,7 @@
 	
 	flexPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flex"];
 	if(flexPath == nil)
-		flexPath = @"/Users/lucas/src/libs/flex_sdk_4/";
+		flexPath = @"/Users/lucasdupin/src/Flex/";
 
 	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingString: @"bin/fdb"] autorelease]];
 	[fdbCommandPath retain];
@@ -96,9 +96,14 @@
 			//Is it an .as file?
 			NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
 			if([regexASFile evaluateWithObject:file]) {
-				NSLog(thisPath);
-				getBookmarksForFile: thisPath;
-				//[breakpoints addObject: file];
+				//NSLog(thisPath);
+				NSArray * res = [self getBookmarksForFile: thisPath];
+				
+				//Adding breakpoints to the list
+				for(int i=0; i < [res count]; i++){
+					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%@", file, [res objectAtIndex:i]]];
+					NSLog(@"Set breakpoint: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+				}
 			}
 		}
 	}
@@ -107,7 +112,6 @@
 //Gets the bookmark list for the file given
 - (NSArray*) getBookmarksForFile: (NSString*)path
 {
-	NSLog(@"%@ has bookmarks", path);
 	const char * key = "com.macromates.bookmarked_lines";
 	ssize_t len = getxattr([path UTF8String], key, NULL, 0, 0, 0);
 	if(len <= 0)
@@ -138,11 +142,6 @@
 		   [NSData dataWithBytes:&v[0] length:v.size()]  
 										   mutabilityOption:NSPropertyListImmutable format:nil  
 										   errorDescription:NULL];
-	
-	//Addiing breakpoints to the list
-	for(int i=0; i < [res count]; i++){
-		[breakpoints addObject:[[NSString alloc] initWithFormat:@"$@:$@", path, [res objectAtIndex:i]]];
-	}
 	
 	return res;
 }
@@ -179,5 +178,16 @@
 }
 - (void)processStarted{};
 - (void)processFinished{};
+
+- (void)dealloc {
+	
+	[projectPath release];
+	[fdbCommandPath release];
+	[flexPath release];
+	[fdbTask release];
+	
+	[breakpoints release];
+    [super dealloc];
+}
 
 @end

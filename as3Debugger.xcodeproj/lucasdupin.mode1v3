@@ -324,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.m</string>
+								<string>DebuggingViewController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.m</string>
+										<string>DebuggingViewController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>729ED7C410299F4200EFB53D</string>
+										<string>720E0613102CB1AE00D5395B</string>
 										<key>history</key>
 										<array>
 											<string>72B3C19C0FF6516E004C58DC</string>
@@ -353,8 +353,8 @@
 											<string>729ED70D102919AF00EFB53D</string>
 											<string>729ED70E102919AF00EFB53D</string>
 											<string>729ED75110291EE300EFB53D</string>
-											<string>729ED78B102926B100EFB53D</string>
-											<string>729ED78C102926B100EFB53D</string>
+											<string>720E060B102CB13900D5395B</string>
+											<string>720E060C102CB13900D5395B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -374,21 +374,10 @@
 											<string>72443D01101CE1E8000D76CE</string>
 											<string>72443D61101CF6A6000D76CE</string>
 											<string>72443D6A101CF6A6000D76CE</string>
-											<string>729ED711102919AF00EFB53D</string>
-											<string>729ED712102919AF00EFB53D</string>
-											<string>729ED713102919AF00EFB53D</string>
-											<string>729ED714102919AF00EFB53D</string>
-											<string>729ED715102919AF00EFB53D</string>
-											<string>729ED74C10291E7700EFB53D</string>
-											<string>729ED75410291EE300EFB53D</string>
-											<string>729ED75510291EE300EFB53D</string>
-											<string>729ED75C10291F6000EFB53D</string>
-											<string>729ED7851029249300EFB53D</string>
-											<string>729ED7861029249300EFB53D</string>
-											<string>729ED78D102926B100EFB53D</string>
-											<string>729ED78E102926B100EFB53D</string>
-											<string>729ED78F102926B100EFB53D</string>
-											<string>729ED790102926B100EFB53D</string>
+											<string>720E060D102CB13900D5395B</string>
+											<string>720E060E102CB13900D5395B</string>
+											<string>720E060F102CB13900D5395B</string>
+											<string>720E0610102CB13900D5395B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -446,9 +435,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>729ED6F91029173F00EFB53D</string>
+				<string>720E05FC102CAE5300D5395B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>729ED6FA1029173F00EFB53D</string>
+				<string>720E05FD102CAE5300D5395B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -582,11 +571,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>729ED717102919AF00EFB53D</string>
-		<string>729ED718102919AF00EFB53D</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>720B0D140FD4B7DF004FB299</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/lucasdupin/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -667,7 +653,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>720B0D140FD4B7DF004FB299</string>
-				<string>729ED6FB1029173F00EFB53D</string>
+				<string>720E0612102CB13900D5395B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -787,13 +773,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>729ED6FC1029173F00EFB53D</string>
+				<string>720E05FE102CAE5300D5395B</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>729ED6FD1029173F00EFB53D</string>
-				<string>729ED6FE1029173F00EFB53D</string>
-				<string>729ED6FF1029173F00EFB53D</string>
-				<string>729ED7001029173F00EFB53D</string>
-				<string>729ED7011029173F00EFB53D</string>
+				<string>720E05FF102CAE5300D5395B</string>
+				<string>720E0600102CAE5300D5395B</string>
+				<string>720E0601102CAE5300D5395B</string>
+				<string>720E0602102CAE5300D5395B</string>
+				<string>720E0603102CAE5300D5395B</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

@@ -40,7 +40,7 @@
 - (IBAction) dettach: (id)sender;
 
 - (void) setBreakpointsForPath: (NSString *)path;
-- (NSPropertyListSerialization *) getBookmarksForFile: (NSString*)path;
+- (NSArray *) getBookmarksForFile: (NSString*)path;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

@@ -15,6 +15,8 @@
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
 	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk";
+	projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk";
+	
 	if(projectPath == NULL || [projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
 		
@@ -72,6 +74,7 @@
 //(Textmate bookmarks)
 - (void) setBreakpointsForPath: (NSString *)path
 {
+	if(breakpoints != nil) [breakpoints release];
 	breakpoints = [[NSMutableArray alloc] init];
 	
 	NSFileHandle * file;
@@ -102,7 +105,7 @@
 }
 
 //Gets the bookmark list for the file given
-- (NSPropertyListSerialization*) getBookmarksForFile: (NSString*)path
+- (NSArray*) getBookmarksForFile: (NSString*)path
 {
 	NSLog(@"%@ has bookmarks", path);
 	const char * key = "com.macromates.bookmarked_lines";
@@ -131,10 +134,15 @@
 			dest.swap(v);
 		}
 	}
-	NSPropertyListSerialization* res = [NSPropertyListSerialization propertyListFromData: 
+	NSArray* res = [NSPropertyListSerialization propertyListFromData: 
 		   [NSData dataWithBytes:&v[0] length:v.size()]  
 										   mutabilityOption:NSPropertyListImmutable format:nil  
 										   errorDescription:NULL];
+	
+	//Addiing breakpoints to the list
+	for(int i=0; i < [res count]; i++){
+		[breakpoints addObject:[[NSString alloc] initWithFormat:@"$@:$@", path, [res objectAtIndex:i]]];
+	}
 	
 	return res;
 }

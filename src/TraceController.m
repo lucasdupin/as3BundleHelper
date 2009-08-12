@@ -66,8 +66,6 @@
 
 - (void) stopTask
 {
-	NSLog(@"Tracer dealloced");
-	[super dealloc];
 	[tailTask stopProcess];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

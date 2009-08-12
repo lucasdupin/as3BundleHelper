@@ -190,7 +190,6 @@
 	[fdbTask release];
 	
 	[breakpoints release];
-    [super dealloc];
 }
 
 @end

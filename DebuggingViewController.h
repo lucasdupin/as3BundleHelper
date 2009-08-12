@@ -40,11 +40,13 @@
 - (IBAction) dettach: (id)sender;
 
 - (void) setBreakpointsForPath: (NSString *)path;
-- (id) getBookmarksForFile: (NSString*)path;
+- (NSArray *) getBookmarksForFile: (NSString*)path;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;
 - (void)processStarted;
 - (void)processFinished;
+
+- (void)stopTask;
 
 @end

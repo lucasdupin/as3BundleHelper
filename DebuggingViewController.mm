@@ -12,9 +12,13 @@
 
 - (void)awakeFromNib
 {
+	NSLog(@"Debugger awaken");
+	
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk";
+	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
+	projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
+	
 	if(projectPath == NULL || [projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
 		
@@ -72,6 +76,7 @@
 //(Textmate bookmarks)
 - (void) setBreakpointsForPath: (NSString *)path
 {
+	if(breakpoints != nil) [breakpoints release];
 	breakpoints = [[NSMutableArray alloc] init];
 	
 	NSFileHandle * file;
@@ -93,10 +98,14 @@
 			//Is it an .as file?
 			NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
 			if([regexASFile evaluateWithObject:file]) {
-				NSDictionary * bookmarks = [self getBookmarksForFile: thisPath];
-				NSLog(@"yeah %@", bookmarks);
+				//NSLog(thisPath);
+				NSArray * res = [self getBookmarksForFile: thisPath];
 				
-				//[breakpoints addObject: file];
+				//Adding breakpoints to the list
+				for(int i=0; i < [res count]; i++){
+					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%@", file, [res objectAtIndex:i]]];
+					NSLog(@"Set breakpoint: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+				}
 			}
 		}
 		[thisPath release];
@@ -104,7 +113,7 @@
 }
 
 //Gets the bookmark list for the file given
-- (id) getBookmarksForFile: (NSString*)path
+- (NSArray*) getBookmarksForFile: (NSString*)path
 {
 	const char * key = "com.macromates.bookmarked_lines";
 	ssize_t len = getxattr([path UTF8String], key, NULL, 0, 0, 0);
@@ -132,12 +141,12 @@
 			dest.swap(v);
 		}
 	}
-	NSArray* bookmarks = [NSPropertyListSerialization propertyListFromData: 
+	NSArray* res = [NSPropertyListSerialization propertyListFromData: 
 		   [NSData dataWithBytes:&v[0] length:v.size()]  
 										   mutabilityOption:NSPropertyListImmutable format:nil  
 										   errorDescription:NULL];
 	
-	return bookmarks;
+	return res;
 }
 
 - (IBAction) step: (id)sender
@@ -172,5 +181,16 @@
 }
 - (void)processStarted{};
 - (void)processFinished{};
+
+- (void)dealloc {
+	
+	[projectPath release];
+	[fdbCommandPath release];
+	[flexPath release];
+	[fdbTask release];
+	
+	[breakpoints release];
+    [super dealloc];
+}
 
 @end

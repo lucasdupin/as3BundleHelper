@@ -5,6 +5,8 @@
 
 - (void)awakeFromNib
 {
+	NSLog(@"Tracer awaken");
+	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog;
 	NSString * logParam = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
@@ -26,9 +28,6 @@
 	
 	//Setting auto-aulpha
 	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
-	
-	//Quit app after closing this window
-	[NSApp setDelegate: self];
 }
 
 //Clear the text field
@@ -65,8 +64,9 @@
 	[field scrollPageDown:self];
 }
 
--(void)dealloc
+- (void) stopTask
 {
+	NSLog(@"Tracer dealloced");
 	[super dealloc];
 	[tailTask stopProcess];
     [[NSNotificationCenter defaultCenter] removeObserver:self];

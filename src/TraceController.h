@@ -25,4 +25,6 @@
 - (void)processFinished;
 - (void)appendOutput:(NSString *)output;
 
+- (void)stopTask;
+
 @end

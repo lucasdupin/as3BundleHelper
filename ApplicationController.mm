@@ -21,4 +21,18 @@
 	[traceController stopTask];
 	[debuggingViewController stopTask];
 }
+
+- (IBAction) showLogViewer: (id)sender
+{
+	[[traceController getWindow] orderFront: self]; 
+}
+- (IBAction) showDebuggingView: (id)sender
+{
+	NSLog(@"%@ window", debugWindow);
+	[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
+	
+//	NSWindow* win = ;
+//	[win makeKeyAndOrderFront:self];
+}
+
 @end

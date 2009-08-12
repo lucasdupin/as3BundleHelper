@@ -27,7 +27,7 @@
 	[tailTask startProcess];
 	
 	//Setting auto-aulpha
-	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
+	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
 }
 
 //Clear the text field
@@ -48,7 +48,7 @@
 //Set auto alpha on Mouse Events
 - (IBAction) setAutoAlpha: (id)sender
 {
-	[mainView setAutoAlpha: [autoAlphaButton state] == NSOnState];
+	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
 }
 
 
@@ -62,6 +62,11 @@
 	[toAdd addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:NSMakeRange(0, [toAdd length])];
     [[field textStorage] appendAttributedString: toAdd];
 	[field scrollPageDown:self];
+}
+
+- (AlphaPanel *)getWindow
+{
+	return [window retain];
 }
 
 - (void) stopTask

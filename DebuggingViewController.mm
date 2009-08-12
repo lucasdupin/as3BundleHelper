@@ -23,7 +23,7 @@
 		NSLog(@"No project, disabling window");
 		
 		
-		NSArray * items = [[debugWindow toolbar] items];
+		NSArray * items = [[window toolbar] items];
 		NSEnumerator *it = [items objectEnumerator];
 		id element;
 		while ((element = [it nextObject])) {
@@ -182,8 +182,15 @@
 - (void)processStarted{};
 - (void)processFinished{};
 
+- (NSWindow *)getWindow
+{
+	if(window == nil)
+		NSLog(@"something wrong");
+	return window;
+}
+
 - (void)stopTask {
-	
+	NSLog(@"task stopped");
 	[projectPath release];
 	[fdbCommandPath release];
 	[flexPath release];

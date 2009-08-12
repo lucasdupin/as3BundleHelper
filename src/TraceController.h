@@ -13,7 +13,9 @@
 @interface TraceController : NSObject <TaskWrapperController> {
 	IBOutlet NSTextView *field;
 	IBOutlet NSButton *autoAlphaButton;
-	IBOutlet AlphaPanel * mainView;
+	IBOutlet AlphaPanel * alphaPanel;
+	IBOutlet NSPanel * window;
+	
 	TaskWrapper *tailTask;
 }
 
@@ -26,5 +28,7 @@
 - (void)appendOutput:(NSString *)output;
 
 - (void)stopTask;
+
+- (AlphaPanel*)getWindow;
 
 @end

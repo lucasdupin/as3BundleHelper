@@ -14,7 +14,12 @@
 @interface ApplicationController : NSObject {
 	IBOutlet TraceController *traceController;
 	IBOutlet DebuggingViewController *debuggingViewController;
+	
+	IBOutlet NSWindow *debugWindow;
 }
+
+- (IBAction) showLogViewer: (id) sender;
+- (IBAction) showDebuggingView: (id) sender;
 
 @end
 

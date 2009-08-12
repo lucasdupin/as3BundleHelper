@@ -15,7 +15,7 @@
 #include <vector>
 
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
-	IBOutlet NSWindow *debugWindow;
+	IBOutlet NSWindow *window;
 	
 	//Toolbar buttons
 	IBOutlet NSToolbarItem *connectButton;
@@ -41,6 +41,8 @@
 
 - (void) setBreakpointsForPath: (NSString *)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
+
+- (NSWindow *)getWindow;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

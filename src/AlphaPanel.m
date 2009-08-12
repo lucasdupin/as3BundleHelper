@@ -52,7 +52,8 @@
 	rectTag = [self addTrackingRect:trackRect owner:self userData:NULL assumeInside:NO];
 }
 
-- (void) setAutoAlpha: (BOOL)value{
+- (void) setAutoAlpha: (BOOL)value
+{
 	autoAlpha = value;
 }
 

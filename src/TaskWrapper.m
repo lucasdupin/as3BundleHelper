@@ -132,6 +132,7 @@
     // Make sure the task has actually stopped!
     [task terminate];
 
+	
    while ((data = [[[task standardOutput] fileHandleForReading] availableData]) && [data length])
    {
        [controller appendOutput: [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];

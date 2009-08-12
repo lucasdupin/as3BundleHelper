@@ -182,7 +182,7 @@
 - (void)processStarted{};
 - (void)processFinished{};
 
-- (void)dealloc {
+- (void)stopTask {
 	
 	[projectPath release];
 	[fdbCommandPath release];

@@ -21,7 +21,7 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
 	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
-	projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
+	//projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
 	
 	if(projectPath == NULL || [projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
@@ -105,13 +105,13 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 		if (!isDirectory) {
 			//Is it an .as file?
 			if([regexASFile evaluateWithObject:file]) {
-				//NSLog(thisPath);
+				NSLog(thisPath);
 				NSArray * res = [self getBookmarksForFile: thisPath];
 				
 				//Adding breakpoints to the list
 				for(int i=0; i < [res count]; i++){
 					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%@", file, [res objectAtIndex:i]]];
-					NSLog(@"Set breakpoint: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+					NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
 				}
 			}
 		}
@@ -186,14 +186,16 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 	if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
 	{
 		//Time to set Breakpoints
-		NSLog(@"Setting breakpoints");
+		NSLog(@"Setting %d breakpoints", [breakpoints count]);
 		//Adding breakpoints to the list
 		for(int i=0; i < [breakpoints count]; i++){
 			NSLog(@"%@", [breakpoints objectAtIndex:i]);
-			//[fdbTask sendData:[breakpoints objectAtIndex:i]];
+			[fdbTask sendData:[@"b " stringByAppendingString:[[breakpoints objectAtIndex:i] lastPathComponent]]];//Set breakpoint
+			[fdbTask sendData:@"\n"]; //Done!
 		}
-		//Telling fdb we're done
-		[fdbTask sendData:@"continue"];
+		
+		//Telling fdb we're done setting everything
+		[fdbTask sendData:@"continue\n"];
 		
 	} else  if([output rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
 		NSLog(@"FDB Already running");

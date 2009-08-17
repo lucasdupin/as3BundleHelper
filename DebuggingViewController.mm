@@ -201,10 +201,6 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 		[alert addButtonWithTitle:@"OK"];
 		[alert setMessageText:@"fdb already running, please, close it."];
 		[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
-		
-		
-	} else {
-		NSLog(@"Don't know what you are saying");
 	}
 }
 - (void)processStarted{};

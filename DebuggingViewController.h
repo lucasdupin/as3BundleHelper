@@ -13,7 +13,6 @@
 #include <sys/xattr.h>
 #include <zlib.h>
 #include <vector>
-#include "FDBConstants.h"
 
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *window;

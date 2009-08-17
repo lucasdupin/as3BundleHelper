@@ -273,8 +273,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
-									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -299,7 +297,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>131 152 1090 717 0 0 1680 1028 </string>
+						<string>241 182 1090 717 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -317,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.mm</string>
+								<string>DebuggingViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.mm</string>
+										<string>DebuggingViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A09C34381039A0AA0008201A</string>
+										<string>A09C34401039A26F0008201A</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -343,8 +341,8 @@
 											<string>A0B8EA6F1035AE7D00451059</string>
 											<string>A09C342A1039A0270008201A</string>
 											<string>A09C34341039A0AA0008201A</string>
-											<string>A09C34351039A0AA0008201A</string>
-											<string>A09C342C1039A0270008201A</string>
+											<string>A09C343D1039A26F0008201A</string>
+											<string>A09C343E1039A26F0008201A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -368,6 +366,7 @@
 											<string>A09C34321039A0270008201A</string>
 											<string>A09C34361039A0AA0008201A</string>
 											<string>A09C34371039A0AA0008201A</string>
+											<string>A09C343F1039A26F0008201A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -381,7 +380,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {882, 498}}</string>
 								<key>RubberWindowFrame</key>
-								<string>131 152 1090 717 0 0 1680 1028 </string>
+								<string>241 182 1090 717 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -401,7 +400,7 @@
 								<key>Frame</key>
 								<string>{{0, 503}, {882, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>131 152 1090 717 0 0 1680 1028 </string>
+								<string>241 182 1090 717 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -561,13 +560,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>A09C34411039A26F0008201A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>A01E3CAB0FFE33DE00139E8B</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/lucas/src/lucas/as3BundleHelper/as3Debugger.xcodeproj</string>
+		<string>A01E3CAB0FFE33DE00139E8B</string>
 	</array>
 	<key>WindowString</key>
-	<string>131 152 1090 717 0 0 1680 1028 </string>
+	<string>241 182 1090 717 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -588,7 +588,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TaskWrapper.m</string>
+								<string>DebuggingViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -657,7 +657,7 @@
 			<key>WindowToolGUID</key>
 			<string>A01E3CAB0FFE33DE00139E8B</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

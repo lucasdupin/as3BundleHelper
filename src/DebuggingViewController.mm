@@ -218,13 +218,19 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		
 		//Telling fdb we're done setting everything
 		[fdbTask sendData:@"continue\n"];
-		
+	
+	//Another instance of FDB is already running
 	} else  if([output rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
 		[self alert: @"fdb already running, please, close it."];
 		NSLog(@"FDB Already running");
 		[fdbTask stopProcess];
 		fdbTask = nil;
+	} else {
+		//None of these...
+		//Maybe he is saying something about breakpoints
+		RKRegex * bpRegex = [RKRegex regexWithRegexString:FDB_REACH_BREAKPOINT options:RKCompileMultiline];
 	}
+
 }
 - (void)processStarted{};
 - (void)processFinished{};

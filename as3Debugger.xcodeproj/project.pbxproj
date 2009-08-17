@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		72443CD7101CCFD6000D76CE /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */; };
-		72443D33101CE652000D76CE /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72443D32101CE652000D76CE /* PreferencesController.m */; };
 		72443E00101D12B9000D76CE /* wait_for_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 72443DFF101D12B9000D76CE /* wait_for_player.png */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* TraceController.m */; };
@@ -19,22 +17,27 @@
 		72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */; };
 		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
 		72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
-		72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
+		72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A03407811033051A00BFE89D /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A03407801033051A00BFE89D /* ApplicationController.mm */; };
+		A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
+		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
+		A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */; };
+		A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B61039F3D20045DA0A /* ApplicationController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		72CEA0DE0FFFE31700E24A1F /* CopyFiles */ = {
+		72CEA0DE0FFFE31700E24A1F /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in CopyFiles */,
+				A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */,
+				72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -48,10 +51,6 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* as3Debugger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = as3Debugger_Prefix.pch; sourceTree = "<group>"; };
-		72443CD5101CCFD6000D76CE /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggingViewController.h; sourceTree = "<group>"; };
-		72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DebuggingViewController.mm; sourceTree = "<group>"; };
-		72443D31101CE652000D76CE /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		72443D32101CE652000D76CE /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		72443DFF101D12B9000D76CE /* wait_for_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wait_for_player.png; path = Resources/icons/wait_for_player.png; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
@@ -63,11 +62,14 @@
 		72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_StepOver.png; path = Resources/icons/TB_StepOver.png; sourceTree = "<group>"; };
 		72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlphaPanel.m; path = src/AlphaPanel.m; sourceTree = "<group>"; };
 		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
-		72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
+		72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = lib/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A034077F1033051A00BFE89D /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
-		A03407801033051A00BFE89D /* ApplicationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApplicationController.mm; sourceTree = "<group>"; };
+		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
+		A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DebuggingViewController.mm; path = src/DebuggingViewController.mm; sourceTree = "<group>"; };
+		A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebuggingViewController.h; path = src/DebuggingViewController.h; sourceTree = "<group>"; };
+		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
+		A0B879B61039F3D20045DA0A /* ApplicationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ApplicationController.mm; path = src/ApplicationController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */,
+				A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,14 +89,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				72D86234101EAB1100C07914 /* lib */,
 				72443D30101CE62F000D76CE /* Prefences */,
 				72443CD2101CCF93000D76CE /* DebuggingView */,
 				72443CD1101CCF78000D76CE /* LogViewer */,
 				72B3C1860FF65052004C58DC /* TaskWrapper.h */,
 				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
-				A034077F1033051A00BFE89D /* ApplicationController.h */,
-				A03407801033051A00BFE89D /* ApplicationController.mm */,
+				A0B879B51039F3D20045DA0A /* ApplicationController.h */,
+				A0B879B61039F3D20045DA0A /* ApplicationController.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -101,6 +103,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A05D6717103A096F00623928 /* RegexKit.framework */,
+				72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -159,7 +163,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -180,8 +183,8 @@
 		72443CD2101CCF93000D76CE /* DebuggingView */ = {
 			isa = PBXGroup;
 			children = (
-				72443CD5101CCFD6000D76CE /* DebuggingViewController.h */,
-				72443CD6101CCFD6000D76CE /* DebuggingViewController.mm */,
+				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
+				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -189,8 +192,6 @@
 		72443D30101CE62F000D76CE /* Prefences */ = {
 			isa = PBXGroup;
 			children = (
-				72443D31101CE652000D76CE /* PreferencesController.h */,
-				72443D32101CE652000D76CE /* PreferencesController.m */,
 			);
 			name = Prefences;
 			sourceTree = "<group>";
@@ -207,13 +208,6 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
-		72D86234101EAB1100C07914 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = lib;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,7 +218,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				72CEA0DE0FFFE31700E24A1F /* CopyFiles */,
+				72CEA0DE0FFFE31700E24A1F /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,9 +273,8 @@
 				72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */,
 				72B3C18C0FF65052004C58DC /* TraceController.m in Sources */,
 				72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */,
-				72443CD7101CCFD6000D76CE /* DebuggingViewController.mm in Sources */,
-				72443D33101CE652000D76CE /* PreferencesController.m in Sources */,
-				A03407811033051A00BFE89D /* ApplicationController.mm in Sources */,
+				A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */,
+				A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +310,8 @@
 					"\"$(SRCROOT)/../rubyCocoa/bghudappkit-read-only/build/Release\"",
 					"\"$(SRCROOT)/frameworks\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -340,6 +335,8 @@
 					"\"$(SRCROOT)/../rubyCocoa/bghudappkit-read-only/build/Release\"",
 					"\"$(SRCROOT)/frameworks\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/../../../Library/Frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

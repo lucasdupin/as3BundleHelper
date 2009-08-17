@@ -17,14 +17,6 @@
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *window;
 	
-	//Toolbar buttons
-	IBOutlet NSToolbarItem *connectButton;
-	IBOutlet NSToolbarItem *dettachButton;
-	IBOutlet NSToolbarItem *continueTilNextBreakPointButton;
-	IBOutlet NSToolbarItem *stepButton;
-	IBOutlet NSToolbarItem *stepIntoButton;
-	IBOutlet NSToolbarItem *stepOutButton;
-	
 	NSString *projectPath;
 	NSString *fdbCommandPath;
 	NSString *flexPath;
@@ -32,7 +24,8 @@
 	
 	NSMutableArray *breakpoints;
 	
-	
+	//Debugger state
+	NSString *currentState;
 }
 
 - (IBAction) connect: (id)sender;
@@ -50,7 +43,9 @@
 - (void)appendOutput:(NSString *)output;
 - (void)processStarted;
 - (void)processFinished;
-
 - (void)stopTask;
+
+//Controlling the menu
+- (void)setState: (NSString *)state;
 
 @end

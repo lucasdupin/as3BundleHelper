@@ -13,45 +13,45 @@ NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'cont
 NSString * const FDB_REACH_BREAKPOINT =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 
+//Debugger states
+NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
+NSString * const ST_DISCONNECTED = @"disconnected";
+NSString * const ST_WAITING_FOR_PLAYER = @"waiting_for_player_to_connect";
+NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
+
 
 @implementation DebuggingViewController
 
+/*
+ Initialization:
+ Gets the Default project Path and if there is no path, disable the window
+ Gets the Flex SDK path
+ Sets the delegate for validating menuItems (enabled or not)
+ Set current state: ST_DISCONNECTED
+ */
 - (void)awakeFromNib
 {
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
+	if(projectPath == nil)
+		projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
 	//projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
 	
-	if(projectPath == NULL || [projectPath length] <= 0) {
+	if([projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
-		
-		
-		NSArray * items = [[window toolbar] items];
-		NSEnumerator *it = [items objectEnumerator];
-		id element;
-		while ((element = [it nextObject])) {
-			[((NSToolbarItem *) element) setEnabled:NO];
-		}
-
-		return;
+		[self setState:ST_NO_PROJECT_PATH];
 	}
+	
 	
 	flexPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flex"];
 	if(flexPath == nil)
 		flexPath = @"/Users/lucas/src/libs/flex_sdk_4/";
 
 	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingString: @"bin/fdb"] autorelease]];
-	[fdbCommandPath retain];
+	[fdbCommandPath retain]; 
 	
-	//NSLog(@"FDB command is: %@", fdbCommandPath);
-	
-	//Enabling ONLY connect button
-	[connectButton setEnabled:YES];
-	[dettachButton setEnabled:NO];
-	[stepButton setEnabled:NO];
-	[stepOutButton setEnabled:NO];
-	[continueTilNextBreakPointButton setEnabled:NO];
+	[self setState:ST_DISCONNECTED];
+	[[window toolbar] setDelegate:self];
 	
 }
 
@@ -173,6 +173,12 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 	[breakpoints release];
 }
 
+//Application state
+- (void) setState:(NSString *)state
+{
+	currentState = state;
+}
+
 - (void)appendOutput:(NSString *)output
 {
 	NSLog([@"FDB says: " stringByAppendingString:output]);
@@ -222,6 +228,24 @@ NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably run
 	[fdbTask release];
 	
 	[breakpoints release];
+}
+
+//Menu item validation
+- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
+//	NSLog(@"validation done with state: %@", currentState);
+	if([currentState isEqual: ST_NO_PROJECT_PATH])
+	{
+		return NO;
+	} else if([currentState isEqual: ST_DISCONNECTED]) {
+		if([item action] == @selector(connect:)) {
+			return YES;
+		} else {
+			return NO;
+		}
+	}
+	
+	//No response? Disable it
+	return NO;
 }
 
 @end

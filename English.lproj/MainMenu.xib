@@ -9,8 +9,8 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="477"/>
+			<integer value="606"/>
 			<integer value="29"/>
-			<integer value="587"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1026,6 +1026,7 @@
 									</object>
 									<string key="NSFrameSize">{476, 255}</string>
 									<reference key="NSSuperview" ref="826695229"/>
+									<reference key="NSNextKeyView" ref="955174807"/>
 									<reference key="NSDocView" ref="955174807"/>
 									<reference key="NSBGColor" ref="377366764"/>
 									<object class="NSCursor" key="NSCursor" id="884643701">
@@ -1056,6 +1057,7 @@
 							</object>
 							<string key="NSFrame">{{15, 32}, {476, 255}}</string>
 							<reference key="NSSuperview" ref="515619762"/>
+							<reference key="NSNextKeyView" ref="453033293"/>
 							<int key="NSsFlags">528</int>
 							<reference key="NSVScroller" ref="916556523"/>
 							<reference key="NSHScroller" ref="394472651"/>
@@ -1269,7 +1271,7 @@
 								<string key="NSToolbarItemMinSize">{0, 0}</string>
 								<string key="NSToolbarItemMaxSize">{0, 0}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">NO</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
 								<int key="NSToolbarItemTag">3</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -1291,7 +1293,7 @@
 								<string key="NSToolbarItemMinSize">{0, 0}</string>
 								<string key="NSToolbarItemMaxSize">{0, 0}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">NO</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
 								<int key="NSToolbarItemTag">1</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -1313,7 +1315,7 @@
 								<string key="NSToolbarItemMinSize">{0, 0}</string>
 								<string key="NSToolbarItemMaxSize">{0, 0}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">NO</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
 								<int key="NSToolbarItemTag">0</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -1335,7 +1337,7 @@
 								<string key="NSToolbarItemMinSize">{0, 0}</string>
 								<string key="NSToolbarItemMaxSize">{0, 0}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">NO</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
 								<int key="NSToolbarItemTag">2</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -1357,7 +1359,7 @@
 								<string key="NSToolbarItemMinSize">{0, 0}</string>
 								<string key="NSToolbarItemMaxSize">{0, 0}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">NO</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
 								<int key="NSToolbarItemTag">4</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -1731,6 +1733,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 													</object>
 													<string key="NSFrame">{{0, 17}, {208, 456}}</string>
 													<reference key="NSSuperview" ref="40841580"/>
+													<reference key="NSNextKeyView" ref="709622248"/>
 													<reference key="NSDocView" ref="709622248"/>
 													<reference key="NSBGColor" ref="571069841"/>
 													<int key="NScvFlags">4</int>
@@ -1764,6 +1767,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 													</object>
 													<string key="NSFrameSize">{208, 17}</string>
 													<reference key="NSSuperview" ref="40841580"/>
+													<reference key="NSNextKeyView" ref="778625901"/>
 													<reference key="NSDocView" ref="778625901"/>
 													<reference key="NSBGColor" ref="571069841"/>
 													<int key="NScvFlags">4</int>
@@ -1772,6 +1776,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 											</object>
 											<string key="NSFrameSize">{208, 473}</string>
 											<reference key="NSSuperview" ref="963011778"/>
+											<reference key="NSNextKeyView" ref="973997397"/>
 											<int key="NSsFlags">560</int>
 											<reference key="NSVScroller" ref="3869714"/>
 											<reference key="NSHScroller" ref="910822487"/>
@@ -2027,6 +2032,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 													</object>
 													<string key="NSFrameSize">{443, 456}</string>
 													<reference key="NSSuperview" ref="740240738"/>
+													<reference key="NSNextKeyView" ref="549930922"/>
 													<reference key="NSDocView" ref="549930922"/>
 													<reference key="NSBGColor" ref="377366764"/>
 													<reference key="NSCursor" ref="884643701"/>
@@ -2055,6 +2061,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 											</object>
 											<string key="NSFrameSize">{458, 456}</string>
 											<reference key="NSSuperview" ref="806539244"/>
+											<reference key="NSNextKeyView" ref="738211474"/>
 											<int key="NSsFlags">16</int>
 											<reference key="NSVScroller" ref="640028705"/>
 											<reference key="NSHScroller" ref="130380976"/>
@@ -2561,46 +2568,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<int key="connectionID">834</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">connectButton</string>
-						<reference key="source" ref="175302177"/>
-						<reference key="destination" ref="912443932"/>
-					</object>
-					<int key="connectionID">847</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">stepButton</string>
-						<reference key="source" ref="175302177"/>
-						<reference key="destination" ref="672281491"/>
-					</object>
-					<int key="connectionID">848</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">stepOutButton</string>
-						<reference key="source" ref="175302177"/>
-						<reference key="destination" ref="928287342"/>
-					</object>
-					<int key="connectionID">849</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">dettachButton</string>
-						<reference key="source" ref="175302177"/>
-						<reference key="destination" ref="559847666"/>
-					</object>
-					<int key="connectionID">852</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">continueTilNextBreakPointButton</string>
-						<reference key="source" ref="175302177"/>
-						<reference key="destination" ref="249053547"/>
-					</object>
-					<int key="connectionID">853</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -4157,7 +4124,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{39, 815}, {461, 20}}</string>
+					<string>{{41, 816}, {461, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{74, 862}</string>
@@ -4217,11 +4184,11 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>{{23, 794}, {245, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{281, 441}, {667, 476}}</string>
-					<string>{{281, 441}, {667, 476}}</string>
+					<string>{{315, 370}, {667, 476}}</string>
+					<string>{{315, 370}, {667, 476}}</string>
 					<reference ref="5"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{400, 917}, {617, 0}}</string>
+					<string>{{340, 619}, {617, 227}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4391,27 +4358,8 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSMutableArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>connectButton</string>
-							<string>continueTilNextBreakPointButton</string>
-							<string>dettachButton</string>
-							<string>stepButton</string>
-							<string>stepIntoButton</string>
-							<string>stepOutButton</string>
-							<string>window</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSToolbarItem</string>
-							<string>NSToolbarItem</string>
-							<string>NSToolbarItem</string>
-							<string>NSToolbarItem</string>
-							<string>NSToolbarItem</string>
-							<string>NSToolbarItem</string>
-							<string>NSWindow</string>
-						</object>
+						<string key="NS.key.0">window</string>
+						<string key="NS.object.0">NSWindow</string>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>

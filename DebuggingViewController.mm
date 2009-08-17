@@ -8,12 +8,16 @@
 
 #import "DebuggingViewController.h"
 
+//FDB Responses
+NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
+NSString * const FDB_REACH_BREAKPOINT =  @"Set breakpoints and then type 'continue' to resume the session.";
+NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
+
+
 @implementation DebuggingViewController
 
 - (void)awakeFromNib
 {
-	NSLog(@"Debugger awaken");
-	
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
 	projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
@@ -58,7 +62,7 @@
 		[fdbTask stopProcess];
 	
 	//Reading breakpoints
-	[self setBreakpointsForPath: projectPath];
+	[self parseBreakpointsForPath: projectPath];
 	
 	NSLog(@"FDB Command: %@", fdbCommandPath);
 	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
@@ -66,7 +70,7 @@
 	[fdbTask setLaunchPath: flexPath];
 	[fdbTask startProcess];
 	
-	[fdbTask sendData:@"run"];
+	[fdbTask sendData:@"run\n"];
 	
 	
 }
@@ -74,18 +78,22 @@
 //Loops through the path and search for .as files in folders wich are not hidden
 //get the metadata of the files looking for a plist of breakpoints
 //(Textmate bookmarks)
-- (void) setBreakpointsForPath: (NSString *)path
+- (void) parseBreakpointsForPath: (NSString *)path
 {
 	if(breakpoints != nil) [breakpoints release];
 	breakpoints = [[NSMutableArray alloc] init];
+	
+	//Regexes
+	NSPredicate *regexHidden = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@"^[\\.].*"]; //Begins with .
+	NSPredicate *regexHiddenPath = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*/[\\.].*"]; //Contains a hidden path
+	NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
 	
 	NSFileHandle * file;
 	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:path];
 	while (file = [enumerator nextObject])
 	{
 		//No hidden files, please
-		NSPredicate *regexHidden = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@"^[\\.].*"]; //Begins with .
-		NSPredicate *regexHiddenPath = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*/[\\.].*"]; //Contains a hidden path
+		
 		if([regexHidden evaluateWithObject:file] == YES || [regexHiddenPath evaluateWithObject:file] == YES)
 			continue;
 		
@@ -96,7 +104,6 @@
 		//This is a file
 		if (!isDirectory) {
 			//Is it an .as file?
-			NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
 			if([regexASFile evaluateWithObject:file]) {
 				//NSLog(thisPath);
 				NSArray * res = [self getBookmarksForFile: thisPath];
@@ -168,29 +175,49 @@
 
 - (void)appendOutput:(NSString *)output
 {
-	NSLog(@"FDB says:");
-	NSLog(output);
+	NSLog([@"FDB says: " stringByAppendingString:output]);
 	
 	
 	/*******
 	 What did fdb mean?
 	 *******/
 	
-	//Did it find an SWF?
-	
+	//Asking to set breakpoints?	
+	if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
+	{
+		//Time to set Breakpoints
+		NSLog(@"Setting breakpoints");
+		//Adding breakpoints to the list
+		for(int i=0; i < [breakpoints count]; i++){
+			NSLog(@"%@", [breakpoints objectAtIndex:i]);
+			//[fdbTask sendData:[breakpoints objectAtIndex:i]];
+		}
+		//Telling fdb we're done
+		[fdbTask sendData:@"continue"];
+		
+	} else  if([output rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
+		NSLog(@"FDB Already running");
+		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		[alert addButtonWithTitle:@"OK"];
+		[alert setMessageText:@"fdb already running, please, close it."];
+		[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
+		
+		
+	} else {
+		NSLog(@"Don't know what you are saying");
+	}
 }
 - (void)processStarted{};
 - (void)processFinished{};
 
 - (NSWindow *)getWindow
 {
-	if(window == nil)
-		NSLog(@"something wrong");
 	return window;
 }
 
+//Stops task. Useful for quitting the program and not leaving
+//Something open
 - (void)stopTask {
-	NSLog(@"task stopped");
 	[projectPath release];
 	[fdbCommandPath release];
 	[flexPath release];

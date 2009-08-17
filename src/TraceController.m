@@ -64,9 +64,9 @@
 	[field scrollPageDown:self];
 }
 
-- (AlphaPanel *)getWindow
+- (NSPanel *)getWindow
 {
-	return [window retain];
+	return window;
 }
 
 - (void) stopTask

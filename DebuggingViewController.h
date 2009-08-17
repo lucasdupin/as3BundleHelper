@@ -13,6 +13,7 @@
 #include <sys/xattr.h>
 #include <zlib.h>
 #include <vector>
+#include "FDBConstants.h"
 
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *window;
@@ -31,6 +32,8 @@
 	TaskWrapper *fdbTask;
 	
 	NSMutableArray *breakpoints;
+	
+	
 }
 
 - (IBAction) connect: (id)sender;
@@ -39,7 +42,7 @@
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
 
-- (void) setBreakpointsForPath: (NSString *)path;
+- (void) parseBreakpointsForPath: (NSString *)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
 - (NSWindow *)getWindow;

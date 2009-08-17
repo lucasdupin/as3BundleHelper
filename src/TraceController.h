@@ -29,6 +29,6 @@
 
 - (void)stopTask;
 
-- (AlphaPanel*)getWindow;
+- (NSPanel*)getWindow;
 
 @end

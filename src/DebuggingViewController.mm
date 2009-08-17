@@ -17,7 +17,7 @@ NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.
 NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 //Breakpointing
-NSString * const FDB_REACH_BREAKPOINT =  @"Set breakpoints and then type 'continue' to resume the session.";
+NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint[ ][0-9]+,.*.as:[0-9]+\\n";
 
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
@@ -228,7 +228,10 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	} else {
 		//None of these...
 		//Maybe he is saying something about breakpoints
-		RKRegex * bpRegex = [RKRegex regexWithRegexString:FDB_REACH_BREAKPOINT options:RKCompileMultiline];
+		if([output isMatchedByRegex:FDB_REACH_BREAKPOINT]){
+			NSLog(@"REACH BREAKPOINT");
+			[self setState:ST_REACH_BREAKPOINT];
+		}
 	}
 
 }
@@ -271,6 +274,10 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		}
 	} else if([currentState isEqual: ST_DISCONNECTED]) {
 		if([item action] == @selector(connect:)) {
+			return YES;
+		}
+	} else if([currentState isEqual:ST_REACH_BREAKPOINT]){
+		if([item action] == @selector(dettach:) || [item action] == @selector(step:) || [item action] == @selector(stepOut:) || [item action] == @selector(continueTilNextBreakPoint:)) {
 			return YES;
 		}
 	}

@@ -128,9 +128,6 @@
     // It is important to clean up after ourselves so that we don't leave potentially deallocated
     // objects as observers in the notification center; this can lead to crashes.
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSFileHandleReadCompletionNotification object: [[task standardOutput] fileHandleForReading]];
-	
-	//Closing our write pipe
-	[[task standardInput] close];
     
     // Make sure the task has actually stopped!
     [task terminate];

@@ -8,7 +8,12 @@
 
 #import "DebuggingViewController.h"
 
-//FDB Responses
+/*
+ FDB Responses
+ */
+//Connecting
+NSString * const FDB_WAITING_CONNECT =  @"Waiting for Player to connect";
+NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.";
 NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_REACH_BREAKPOINT =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
@@ -55,10 +60,10 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	
 }
 
-//Starts FDB, find breakpoints in project
+//Starts FDB, find breakpoints in project path
 - (IBAction) connect: (id)sender
 {
-	if(fdbTask != NULL)
+	if(fdbTask != nil)
 		[fdbTask stopProcess];
 	
 	//Reading breakpoints
@@ -71,8 +76,6 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	[fdbTask startProcess];
 	
 	[fdbTask sendData:@"run\n"];
-	
-	
 }
 
 //Loops through the path and search for .as files in folders wich are not hidden
@@ -171,6 +174,8 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 - (IBAction) dettach: (id)sender
 {
 	[breakpoints release];
+	[fdbTask stopProcess];
+	[self setState: ST_DISCONNECTED];
 }
 
 //Application state
@@ -188,8 +193,17 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	 What did fdb mean?
 	 *******/
 	
-	//Asking to set breakpoints?	
-	if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
+	//After 'run' command, fdb waits for player to connect
+	if([output rangeOfString:FDB_WAITING_CONNECT].location != NSNotFound) {
+		[self setState:ST_WAITING_FOR_PLAYER];
+		
+	//Failed to connect to player
+	} else if([output rangeOfString:FDB_CONNECTION_FAILED].location != NSNotFound) {
+		[self alert: [NSString stringWithFormat: @"Failed to connect to player:\n%@", output]];
+		[self dettach: self];
+		
+	//Connected and waiting for breakpoints
+	} else if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
 	{
 		//Time to set Breakpoints
 		NSLog(@"Setting %d breakpoints", [breakpoints count]);
@@ -204,11 +218,10 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		[fdbTask sendData:@"continue\n"];
 		
 	} else  if([output rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
+		[self alert: @"fdb already running, please, close it."];
 		NSLog(@"FDB Already running");
-		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"fdb already running, please, close it."];
-		[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
+		[fdbTask stopProcess];
+		fdbTask = nil;
 	}
 }
 - (void)processStarted{};
@@ -230,17 +243,27 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	[breakpoints release];
 }
 
+-(void) alert: (NSString *)message
+{
+	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	[alert addButtonWithTitle:@"OK"];
+	[alert setMessageText:message];
+	[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
+}
+
 //Menu item validation
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
 //	NSLog(@"validation done with state: %@", currentState);
 	if([currentState isEqual: ST_NO_PROJECT_PATH])
 	{
 		return NO;
+	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER]) {
+		if([item action] == @selector(dettach:)) {
+			return YES;
+		}
 	} else if([currentState isEqual: ST_DISCONNECTED]) {
 		if([item action] == @selector(connect:)) {
 			return YES;
-		} else {
-			return NO;
 		}
 	}
 	

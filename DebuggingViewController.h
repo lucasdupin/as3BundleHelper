@@ -48,4 +48,7 @@
 //Controlling the menu
 - (void)setState: (NSString *)state;
 
+//Default alert
+- (void)alert: (NSString *)message;
+
 @end

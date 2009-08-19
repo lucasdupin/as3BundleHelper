@@ -17,7 +17,7 @@ NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.
 NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 //Breakpointing
-NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint[ ][0-9]+,.*.as:[0-9]+\\n";
+NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint[ ][0-9]+,.*.as:[0-9]+\\n*.";
 
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
@@ -109,12 +109,12 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		if (!isDirectory) {
 			//Is it an .as file?
 			if([regexASFile evaluateWithObject:file]) {
-				NSLog(thisPath);
+				//NSLog(thisPath);
 				NSArray * res = [self getBookmarksForFile: thisPath];
 				
 				//Adding breakpoints to the list
 				for(int i=0; i < [res count]; i++){
-					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%@", file, [res objectAtIndex:i]]];
+					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:i] intValue]+1]];
 					NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
 				}
 			}

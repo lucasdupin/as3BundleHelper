@@ -145,6 +145,7 @@
 			A0F45A3D1042005000DE066E /* PBXTextBookmark */ = A0F45A3D1042005000DE066E /* PBXTextBookmark */;
 			A0F45A411042007500DE066E /* PBXTextBookmark */ = A0F45A411042007500DE066E /* PBXTextBookmark */;
 			A0F45A441042009D00DE066E /* PBXTextBookmark */ = A0F45A441042009D00DE066E /* PBXTextBookmark */;
+			A0F45A4D104200D900DE066E /* PBXTextBookmark */ = A0F45A4D104200D900DE066E /* PBXTextBookmark */;
 		};
 		sourceControlManager = A01E3CA00FFE29CF00139E8B /* Source Control */;
 		userBuildSettings = {
@@ -449,8 +450,8 @@
 	};
 	A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {821, 812}}";
-			sepNavSelRange = "{415, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {821, 798}}";
+			sepNavSelRange = "{249, 0}";
 			sepNavVisRange = "{169, 767}";
 		};
 	};
@@ -754,6 +755,16 @@
 		name = "DebuggingViewController.h: 21";
 		rLen = 0;
 		rLoc = 415;
+		rType = 0;
+		vrLen = 767;
+		vrLoc = 169;
+	};
+	A0F45A4D104200D900DE066E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 13";
+		rLen = 0;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 767;
 		vrLoc = 169;

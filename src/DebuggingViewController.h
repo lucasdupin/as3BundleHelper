@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "TaskWrapper.h"
 #import <RegexKit/RegexKit.h>
+#import <WebKit/WebKit.h>
 
 //C
 #include <sys/xattr.h>
@@ -17,6 +18,7 @@
 
 @interface DebuggingViewController : NSObject <TaskWrapperController> {
 	IBOutlet NSWindow *window;
+	IBOutlet WebView *codeView;
 	
 	NSString *projectPath;
 	NSString *fdbCommandPath;

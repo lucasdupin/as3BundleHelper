@@ -22,7 +22,7 @@ NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint[ ][0-9]+,.*.as:[0-9]+\\n*
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
 NSString * const ST_DISCONNECTED = @"disconnected";
-NSString * const ST_WAITING_FOR_PLAYER = @"waiting_for_player_to_connect";
+NSString * const ST_WAITING_FOR_PLAYER_OR_FDB = @"waiting_for_player_to_connect";
 NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 
 
@@ -199,7 +199,7 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 
 - (void)appendOutput:(NSString *)output
 {
-	NSLog([@"FDB says: " stringByAppendingString:output]);
+	NSLog([@"fdb: " stringByAppendingString:output]);
 	
 	
 	/*******
@@ -208,7 +208,7 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	
 	//After 'run' command, fdb waits for player to connect
 	if([output rangeOfString:FDB_WAITING_CONNECT].location != NSNotFound) {
-		[self setState:ST_WAITING_FOR_PLAYER];
+		[self setState:ST_WAITING_FOR_PLAYER_OR_FDB];
 		
 	//Failed to connect to player
 	} else if([output rangeOfString:FDB_CONNECTION_FAILED].location != NSNotFound) {
@@ -282,7 +282,7 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	if([currentState isEqual: ST_NO_PROJECT_PATH])
 	{
 		return NO;
-	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER]) {
+	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
 		if([item action] == @selector(dettach:)) {
 			return YES;
 		}

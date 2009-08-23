@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>SyntaxHighlighter Build Test Page</title>
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="styles/shThemeAS3.css"/>
+	<script type="text/javascript">
+		//SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+	
+	<style type="text/css" media="screen">
+		body{
+			margin:2px;
+			padding:0;
+		}
+	</style>
+</head>
+
+<body>
+<pre class="brush: java; highlight: 7" id="code">
+	package oohsms.assets {
+
+	import flash.display.Sprite;
+	import flash.display.MovieClip;
+	import patota.display.safeRemoveChild;
+	import patota.display.disposeChildren;
+	import caurina.transitions.Tweener;
+	public class Character extends Sprite {
+
+		public var mc:MovieClip;
+		public var finalX:Number;
+
+		public function Character(char:MovieClip)
+		{
+			mc = char;
+
+			if(!oohsms_main.debug)
+			    safeRemoveChild(mc.bounds);
+
+			addChild(mc);
+		}
+
+		public function hide():void
+		{
+		   Tweener.addTween(this,{time:.2, alpha: 0, onComplete: function():void{
+		       safeRemoveChild(this);
+		       dispose();
+		   }})
+		}
+
+		public function get bounds():MovieClip
+		{
+		   return mc.bounds;
+		}
+
+		public function dispose():void
+		{
+		    if(mc) mc.stop();
+		    safeRemoveChild(mc);
+		    mc = null;
+		   disposeChildren(this);
+		}
+	}
+
+	}
+</pre>
+</html>

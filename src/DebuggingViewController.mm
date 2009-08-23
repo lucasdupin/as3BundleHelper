@@ -37,11 +37,14 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
  */
 - (void)awakeFromNib
 {
+	//Enablig the toolbar based on the states
+	[[window toolbar] setDelegate:self];
+	
 	//Did we receive a project path?
 	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
 	if(projectPath == nil)
-		projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
-	//projectPath = @"/Users/lucasdupin/Desktop/oohsms/FlashClient/trunk/source/classes";
+		//projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
+		projectPath = @"/Users/lucas/src/oohsms/FlashClient/trunk/source/classes";
 	
 	if([projectPath length] <= 0) {
 		NSLog(@"No project, disabling window");
@@ -51,13 +54,21 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	
 	flexPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flex"];
 	if(flexPath == nil)
-		flexPath = @"/Users/lucas/src/libs/flex_sdk_4/";
-
-	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingString: @"bin/fdb"] autorelease]];
-	[fdbCommandPath retain]; 
+		flexPath = @"/Users/lucas/src/lib/flex_sdk_4/";
 	
-	[self setState:ST_DISCONNECTED];
-	[[window toolbar] setDelegate:self];
+	//Checking if the flex path exists
+	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){
+		[self setState:ST_NO_PROJECT_PATH];
+	} else {
+		
+		//Ok, let's continue and create the command
+		fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingString: @"bin/fdb"] autorelease]];
+		[fdbCommandPath retain];
+		
+		//setting our state
+		[self setState:ST_DISCONNECTED];
+	}
+
 	
 }
 
@@ -162,15 +173,15 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 
 - (IBAction) step: (id)sender
 {
-	
+	[fdbTask sendData: @"next \n"];
 }
 - (IBAction) stepOut: (id)sender
 {
-	
+	[fdbTask sendData: @"finish \n"];
 }
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
-	
+	[fdbTask sendData: @"continue \n"];
 }
 - (IBAction) dettach: (id)sender
 {
@@ -225,14 +236,17 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		NSLog(@"FDB Already running");
 		[fdbTask stopProcess];
 		fdbTask = nil;
+		
+	//Maybe he is saying something about breakpoints
+	} else if([output isMatchedByRegex:FDB_REACH_BREAKPOINT]){
+		NSLog(@"REACH BREAKPOINT");
+		[self setState:ST_REACH_BREAKPOINT];
 	} else {
-		//None of these...
-		//Maybe he is saying something about breakpoints
-		if([output isMatchedByRegex:FDB_REACH_BREAKPOINT]){
-			NSLog(@"REACH BREAKPOINT");
-			[self setState:ST_REACH_BREAKPOINT];
-		}
+		
+		//Dont; know what you're saying
+		//[self alert:output];
 	}
+
 
 }
 - (void)processStarted{};

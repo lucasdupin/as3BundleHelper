@@ -17,7 +17,7 @@ NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.
 NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 //Breakpointing
-NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint[ ][0-9]+,.*.as:[0-9]+\\n*.";
+NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint \\d+,.* (?<file>.*):\\d+\\n";
 
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";

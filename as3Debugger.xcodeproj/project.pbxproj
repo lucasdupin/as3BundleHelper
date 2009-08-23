@@ -25,6 +25,7 @@
 		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */; };
 		A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B61039F3D20045DA0A /* ApplicationController.mm */; };
+		A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F45A46104200B700DE066E /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,7 @@
 		A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebuggingViewController.h; path = src/DebuggingViewController.h; sourceTree = "<group>"; };
 		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
 		A0B879B61039F3D20045DA0A /* ApplicationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ApplicationController.mm; path = src/ApplicationController.mm; sourceTree = "<group>"; };
+		A0F45A46104200B700DE066E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */,
 				A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */,
+				A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0F45A46104200B700DE066E /* WebKit.framework */,
 				A05D6717103A096F00623928 /* RegexKit.framework */,
 				72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,

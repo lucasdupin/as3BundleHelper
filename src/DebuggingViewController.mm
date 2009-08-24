@@ -103,7 +103,6 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
 		
 		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
-		NSLog(@"%d in %@", [res count], [actionScriptFiles objectAtIndex:i]);
 		
 		//Adding breakpoints to the list
 		for(int j=0; j < [res count]; j++){
@@ -213,9 +212,27 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
 	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath];
 	
-	NSLog(@"file path: %@", htmlPath);
-	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: htmlPath]];
-	[[codeView mainFrame] loadRequest: req];
+	//Finding the file in the list
+	for (int i=0; i<[actionScriptFiles count]; ++i) {
+		
+		NSString* fileFound;
+		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &fileFound, nil];
+		
+		if([file isEqual: fileFound]){
+			//Opening code file
+			NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
+			//Replacing code
+			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: code];
+			//Replace highlight line number
+			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
+			
+			NSLog(htmlFileContents);
+			break;
+		}
+		
+	}
+	
+	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
 //Application state

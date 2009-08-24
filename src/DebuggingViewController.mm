@@ -18,6 +18,7 @@ NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'cont
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 //Breakpointing
 NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n";
+NSString * const FDB_NEXT_BREAKPOINT =  @"^ (?<line>\\d+)";
 
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
@@ -244,7 +245,7 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 
 - (void)appendOutput:(NSString *)output
 {
-	NSLog([@"fdb: " stringByAppendingString:output]);
+	NSLog([@"fdb:" stringByAppendingString:output]);
 	
 	
 	/*******
@@ -300,6 +301,18 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		//Showing file
 		[self showFile: currentFile at: [line intValue]];
 
+	//Continuing in breakpoint (updating line number)
+	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [output isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
+		
+		//Getting filename and line
+		NSString *line;
+		[output getCapturesWithRegexAndReferences: FDB_NEXT_BREAKPOINT, @"${line}", &line, nil];
+		
+		//Showing file
+		[self showFile: currentFile at: [line intValue]];
+		
+		[self setState: ST_REACH_BREAKPOINT];
+		
 	} else {
 		
 		//Dont; know what you're saying

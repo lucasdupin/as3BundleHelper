@@ -26,6 +26,7 @@
 		A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */; };
 		A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B61039F3D20045DA0A /* ApplicationController.mm */; };
 		A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F45A46104200B700DE066E /* WebKit.framework */; };
+		A0F45A80104207F100DE066E /* codeView in Resources */ = {isa = PBXBuildFile; fileRef = A0F45A53104207F100DE066E /* codeView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,7 @@
 		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
 		A0B879B61039F3D20045DA0A /* ApplicationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ApplicationController.mm; path = src/ApplicationController.mm; sourceTree = "<group>"; };
 		A0F45A46104200B700DE066E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		A0F45A53104207F100DE066E /* codeView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = codeView; path = Resources/codeView; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0F45A53104207F100DE066E /* codeView */,
 				72C1A9E2101CB2F600EAD900 /* Icons */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -263,6 +266,7 @@
 				72C1A9DF101CB2F200EAD900 /* TB_Stop.png in Resources */,
 				72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */,
 				72443E00101D12B9000D76CE /* wait_for_player.png in Resources */,
+				A0F45A80104207F100DE066E /* codeView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

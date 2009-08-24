@@ -17,7 +17,7 @@ NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.
 NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
 NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
 //Breakpointing
-NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint \\d+,.* (?<file>.*):\\d+\\n";
+NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n";
 
 //Debugger states
 NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
@@ -79,7 +79,8 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		[fdbTask stopProcess];
 	
 	//Reading breakpoints
-	[self parseBreakpointsForPath: projectPath];
+	[self findASFilesInPath:projectPath];
+	[self lookAfterBreakpoints];
 	
 	NSLog(@"FDB Command: %@", fdbCommandPath);
 	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
@@ -90,13 +91,35 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	[fdbTask sendData:@"run\n"];
 }
 
+//Searches fo breakpoints in files
+- (void) lookAfterBreakpoints
+{
+	if(breakpoints != nil) [breakpoints release];
+		breakpoints = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i<[actionScriptFiles count]; ++i) {
+		
+		NSString* file;
+		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
+		
+		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
+		NSLog(@"%d in %@", [res count], [actionScriptFiles objectAtIndex:i]);
+		
+		//Adding breakpoints to the list
+		for(int j=0; j < [res count]; j++){
+			[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:j] intValue]+1]];
+			NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+		}
+		
+	}
+}
+
 //Loops through the path and search for .as files in folders wich are not hidden
 //get the metadata of the files looking for a plist of breakpoints
 //(Textmate bookmarks)
-- (void) parseBreakpointsForPath: (NSString *)path
+- (void) findASFilesInPath: (NSString*)path
 {
-	if(breakpoints != nil) [breakpoints release];
-	breakpoints = [[NSMutableArray alloc] init];
+	actionScriptFiles = [[NSMutableArray alloc] init];
 	
 	//Regexes
 	NSPredicate *regexHidden = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@"^[\\.].*"]; //Begins with .
@@ -121,13 +144,7 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 			//Is it an .as file?
 			if([regexASFile evaluateWithObject:file]) {
 				//NSLog(thisPath);
-				NSArray * res = [self getBookmarksForFile: thisPath];
-				
-				//Adding breakpoints to the list
-				for(int i=0; i < [res count]; i++){
-					[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:i] intValue]+1]];
-					NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
-				}
+				[actionScriptFiles addObject:file];
 			}
 		}
 		[thisPath release];
@@ -190,6 +207,17 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 	[self setState: ST_DISCONNECTED];
 }
 
+//Show file with highlighted number in codeView
+- (void) showFile: (NSString*)file at: (int)line
+{
+	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
+	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath];
+	
+	NSLog(@"file path: %@", htmlPath);
+	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: htmlPath]];
+	[[codeView mainFrame] loadRequest: req];
+}
+
 //Application state
 - (void) setState:(NSString *)state
 {
@@ -239,8 +267,22 @@ NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
 		
 	//Maybe he is saying something about breakpoints
 	} else if([output isMatchedByRegex:FDB_REACH_BREAKPOINT]){
-		NSLog(@"REACH BREAKPOINT");
+		//NSLog(@"REACH BREAKPOINT");
+		
+		//Found a breakpoint. Now we are going to set the toolbar state,
+		//Capture the line and the name of the file and show it in
+		//the code view
+		
+		//Toolbar
 		[self setState:ST_REACH_BREAKPOINT];
+		
+		//Getting filename and line
+		NSString *line;
+		[output getCapturesWithRegexAndReferences: FDB_REACH_BREAKPOINT, @"${file}", &currentFile, @"${line}", &line, nil];
+		
+		//Showing file
+		[self showFile: currentFile at: [line intValue]];
+
 	} else {
 		
 		//Dont; know what you're saying

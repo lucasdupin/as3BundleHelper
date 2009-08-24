@@ -20,12 +20,22 @@
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	
+	//Path of the .as files
 	NSString *projectPath;
+	//Path of the fdbCommand
 	NSString *fdbCommandPath;
+	//SDK path
 	NSString *flexPath;
+	//Task wich we talk to
 	TaskWrapper *fdbTask;
 	
+	//.as files in project path
+	NSMutableArray *actionScriptFiles;
+	//Breakpoints in projet
 	NSMutableArray *breakpoints;
+	
+	//File we're seeing
+	NSString *currentFile;
 	
 	//Debugger state
 	NSString *currentState;
@@ -37,7 +47,8 @@
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
 
-- (void) parseBreakpointsForPath: (NSString *)path;
+- (void) lookAfterBreakpoints;
+- (void) findASFilesInPath: (NSString*)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
 - (NSWindow *)getWindow;
@@ -50,6 +61,9 @@
 
 //Controlling the menu
 - (void)setState: (NSString *)state;
+
+//Controlling the codeView
+- (void) showFile: (NSString*)file at: (int)line;
 
 //Default alert
 - (void)alert: (NSString *)message;

@@ -149,6 +149,10 @@
 			A0E9801510443EFB0069EE26 /* PBXTextBookmark */ = A0E9801510443EFB0069EE26 /* PBXTextBookmark */;
 			A0E9801710443F0C0069EE26 /* PBXTextBookmark */ = A0E9801710443F0C0069EE26 /* PBXTextBookmark */;
 			A0E9801810443F0C0069EE26 /* PBXTextBookmark */ = A0E9801810443F0C0069EE26 /* PBXTextBookmark */;
+			A0E9801C104456B90069EE26 /* PBXTextBookmark */ = A0E9801C104456B90069EE26 /* PBXTextBookmark */;
+			A0E9801D104456B90069EE26 /* PBXTextBookmark */ = A0E9801D104456B90069EE26 /* PBXTextBookmark */;
+			A0E9801E104456B90069EE26 /* PBXTextBookmark */ = A0E9801E104456B90069EE26 /* PBXTextBookmark */;
+			A0E98025104456D60069EE26 /* PBXTextBookmark */ = A0E98025104456D60069EE26 /* PBXTextBookmark */;
 			A0F45A271042001600DE066E = A0F45A271042001600DE066E /* PBXTextBookmark */;
 			A0F45A281042001600DE066E = A0F45A281042001600DE066E /* PBXTextBookmark */;
 			A0F45A2C1042001600DE066E = A0F45A2C1042001600DE066E /* PBXTextBookmark */;
@@ -267,7 +271,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 256";
 		rLen = 49;
-		rLoc = 9471;
+		rLoc = 10383;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 6804;
@@ -287,7 +291,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 103";
 		rLen = 0;
-		rLoc = 3934;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 2388;
@@ -317,7 +321,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 103";
 		rLen = 0;
-		rLoc = 3934;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 2264;
@@ -337,7 +341,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 82";
 		rLen = 0;
-		rLoc = 2445;
+		rLoc = 2307;
 		rType = 0;
 		vrLen = 801;
 		vrLoc = 2038;
@@ -357,7 +361,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 82";
 		rLen = 0;
-		rLoc = 2406;
+		rLoc = 2307;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 1896;
@@ -394,7 +398,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 232";
 		rLen = 0;
-		rLoc = 7303;
+		rLoc = 7409;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 6192;
@@ -421,7 +425,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 229";
 		rLen = 0;
-		rLoc = 7281;
+		rLoc = 7387;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 6326;
@@ -431,7 +435,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 229";
 		rLen = 0;
-		rLoc = 7281;
+		rLoc = 7387;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 6326;
@@ -621,9 +625,9 @@
 	};
 	A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {928, 5544}}";
-			sepNavSelRange = "{1750, 38}";
-			sepNavVisRange = "{1507, 384}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 5348}}";
+			sepNavSelRange = "{11282, 0}";
+			sepNavVisRange = "{10701, 626}";
 			sepNavWindowFrame = "{{15, 150}, {933, 623}}";
 		};
 	};
@@ -792,7 +796,7 @@
 		comments = "confused by earlier errors, bailing out";
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		rLen = 1;
-		rLoc = 256;
+		rLoc = 283;
 		rType = 1;
 	};
 	A0E9801510443EFB0069EE26 /* PBXTextBookmark */ = {
@@ -800,7 +804,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 257";
 		rLen = 73;
-		rLoc = 7787;
+		rLoc = 8699;
 		rType = 0;
 		vrLen = 269;
 		vrLoc = 7601;
@@ -822,6 +826,46 @@
 		rType = 0;
 		vrLen = 384;
 		vrLoc = 1507;
+	};
+	A0E9801C104456B90069EE26 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 42";
+		rLen = 0;
+		rLoc = 842;
+		rType = 0;
+		vrLen = 719;
+		vrLoc = 796;
+	};
+	A0E9801D104456B90069EE26 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 42";
+		rLen = 0;
+		rLoc = 842;
+		rType = 0;
+		vrLen = 719;
+		vrLoc = 796;
+	};
+	A0E9801E104456B90069EE26 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 366";
+		rLen = 0;
+		rLoc = 11282;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 10701;
+	};
+	A0E98025104456D60069EE26 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 366";
+		rLen = 0;
+		rLoc = 11282;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 10701;
 	};
 	A0F45A271042001600DE066E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

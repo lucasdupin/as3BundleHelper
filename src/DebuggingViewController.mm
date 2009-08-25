@@ -74,25 +74,7 @@
 	
 }
 
-//Starts FDB, find breakpoints in project path
-- (IBAction) connect: (id)sender
-{
-	if(fdbTask != nil)
-		[fdbTask stopProcess];
-	
-	//Reading breakpoints
-	[self findASFilesInPath:projectPath];
-	[self lookAfterBreakpoints];
-	
-	NSLog(@"FDB Command: %@", fdbCommandPath);
-	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
-	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
-	[fdbTask setLaunchPath: flexPath];
-	[fdbTask startProcess];
-	
-	[fdbTask sendData:@"run\n"];
-}
-
+#pragma mark Breakpoints an Files search methods
 //Searches fo breakpoints in files
 - (void) lookAfterBreakpoints
 {
@@ -189,6 +171,25 @@
 	return res;
 }
 
+#pragma mark Toolbar methods
+//Starts FDB, find breakpoints in project path
+- (IBAction) connect: (id)sender
+{
+	if(fdbTask != nil)
+		[fdbTask stopProcess];
+	
+	//Reading breakpoints
+	[self findASFilesInPath:projectPath];
+	[self lookAfterBreakpoints];
+	
+	NSLog(@"FDB Command: %@", fdbCommandPath);
+	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
+	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
+	[fdbTask setLaunchPath: flexPath];
+	[fdbTask startProcess];
+	
+	[fdbTask sendData:@"run\n"];
+}
 - (IBAction) step: (id)sender
 {
 	[fdbTask sendData: @"next \n"];
@@ -208,6 +209,7 @@
 	[self setState: ST_DISCONNECTED];
 }
 
+#pragma mark Code navigation
 //Show file with highlighted number in codeView
 - (void) showFile: (NSString*)file at: (int)line
 {
@@ -237,13 +239,38 @@
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
+#pragma mark State changing
 //Application state
 - (void) setState:(NSString *)state
 {
 	currentState = state;
 	[[window toolbar] validateVisibleItems];
 }
+//Menu item validation
+- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
+	//	NSLog(@"validation done with state: %@", currentState);
+	if([currentState isEqual: ST_NO_PROJECT_PATH])
+	{
+		return NO;
+	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
+		if([item action] == @selector(dettach:)) {
+			return YES;
+		}
+	} else if([currentState isEqual: ST_DISCONNECTED]) {
+		if([item action] == @selector(connect:)) {
+			return YES;
+		}
+	} else if([currentState isEqual:ST_REACH_BREAKPOINT]){
+		if([item action] == @selector(dettach:) || [item action] == @selector(step:) || [item action] == @selector(stepOut:) || [item action] == @selector(continueTilNextBreakPoint:)) {
+			return YES;
+		}
+	}
+	
+	//No response? Disable it
+	return NO;
+}
 
+#pragma mark Task management
 - (void)appendOutput:(NSString *)output
 {
 	NSLog([@"fdb:" stringByAppendingString:output]);
@@ -325,11 +352,6 @@
 - (void)processStarted{};
 - (void)processFinished{};
 
-- (NSWindow *)getWindow
-{
-	return window;
-}
-
 //Stops task. Useful for quitting the program and not leaving
 //Something open
 - (void)stopTask {
@@ -341,36 +363,19 @@
 	[breakpoints release];
 }
 
+#pragma mark Helpers
+- (NSWindow *)getWindow
+{
+	return window;
+}
+
+
 -(void) alert: (NSString *)message
 {
 	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
 	[alert addButtonWithTitle:@"OK"];
 	[alert setMessageText:message];
 	[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
-}
-
-//Menu item validation
-- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
-//	NSLog(@"validation done with state: %@", currentState);
-	if([currentState isEqual: ST_NO_PROJECT_PATH])
-	{
-		return NO;
-	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
-		if([item action] == @selector(dettach:)) {
-			return YES;
-		}
-	} else if([currentState isEqual: ST_DISCONNECTED]) {
-		if([item action] == @selector(connect:)) {
-			return YES;
-		}
-	} else if([currentState isEqual:ST_REACH_BREAKPOINT]){
-		if([item action] == @selector(dettach:) || [item action] == @selector(step:) || [item action] == @selector(stepOut:) || [item action] == @selector(continueTilNextBreakPoint:)) {
-			return YES;
-		}
-	}
-	
-	//No response? Disable it
-	return NO;
 }
 
 @end

@@ -8,23 +8,24 @@
 
 #import "DebuggingViewController.h"
 
-/*
- FDB Responses
- */
-//Connecting
-NSString * const FDB_WAITING_CONNECT =  @"Waiting for Player to connect";
-NSString * const FDB_CONNECTION_FAILED = @"Failed to connect; session timed out.";
-NSString * const FDB_INSERT_BREAKPOINTS =  @"Set breakpoints and then type 'continue' to resume the session.";
-NSString * const FDB_ALREADY_RUNNING =  @"Another Flash debugger is probably running";
-//Breakpointing
-NSString * const FDB_REACH_BREAKPOINT =  @"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n";
-NSString * const FDB_NEXT_BREAKPOINT =  @"^ (?<line>\\d+)";
+#pragma mark FDB Responses
 
+//Connecting
+#define FDB_WAITING_CONNECT				@"Waiting for Player to connect"
+#define FDB_CONNECTION_FAILED			@"Failed to connect; session timed out."
+#define FDB_INSERT_BREAKPOINTS			@"Set breakpoints and then type 'continue' to resume the session."
+#define FDB_ALREADY_RUNNING				@"Another Flash debugger is probably running"
+//Breakpointing
+#define FDB_REACH_BREAKPOINT			@"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n"
+#define FDB_NEXT_BREAKPOINT				@"^ (?<line>\\d+)"
+
+
+#pragma mark Application states
 //Debugger states
-NSString * const ST_NO_PROJECT_PATH = @"no_project_path";
-NSString * const ST_DISCONNECTED = @"disconnected";
-NSString * const ST_WAITING_FOR_PLAYER_OR_FDB = @"waiting_for_player_to_connect";
-NSString * const ST_REACH_BREAKPOINT = @"reach_breakpoint";
+#define ST_NO_PROJECT_PATH				@"no_project_path"
+#define ST_DISCONNECTED					@"disconnected"
+#define ST_WAITING_FOR_PLAYER_OR_FDB	@"waiting_for_player_to_connect"
+#define ST_REACH_BREAKPOINT				@"reach_breakpoint"
 
 
 @implementation DebuggingViewController

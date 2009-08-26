@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="">
+	<suite name="as3BundleHelper Scripting" code="A3BR" description="Commands and classes for as3Debugger Scripting">
+		<command name="Flex Path" code="A3BRFLPT">
+			<cocoa name="flexPath"/>
+			<direct-parameter description="The SDK path" type="text"/>
+		</command>
+		<command name="Project Path" code="A3BRPRPT">
+			<cocoa name="projectPath"/>
+			<direct-parameter description="The  folder with your .as files" type="text"/>
+		</command>
+		<command name="Flashlog Path" code="A3BHFLPH">
+			<cocoa name="flashlogPath"/>
+			<direct-parameter description="Path of the flashlog file" type="text"/>
+		</command>
+	</suite>
+</dictionary>

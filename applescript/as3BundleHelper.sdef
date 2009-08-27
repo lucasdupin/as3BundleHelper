@@ -2,7 +2,7 @@
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="">
 	<suite name="as3BundleHelper Scripting" code="A3BR" description="Commands and classes for as3Debugger Scripting">
-		<class name="application" code="capp" inherits="NSApplication">
+		<class name="application" code="capp" inherits="NSCoreSuite.NSApplication">
 			<cocoa class="NSApplication"/>
 			<property name="flex path" code="fxpt" type="string">
 				<cocoa key="flexPath" method="flexPath"/>
@@ -13,6 +13,10 @@
 			<property name="project path" code="prpt" type="string">
 				<cocoa key="projectPath"/>
 			</property>
+			<responds-to command="connect">
+				<cocoa method="connectDebugger:"/>
+			</responds-to>
 		</class>
+		<command name="connect" code="a3bhconn" description="Connect to FDB"/>
 	</suite>
 </dictionary>

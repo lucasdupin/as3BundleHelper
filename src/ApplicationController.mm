@@ -44,7 +44,6 @@
 	[traceController stopTask];
 	[traceController startTask];
 }
-
 //Project path
 - (NSString *)projectPath
 {
@@ -54,7 +53,6 @@
 {
     [[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:text forKey: @"flashProjectPath"];
 }
-
 //SDK
 - (NSString *)flexPath
 {
@@ -63,6 +61,16 @@
 - (void)setFlexPath:(NSString *)text
 {
     [[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:text forKey: @"flexSDKPath"];
+}
+- (void) connectDebugger:(NSScriptCommand*)command
+{
+	NSLog(@"connecting to debugger");
+	[debuggingViewController connect:self];
+}
+//Common
+- (NSString *)string
+{
+	return @"as3BundleHelper";
 }
 
 #pragma mark Showing windows

@@ -57,12 +57,9 @@
 		[self setState:ST_NO_PROJECT_PATH];
 	} else {
 		
-		//Ok, let's continue and create the command
-		fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingString: @"bin/fdb"] autorelease]];
-		[fdbCommandPath retain];
-		
 		//setting our state
 		[self setState:ST_DISCONNECTED];
+		
 	}
 
 	
@@ -171,6 +168,10 @@
 {
 	if(fdbTask != nil)
 		[fdbTask stopProcess];
+	
+	//Set commands
+	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
+	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingPathComponent: @"bin/fdb"] autorelease]];
 	
 	//Reading breakpoints
 	[self findASFilesInPath:projectPath];

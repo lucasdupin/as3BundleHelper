@@ -27,6 +27,7 @@
 - (void)processFinished;
 - (void)appendOutput:(NSString *)output;
 
+- (void) startTask;
 - (void)stopTask;
 
 - (NSPanel*)getWindow;

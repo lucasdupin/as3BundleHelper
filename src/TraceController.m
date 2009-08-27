@@ -11,6 +11,7 @@
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
 	if(![[NSFileManager defaultManager] fileExistsAtPath: flashlog]) {
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
+		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
 	}
 	NSLog([@"Flashlog is : " stringByAppendingString: flashlog]);
 	
@@ -21,9 +22,7 @@
 	[field setUsesFontPanel:YES];
 	[field setEditable:NO];
 	
-	//Start reading
-	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", flashlog, nil]];
-	[tailTask startProcess];
+	[self startTask];
 	
 	//Setting auto-aulpha
 	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
@@ -48,6 +47,17 @@
 - (IBAction) setAutoAlpha: (id)sender
 {
 	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
+}
+
+- (void) startTask
+{
+	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
+	
+	//Start reading
+	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", flashlog, nil]];
+	[tailTask startProcess];
+	
+	[flashlog autorelease];
 }
 
 

@@ -68,6 +68,7 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
+		A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; name = as3BundleHelper.sdef; path = applescript/as3BundleHelper.sdef; sourceTree = "<group>"; };
 		A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DebuggingViewController.mm; path = src/DebuggingViewController.mm; sourceTree = "<group>"; };
 		A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebuggingViewController.h; path = src/DebuggingViewController.h; sourceTree = "<group>"; };
 		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -226,6 +228,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				72CEA0DE0FFFE31700E24A1F /* Copy Frameworks */,
+				A0A5B0501044BD5F00A5949E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -271,6 +274,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0A5B0501044BD5F00A5949E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/sdp -fast -o \"$BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/applescript/as3BundleHelper.sdef\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {

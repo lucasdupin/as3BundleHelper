@@ -43,20 +43,14 @@
 	[[window toolbar] setDelegate:self];
 	
 	//Did we receive a project path?
-	projectPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	if(projectPath == nil)
-		//projectPath = @"/Users/lucas/src/coca-cola/oohsms/FlashClient/trunk/source/classes";
-		projectPath = @"/Users/lucas/src/oohsms/FlashClient/trunk/source/classes";
+	projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
+	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
 	
-	if([projectPath length] <= 0) {
+	if([projectPath length] <= 0 || [flexPath length] <= 0) {
 		NSLog(@"No project, disabling window");
 		[self setState:ST_NO_PROJECT_PATH];
 	}
 	
-	
-	flexPath = [[NSUserDefaults standardUserDefaults] stringForKey: @"flex"];
-	if(flexPath == nil)
-		flexPath = @"/Users/lucas/src/lib/flex_sdk_4/";
 	
 	//Checking if the flex path exists
 	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){

@@ -21,11 +21,11 @@
 	IBOutlet WebView *codeView;
 	
 	//Path of the .as files
-	NSString *projectPath;
+	IBOutlet NSString *projectPath;
 	//Path of the fdbCommand
 	NSString *fdbCommandPath;
 	//SDK path
-	NSString *flexPath;
+	IBOutlet NSString *flexPath;
 	//Task wich we talk to
 	TaskWrapper *fdbTask;
 	

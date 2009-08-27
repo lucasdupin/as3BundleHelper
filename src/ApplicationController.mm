@@ -13,7 +13,6 @@
 
 - (void)awakeFromNib
 {
-	[NSApp setDelegate:self];
 }
 
 - (void)applicationWillTerminate: (NSNotification *)note

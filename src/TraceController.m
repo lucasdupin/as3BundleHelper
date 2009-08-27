@@ -8,9 +8,8 @@
 	NSLog(@"Tracer awaken");
 	
 	//Did we receive a flashlog variable in de commandline?
-	NSString * flashlog;
-	NSString * logParam = [[NSUserDefaults standardUserDefaults] stringForKey: @"flashlog"];
-	if(logParam == NULL) {
+	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
+	if(![[NSFileManager defaultManager] fileExistsAtPath: flashlog]) {
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 	}
 	NSLog([@"Flashlog is : " stringByAppendingString: flashlog]);

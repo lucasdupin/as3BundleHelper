@@ -79,7 +79,6 @@
 		
 		NSString* file = [[actionScriptFiles objectAtIndex:i] copy];
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
-		NSLog(@"filename for %@",[actionScriptFiles objectAtIndex:i]);
 		
 		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
 		
@@ -207,17 +206,19 @@
 	[self setState: ST_DISCONNECTED];
 }
 
-#pragma mark Code navigation
+#pragma mark Code presentation
 //Show file with highlighted number in codeView
 - (void) showFile: (NSString*)file at: (int)line
 {
 	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
 	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath];
 	
+	NSLog(@"showing file %@ at line %d", file, line);
+	
 	//Finding the file in the list
 	for (int i=0; i<[actionScriptFiles count]; ++i) {
 		
-		NSString* fileFound;
+		NSString* fileFound = [actionScriptFiles objectAtIndex:i];
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &fileFound, nil];
 		
 		if([file isEqual: fileFound]){

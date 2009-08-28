@@ -29,6 +29,7 @@
     if ([key isEqual:@"flexPath"] || 
 		[key isEqual:@"projectPath"] || 
 		[key isEqual:@"flashlogPath"] || 
+		[key isEqual:@"flashlogText"] || 
 		[key isEqual:@"connected"]) {
 		NSLog(@"responds to: %@", key);
         return YES;
@@ -81,6 +82,7 @@
 }
 - (void)setConnected:(bool)value
 {
+	[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
 	if([debuggingViewController connected]){
 		[debuggingViewController dettach:self];
 	} else {

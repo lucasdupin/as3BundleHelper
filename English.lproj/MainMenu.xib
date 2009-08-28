@@ -4021,7 +4021,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{354, 238}, {511, 301}}</string>
 					<string>{{354, 238}, {511, 301}}</string>
-					<boolean value="YES" id="5"/>
+					<boolean value="YES"/>
 					<string>AlphaPanel</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4049,7 +4049,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<reference ref="9"/>
 					<string>{{32, 225}, {667, 476}}</string>
 					<string>{{32, 225}, {667, 476}}</string>
-					<reference ref="5"/>
+					<boolean value="NO" id="6"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{340, 846}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4088,7 +4088,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{197, 451}, {324, 164}}</string>
 					<string>{{197, 451}, {324, 164}}</string>
-					<boolean value="NO"/>
+					<reference ref="6"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>

@@ -273,6 +273,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>4</integer>
+									<integer>3</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -307,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ApplicationController.mm</string>
+								<string>DebuggingViewController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ApplicationController.mm</string>
+										<string>DebuggingViewController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A0DD8ED010476776000DD023</string>
+										<string>A0DD8F0A10477961000DD023</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -336,13 +341,13 @@
 											<string>A0B46E4010460BC3005BA640</string>
 											<string>A0B46E5510461058005BA640</string>
 											<string>A0B46E761046119F005BA640</string>
-											<string>A0B46F6E10475D00005BA640</string>
 											<string>A0B46F6F10475D00005BA640</string>
 											<string>A0B46FAF10476355005BA640</string>
 											<string>A0B46FBD10476412005BA640</string>
 											<string>A0B46FBE10476412005BA640</string>
 											<string>A0B46FBF10476412005BA640</string>
-											<string>A00AC8D21047652100E25F76</string>
+											<string>A0DD8EED104776FF000DD023</string>
+											<string>A0DD8EE9104776F0000DD023</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -362,6 +367,7 @@
 											<string>A0A5B0331044BBB800A5949E</string>
 											<string>A0A5B07D1044D12000A5949E</string>
 											<string>A0A5B0981044D2A800A5949E</string>
+											<string>A0DD8EEE104776FF000DD023</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -383,8 +389,6 @@
 							<string>498pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -557,6 +561,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>A01E3CAB0FFE33DE00139E8B</string>
 		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -576,12 +583,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>DebuggingViewController.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -637,7 +646,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>A01E3CAB0FFE33DE00139E8B</string>
-				<string>A00AC8D31047652100E25F76</string>
+				<string>A0DD8ED710477433000DD023</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -757,13 +766,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>A0B46E4710460DB8005BA640</string>
+				<string>A0DD8ED810477433000DD023</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>A0B46E4810460DB8005BA640</string>
-				<string>A0B46E4910460DB8005BA640</string>
-				<string>A0B46E4A10460DB8005BA640</string>
-				<string>A0B46E4B10460DB8005BA640</string>
-				<string>A0B46E4C10460DB8005BA640</string>
+				<string>A0DD8ED910477433000DD023</string>
+				<string>A0DD8EDA10477433000DD023</string>
+				<string>A0DD8EDB10477433000DD023</string>
+				<string>A0DD8EDC10477433000DD023</string>
+				<string>A0DD8EDD10477433000DD023</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -927,7 +936,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>A0B46E4D10460DB8005BA640</string>
+				<string>A0DD8EDE10477433000DD023</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

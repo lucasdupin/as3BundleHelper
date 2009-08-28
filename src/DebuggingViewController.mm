@@ -74,19 +74,20 @@
 	if(breakpoints != nil) [breakpoints release];
 		breakpoints = [[NSMutableArray alloc] init];
 	
+	NSLog(@"file loop?");
 	for (int i=0; i<[actionScriptFiles count]; ++i) {
 		
-		NSString* file;
+		NSString* file = [[actionScriptFiles objectAtIndex:i] copy];
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
+		NSLog(@"filename for %@",[actionScriptFiles objectAtIndex:i]);
 		
 		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
 		
 		//Adding breakpoints to the list
 		for(int j=0; j < [res count]; j++){
-			[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:j] intValue]+1]];
-			NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+//			[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:j] intValue]+1]];
+//			NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
 		}
-		
 	}
 }
 

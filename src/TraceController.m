@@ -3,6 +3,8 @@
 
 @implementation TraceController
 
+@synthesize field;
+
 - (void)awakeFromNib
 {
 	NSLog(@"Tracer awaken");

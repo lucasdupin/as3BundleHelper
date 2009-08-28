@@ -39,7 +39,12 @@
 	
 	//Debugger state
 	NSString *currentState;
+	
+	//Are we connected?
+	BOOL connected;
 }
+
+@property (readonly) BOOL connected;
 
 - (IBAction) connect: (id)sender;
 - (IBAction) step: (id)sender;

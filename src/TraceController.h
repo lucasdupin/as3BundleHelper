@@ -19,9 +19,12 @@
 	TaskWrapper *tailTask;
 }
 
+@property (readonly) NSTextView * field;
+
 - (IBAction) clear: (id)sender;
 - (IBAction) separate: (id)sender;
 - (IBAction) setAutoAlpha: (id)sender;
+
 
 - (void)processStarted;
 - (void)processFinished;

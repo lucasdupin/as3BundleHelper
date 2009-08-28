@@ -10,13 +10,15 @@
 			<property name="flashlog path" code="flpt" type="string">
 				<cocoa key="flashlogPath" method="flashlogPath"/>
 			</property>
+			<property name="flashlog text" code="fltx" type="string">
+				<cocoa key="flashlogText" method="flashlogText"/>
+			</property>
 			<property name="project path" code="prpt" type="string">
 				<cocoa key="projectPath"/>
 			</property>
-			<responds-to command="connect">
-				<cocoa method="connectDebugger:"/>
-			</responds-to>
+			<property name="connected" code="conn" type="boolean">
+				<cocoa key="connected" method="connected"/>
+			</property>
 		</class>
-		<command name="connect" code="a3bhconn" description="Connect to FDB"/>
 	</suite>
 </dictionary>

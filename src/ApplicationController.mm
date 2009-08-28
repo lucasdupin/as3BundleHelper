@@ -26,7 +26,11 @@
  delegateHandlesKey:(NSString *)key
 {
 	NSLog(key);
-    if ([key isEqual:@"flexPath"] || [key isEqual:@"projectPath"] || [key isEqual:@"flashlogPath"]) {
+    if ([key isEqual:@"flexPath"] || 
+		[key isEqual:@"projectPath"] || 
+		[key isEqual:@"flashlogPath"] || 
+		[key isEqual:@"connected"]) {
+		NSLog(@"responds to: %@", key);
         return YES;
     } else {
         return NO;
@@ -43,6 +47,14 @@
     [[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:text forKey: @"flashLogPath"];
 	[traceController stopTask];
 	[traceController startTask];
+}
+- (NSString *)flashlogText
+{
+    return [[traceController field] string];
+}
+- (void)setFlashlogText:(NSString *)text
+{
+    [[traceController field] setString: text];
 }
 //Project path
 - (NSString *)projectPath
@@ -62,11 +74,21 @@
 {
     [[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:text forKey: @"flexSDKPath"];
 }
-- (void) connectDebugger:(NSScriptCommand*)command
+//Connect
+- (bool)connected
 {
-	NSLog(@"connecting to debugger");
-	[debuggingViewController connect:self];
+    return [debuggingViewController connected];
 }
+- (void)setConnected:(bool)value
+{
+	if([debuggingViewController connected]){
+		[debuggingViewController dettach:self];
+	} else {
+		[debuggingViewController connect:self];
+	}
+
+}
+
 //Common
 - (NSString *)string
 {

@@ -21,7 +21,6 @@
 - (IBAction) showLogViewer: (id) sender;
 - (IBAction) showDebuggingView: (id) sender;
 
-- (void) connectDebugger:(NSScriptCommand*)command;
 - (NSString *)string;
 
 @end

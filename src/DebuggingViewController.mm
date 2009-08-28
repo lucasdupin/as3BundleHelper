@@ -30,6 +30,8 @@
 
 @implementation DebuggingViewController
 
+@synthesize connected;
+
 /*
  Initialization:
  Gets the Default project Path and if there is no path, disable the window
@@ -61,7 +63,7 @@
 		[self setState:ST_DISCONNECTED];
 		
 	}
-
+	connected = false;
 	
 }
 
@@ -238,6 +240,12 @@
 //Application state
 - (void) setState:(NSString *)state
 {
+	if([state isEqual:ST_DISCONNECTED] || [state isEqual:ST_NO_PROJECT_PATH]){
+		connected = NO;
+	} else {
+		connected = YES;
+	}
+	
 	currentState = state;
 	[[window toolbar] validateVisibleItems];
 }

@@ -12,15 +12,10 @@
 @implementation PreferencesController
 
 - (id)init {
-    return [super initWithWindowNibName:@"Preferences"];
+    return [super initWithWindowNibName:@"Preferences" owner: self];
 }
 - (void)windowDidLoad {
     
-}
-
--(NSWindow *) getWindow
-{
-	return window;
 }
 
 - (IBAction) selectGeneralTab: (id)sender

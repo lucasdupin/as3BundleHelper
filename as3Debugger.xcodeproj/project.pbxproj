@@ -211,8 +211,8 @@
 		72443CD2101CCF93000D76CE /* DebuggingView */ = {
 			isa = PBXGroup;
 			children = (
-				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
+				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";

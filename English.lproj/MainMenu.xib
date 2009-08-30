@@ -30,7 +30,7 @@
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1048">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSCustomObject" id="1021">
-				<string key="NSClassName">NSObject</string>
+				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSCustomObject" id="1014">
 				<string key="NSClassName">FirstResponder</string>
@@ -1273,12 +1273,6 @@
 			<object class="NSCustomObject" id="967212077">
 				<string key="NSClassName">ApplicationController</string>
 			</object>
-			<object class="NSCustomObject" id="675290604">
-				<string key="NSClassName">FlashLogViewerController</string>
-			</object>
-			<object class="NSCustomObject" id="541521133">
-				<string key="NSClassName">PreferencesController</string>
-			</object>
 			<object class="NSCustomObject" id="175302177">
 				<string key="NSClassName">DebuggingViewController</string>
 			</object>
@@ -1287,6 +1281,12 @@
 			</object>
 			<object class="NSCustomObject" id="467133514">
 				<string key="NSClassName">NSFontManager</string>
+			</object>
+			<object class="NSCustomObject" id="536928409">
+				<string key="NSClassName">PreferencesController</string>
+			</object>
+			<object class="NSCustomObject" id="90391471">
+				<string key="NSClassName">FlashLogViewerController</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1886,17 +1886,9 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">traceController</string>
-						<reference key="source" ref="967212077"/>
-						<reference key="destination" ref="675290604"/>
-					</object>
-					<int key="connectionID">1087</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">preferencesController</string>
 						<reference key="source" ref="967212077"/>
-						<reference key="destination" ref="541521133"/>
+						<reference key="destination" ref="536928409"/>
 					</object>
 					<int key="connectionID">1088</int>
 				</object>
@@ -1907,6 +1899,14 @@
 						<reference key="destination" ref="175302177"/>
 					</object>
 					<int key="connectionID">1089</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">flashLogViewerController</string>
+						<reference key="source" ref="967212077"/>
+						<reference key="destination" ref="90391471"/>
+					</object>
+					<int key="connectionID">1090</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2913,18 +2913,18 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1083</int>
-						<reference key="object" ref="675290604"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1084</int>
 						<reference key="object" ref="175302177"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1085</int>
-						<reference key="object" ref="541521133"/>
+						<reference key="object" ref="536928409"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1083</int>
+						<reference key="object" ref="90391471"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -3432,7 +3432,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1089</int>
+			<int key="maxID">1094</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3485,7 +3485,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">DebuggingViewController</string>
-					<string key="superclassName">NSObject</string>
+					<string key="superclassName">NSWindowController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">

@@ -32,6 +32,10 @@
 
 @synthesize connected;
 
+- (id)init {
+    return [super initWithWindowNibName:@"DebuggingView"];
+}
+
 /*
  Initialization:
  Gets the Default project Path and if there is no path, disable the window
@@ -39,7 +43,7 @@
  Sets the delegate for validating menuItems (enabled or not)
  Set current state: ST_DISCONNECTED
  */
-- (void)awakeFromNib
+- (void)windowDidLoad
 {
 	//Enablig the toolbar based on the states
 	[[window toolbar] setDelegate:self];
@@ -66,6 +70,7 @@
 	connected = false;
 	
 }
+
 
 #pragma mark Breakpoints an Files search methods
 //Searches fo breakpoints in files

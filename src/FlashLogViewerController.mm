@@ -6,12 +6,14 @@
 @synthesize field;
 
 - (id)init {
-    return [super initWithWindowNibName:@"FlashLogViewer"];
+	NSLog(@"flashlog init");
+    return [super initWithWindowNibName:@"FlashLogViewer" owner: self];
+	
 }
 
 - (void)awakeFromNib
 {
-	NSLog(@"Tracer awaken");
+	NSLog(@"Tracer awaken %@", window);
 	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];

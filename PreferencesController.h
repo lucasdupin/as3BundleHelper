@@ -14,6 +14,7 @@
 	IBOutlet NSWindow * window;
 }
 
+- (id)init;
 - (NSWindow *)getWindow;
 
 - (IBAction) selectGeneralTab: (id)sender;

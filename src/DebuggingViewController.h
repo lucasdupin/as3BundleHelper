@@ -16,7 +16,7 @@
 #include <zlib.h>
 #include <vector>
 
-@interface DebuggingViewController : NSObject <TaskWrapperController> {
+@interface DebuggingViewController : NSWindowController <TaskWrapperController> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	
@@ -46,6 +46,8 @@
 
 @property (readonly) BOOL connected;
 
+- (id)init;
+
 - (IBAction) connect: (id)sender;
 - (IBAction) step: (id)sender;
 - (IBAction) stepOut: (id)sender;
@@ -55,8 +57,6 @@
 - (void) lookAfterBreakpoints;
 - (void) findASFilesInPath: (NSString*)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
-
-- (NSWindow *)getWindow;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

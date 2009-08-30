@@ -13,12 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-	preferencesController = [[PreferencesController alloc] init];
-	if (![NSBundle loadNibNamed:@"Preferences" owner:preferencesController]) {
-		NSLog(@"Error loading Nib for document!");
-	}
 	
-	NSLog(@"Created preferences controller %@", preferencesController);
 }
 
 - (void)applicationWillTerminate: (NSNotification *)note
@@ -88,7 +83,7 @@
 }
 - (void)setConnected:(bool)value
 {
-	[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
+	[[debuggingViewController window] makeKeyAndOrderFront:self];
 	if([debuggingViewController connected]){
 		[debuggingViewController dettach:self];
 	} else {
@@ -106,16 +101,17 @@
 #pragma mark Showing windows
 - (IBAction) showLogViewer: (id)sender
 {
-	NSLog(@"show log %@", [flashLogViewerController getWindow]);
-	[[flashLogViewerController getWindow] orderFront: self]; 
+	[flashLogViewerController showWindow:self];
 }
 - (IBAction) showDebuggingView: (id)sender
 {
-	[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
+	//[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
+	[debuggingViewController showWindow:self];
 }
 - (IBAction) showPreferences: (id)sender
 {
 //	[[preferencesController getWindow] makeKeyAndOrderFront: self]; 
+	[preferencesController showWindow: self];
 }
 
 

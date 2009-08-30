@@ -21,6 +21,8 @@
 
 @property (readonly) NSTextView * field;
 
+- (id)init;
+
 - (IBAction) clear: (id)sender;
 - (IBAction) separate: (id)sender;
 - (IBAction) setAutoAlpha: (id)sender;
@@ -32,7 +34,5 @@
 
 - (void) startTask;
 - (void)stopTask;
-
-- (NSPanel*)getWindow;
 
 @end

@@ -211,7 +211,7 @@
 - (void) showFile: (NSString*)file at: (int)line
 {
 	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
-	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath];
+	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
 	
 	NSLog(@"showing file %@ at line %d", file, line);
 	
@@ -223,13 +223,13 @@
 		
 		if([file isEqual: fileFound]){
 			//Opening code file
-			NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
+			NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]] encoding: NSUTF8StringEncoding error:nil];
 			//Replacing code
 			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: code];
 			//Replace highlight line number
 			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
 			
-			NSLog(htmlFileContents);
+			NSLog(@"%@", htmlFileContents);
 			break;
 		}
 		
@@ -278,7 +278,7 @@
 #pragma mark Task management
 - (void)appendOutput:(NSString *)output
 {
-	NSLog([@"fdb:" stringByAppendingString:output]);
+	NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
 	
 	
 	/*******

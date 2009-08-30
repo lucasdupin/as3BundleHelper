@@ -16,8 +16,6 @@
 		72C1A9DF101CB2F200EAD900 /* TB_Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DC101CB2F200EAD900 /* TB_Stop.png */; };
 		72C1A9E0101CB2F200EAD900 /* TB_StepOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */; };
 		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
-		72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
-		72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -25,6 +23,8 @@
 		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */; };
 		A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B61039F3D20045DA0A /* ApplicationController.mm */; };
+		A0E0ED23104ADC78006BA6F1 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E0ED22104ADC78006BA6F1 /* BWToolkitFramework.framework */; };
+		A0E0ED54104ADC81006BA6F1 /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A0E0ED22104ADC78006BA6F1 /* BWToolkitFramework.framework */; };
 		A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F45A46104200B700DE066E /* WebKit.framework */; };
 		A0F45A80104207F100DE066E /* codeView in Resources */ = {isa = PBXBuildFile; fileRef = A0F45A53104207F100DE066E /* codeView */; };
 /* End PBXBuildFile section */
@@ -36,8 +36,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A0E0ED54104ADC81006BA6F1 /* BWToolkitFramework.framework in Copy Frameworks */,
 				A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */,
-				72CEA0DA0FFFE31400E24A1F /* BGHUDAppKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +64,6 @@
 		72C1A9DD101CB2F200EAD900 /* TB_StepOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_StepOver.png; path = Resources/icons/TB_StepOver.png; sourceTree = "<group>"; };
 		72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlphaPanel.m; path = src/AlphaPanel.m; sourceTree = "<group>"; };
 		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
-		72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = lib/BGHUDAppKit.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebuggingViewController.h; path = src/DebuggingViewController.h; sourceTree = "<group>"; };
 		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
 		A0B879B61039F3D20045DA0A /* ApplicationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ApplicationController.mm; path = src/ApplicationController.mm; sourceTree = "<group>"; };
+		A0E0ED22104ADC78006BA6F1 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = lib/BWToolkit/BWToolkitFramework.framework; sourceTree = "<group>"; };
 		A0F45A46104200B700DE066E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		A0F45A53104207F100DE066E /* codeView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = codeView; path = Resources/codeView; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,9 +83,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				72CEA0D10FFFE20100E24A1F /* BGHUDAppKit.framework in Frameworks */,
 				A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */,
 				A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */,
+				A0E0ED23104ADC78006BA6F1 /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +109,9 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0E0ED22104ADC78006BA6F1 /* BWToolkitFramework.framework */,
 				A0F45A46104200B700DE066E /* WebKit.framework */,
 				A05D6717103A096F00623928 /* RegexKit.framework */,
-				72CEA0D00FFFE20100E24A1F /* BGHUDAppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -339,6 +339,7 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/lib\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+					"\"$(SRCROOT)/lib/BWToolkit\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -364,6 +365,7 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/lib\"",
 					"\"$(SRCROOT)/../../../Library/Frameworks\"",
+					"\"$(SRCROOT)/lib/BWToolkit\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

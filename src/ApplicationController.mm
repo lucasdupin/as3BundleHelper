@@ -25,7 +25,7 @@
 - (BOOL)application:(NSApplication *)sender 
  delegateHandlesKey:(NSString *)key
 {
-	NSLog(key);
+	NSLog(@"%@", key);
     if ([key isEqual:@"flexPath"] || 
 		[key isEqual:@"projectPath"] || 
 		[key isEqual:@"flashlogPath"] || 

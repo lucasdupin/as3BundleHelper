@@ -15,7 +15,7 @@
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
 	}
-	NSLog([@"Flashlog is : " stringByAppendingString: flashlog]);
+	NSLog(@"%@", [@"Flashlog is : " stringByAppendingString: flashlog]);
 	
 	//Telling wich file we're reading
 	[field setTextColor: [NSColor blackColor]];
@@ -68,10 +68,12 @@
 - (void)appendOutput:(NSString *)output
 {
 	
-	NSMutableAttributedString * toAdd = [[[NSMutableAttributedString alloc]
+/*	NSString * toAdd = [[[NSMutableAttributedString alloc]
 								 initWithString: output] autorelease];
 	[toAdd addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:NSMakeRange(0, [toAdd length])];
     [[field textStorage] appendAttributedString: toAdd];
+*/	
+	[field setString: [NSString stringWithFormat:@"%@\n%@", [field string], output]];
 	[field scrollPageDown:self];
 }
 

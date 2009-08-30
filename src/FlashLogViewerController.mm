@@ -1,9 +1,13 @@
-#import "TraceController.h"
+#import "FlashLogViewerController.h"
 
 
-@implementation TraceController
+@implementation FlashLogViewerController
 
 @synthesize field;
+
+- (id)init {
+    return [super initWithWindowNibName:@"FlashLogViewer"];
+}
 
 - (void)awakeFromNib
 {
@@ -28,6 +32,8 @@
 	
 	//Setting auto-aulpha
 	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
+	
+	NSLog(@"done starting");
 }
 
 //Clear the text field

@@ -11,13 +11,19 @@
 
 @implementation ApplicationController
 
-- (void)awakeFromNib
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
+	preferencesController = [[PreferencesController alloc] init];
+	if (![NSBundle loadNibNamed:@"Preferences" owner:preferencesController]) {
+		NSLog(@"Error loading Nib for document!");
+	}
+	
+	NSLog(@"Created preferences controller %@", preferencesController);
 }
 
 - (void)applicationWillTerminate: (NSNotification *)note
 {
-	[traceController stopTask];
+	[flashLogViewerController stopTask];
 	[debuggingViewController stopTask];
 }
 
@@ -31,7 +37,7 @@
 		[key isEqual:@"flashlogPath"] || 
 		[key isEqual:@"flashlogText"] || 
 		[key isEqual:@"connected"]) {
-		NSLog(@"responds to: %@", key);
+		//NSLog(@"responds to: %@", key);
         return YES;
     } else {
         return NO;
@@ -46,16 +52,16 @@
 - (void)setFlashlogPath:(NSString *)text
 {
     [[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:text forKey: @"flashLogPath"];
-	[traceController stopTask];
-	[traceController startTask];
+	[flashLogViewerController stopTask];
+	[flashLogViewerController startTask];
 }
 - (NSString *)flashlogText
 {
-    return [[traceController field] string];
+    return [[flashLogViewerController field] string];
 }
 - (void)setFlashlogText:(NSString *)text
 {
-    [[traceController field] setString: text];
+    [[flashLogViewerController field] setString: text];
 }
 //Project path
 - (NSString *)projectPath
@@ -100,15 +106,17 @@
 #pragma mark Showing windows
 - (IBAction) showLogViewer: (id)sender
 {
-	[[traceController getWindow] orderFront: self]; 
+	NSLog(@"show log %@", [flashLogViewerController getWindow]);
+	[[flashLogViewerController getWindow] orderFront: self]; 
 }
 - (IBAction) showDebuggingView: (id)sender
 {
-	NSLog(@"%@ window", debugWindow);
 	[[debuggingViewController getWindow] makeKeyAndOrderFront:self];
-	
-//	NSWindow* win = ;
-//	[win makeKeyAndOrderFront:self];
 }
+- (IBAction) showPreferences: (id)sender
+{
+//	[[preferencesController getWindow] makeKeyAndOrderFront: self]; 
+}
+
 
 @end

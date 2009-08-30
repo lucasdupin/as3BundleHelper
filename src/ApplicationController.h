@@ -7,17 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TraceController.h"
+#import "FlashLogViewerController.h"
 #import "DebuggingViewController.h"
-
+#import "PreferencesController.h"
 
 @interface ApplicationController : NSObject {
-	IBOutlet TraceController *traceController;
+	IBOutlet FlashLogViewerController *flashLogViewerController;
 	IBOutlet DebuggingViewController *debuggingViewController;
-	
-	IBOutlet NSWindow *debugWindow;
+	IBOutlet PreferencesController *preferencesController;
 }
 
+- (IBAction) showPreferences: (id) sender;
 - (IBAction) showLogViewer: (id) sender;
 - (IBAction) showDebuggingView: (id) sender;
 

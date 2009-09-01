@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A0D7A535104CBD240088C72F</string>
+										<string>A00C30C8104CBEA30068871A</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -360,7 +360,7 @@
 											<string>A0B608C1104B23AE0046B2DA</string>
 											<string>A0B608C2104B23AE0046B2DA</string>
 											<string>A0D7A506104CB8E50088C72F</string>
-											<string>A0D7A507104CB8E50088C72F</string>
+											<string>A0D7A535104CBD240088C72F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -372,14 +372,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {829, 386}}</string>
+								<string>{{0, 0}, {829, 379}}</string>
 								<key>RubberWindowFrame</key>
 								<string>93 162 1037 616 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>386pt</string>
+							<string>379pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -392,14 +392,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 391}, {829, 184}}</string>
+								<string>{{0, 384}, {829, 191}}</string>
 								<key>RubberWindowFrame</key>
 								<string>93 162 1037 616 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>184pt</string>
+							<string>191pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -418,9 +418,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>A0D7A469104CAD3D0088C72F</string>
+				<string>A00C3096104CBDEC0068871A</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>A0D7A46A104CAD3D0088C72F</string>
+				<string>A00C3097104CBDEC0068871A</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -556,10 +556,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A0D7A484104CB21F0088C72F</string>
-		<string>A0D7A485104CB21F0088C72F</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A01E3CAB0FFE33DE00139E8B</string>
 		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
@@ -585,7 +581,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FlashLogViewerController.mm</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -602,8 +598,6 @@
 							<string>178pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -643,7 +637,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>A01E3CAB0FFE33DE00139E8B</string>
-				<string>A0D7A46B104CAD3D0088C72F</string>
+				<string>A00C3098104CBDEC0068871A</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

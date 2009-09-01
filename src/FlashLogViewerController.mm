@@ -47,7 +47,7 @@
 	[field setString: @" "];
 }
 
-//Make the text black
+//Tint the text
 - (IBAction) separate: (id)sender
 {
 	if([field string] != nil){
@@ -134,6 +134,8 @@
 		[toAdd addAttribute:NSFontAttributeName value:[field font] range:NSMakeRange(0, [toAdd length])];
 		[toAdd addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [toAdd length])];
 		[[field textStorage] appendAttributedString: toAdd];
+		
+		[field scrollPageDown:self];
 
 	}
 

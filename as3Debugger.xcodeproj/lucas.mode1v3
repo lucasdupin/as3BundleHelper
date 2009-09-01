@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -318,12 +316,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.mm</string>
+								<string>FlashLogViewerController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.mm</string>
+										<string>FlashLogViewerController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A0D7A468104CAD3D0088C72F</string>
+										<string>A0D7A51C104CBA720088C72F</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -356,11 +356,11 @@
 											<string>A0B608BC104B23AE0046B2DA</string>
 											<string>A0B608BD104B23AE0046B2DA</string>
 											<string>A0B608BE104B23AE0046B2DA</string>
-											<string>A0B608BF104B23AE0046B2DA</string>
 											<string>A0B608C0104B23AE0046B2DA</string>
 											<string>A0B608C1104B23AE0046B2DA</string>
 											<string>A0B608C2104B23AE0046B2DA</string>
-											<string>A0D7A467104CAD3D0088C72F</string>
+											<string>A0D7A506104CB8E50088C72F</string>
+											<string>A0D7A507104CB8E50088C72F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -556,6 +556,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>A0D7A484104CB21F0088C72F</string>
+		<string>A0D7A485104CB21F0088C72F</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A01E3CAB0FFE33DE00139E8B</string>
 		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
@@ -581,7 +585,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>FlashLogViewerController.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -598,6 +602,8 @@
 							<string>178pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -757,13 +763,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>A0B60569104AE9630046B2DA</string>
+				<string>A0D7A47C104CB21F0088C72F</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>A0B6056A104AE9630046B2DA</string>
-				<string>A0B6056B104AE9630046B2DA</string>
-				<string>A0B6056C104AE9630046B2DA</string>
-				<string>A0B6056D104AE9630046B2DA</string>
-				<string>A0B6056E104AE9630046B2DA</string>
+				<string>A0D7A47D104CB21F0088C72F</string>
+				<string>A0D7A47E104CB21F0088C72F</string>
+				<string>A0D7A47F104CB21F0088C72F</string>
+				<string>A0D7A480104CB21F0088C72F</string>
+				<string>A0D7A481104CB21F0088C72F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -927,7 +933,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>A0B6056F104AE9630046B2DA</string>
+				<string>A0D7A482104CB21F0088C72F</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

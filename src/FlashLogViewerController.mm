@@ -3,6 +3,9 @@
 
 @implementation FlashLogViewerController
 
+#define WARNING_MESSAGE		@"warning"
+#define ERROR_MESSAGE		@"error"
+
 @synthesize field;
 
 - (id)init {
@@ -47,7 +50,7 @@
 //Make the text black
 - (IBAction) separate: (id)sender
 {
-	if([field string] != NULL){
+	if([field string] != nil){
 		[field setString:[[field string] stringByAppendingString: @"\n\n"]];
 		[field scrollPageDown:self];
 	}
@@ -75,14 +78,50 @@
 - (void)processFinished{}
 - (void)appendOutput:(NSString *)output
 {
+	if (output == nil) {
+		return;
+		//Nothing to do here
+	}
 	
-/*	NSString * toAdd = [[[NSMutableAttributedString alloc]
+	//Retrieving from userDefaults
+	NSColor * theColor;
+	NSData * colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
+	
+	//Do we get an empty value?
+	//Let's fill our user defaults
+	if(colorData == nil){
+		[[NSUserDefaults standardUserDefaults] 
+		 setObject:
+			[NSArchiver archivedDataWithRootObject:[NSColor whiteColor]]
+		forKey:@"flashlogTextColor"];
+		
+		[[NSUserDefaults standardUserDefaults] 
+		 setObject:
+		 [NSArchiver archivedDataWithRootObject:[NSColor redColor]]
+		 forKey:@"flashlogExceptionColor"];
+		
+		[[NSUserDefaults standardUserDefaults] 
+		 setObject:
+		 [NSArchiver archivedDataWithRootObject:[NSColor yellowColor]]
+		 forKey:@"flashlogWarningColor"];
+	}
+	
+	if ([output rangeOfString:ERROR_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
+		colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogExceptionColor"];
+	} else if ([output rangeOfString:WARNING_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
+		colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogWarningColor"];
+	}
+	
+	if (colorData != nil) {
+		theColor = (NSColor *)[NSUnarchiver unarchiveObjectWithData:colorData];
+	}
+
+	NSMutableAttributedString * toAdd = [[[NSMutableAttributedString alloc]
 								 initWithString: output] autorelease];
-	[toAdd addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:NSMakeRange(0, [toAdd length])];
+	[toAdd addAttribute:NSFontNameAttribute value:[field font] range:NSMakeRange(0, [toAdd length])];
+	[toAdd addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [toAdd length])];
     [[field textStorage] appendAttributedString: toAdd];
-*/	
-	[field setString: [NSString stringWithFormat:@"%@\n%@", [field string], output]];
-	[field scrollPageDown:self];
+
 }
 
 - (NSPanel *)getWindow

@@ -158,9 +158,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				A0B60597104AF4900046B2DA /* Preferences.xib */,
-				A0B60686104B0C900046B2DA /* FlashLogViewer.xib */,
-				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
 			);
 			name = as3Debugger;
 			sourceTree = "<group>";
@@ -204,6 +201,7 @@
 				72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */,
 				72B3C1880FF65052004C58DC /* FlashLogViewerController.h */,
 				72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */,
+				A0B60686104B0C900046B2DA /* FlashLogViewer.xib */,
 			);
 			name = LogViewer;
 			sourceTree = "<group>";
@@ -213,6 +211,7 @@
 			children = (
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
+				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -222,6 +221,7 @@
 			children = (
 				A0B605A4104AF6D90046B2DA /* PreferencesController.h */,
 				A0B605A5104AF6D90046B2DA /* PreferencesController.m */,
+				A0B60597104AF4900046B2DA /* Preferences.xib */,
 			);
 			name = Prefences;
 			sourceTree = "<group>";

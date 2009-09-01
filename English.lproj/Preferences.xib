@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="23"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -638,6 +638,13 @@
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 			<object class="NSUserDefaultsController" id="332605031">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>flashlogTextColor</string>
+					<string>flashlogExceptionColor</string>
+					<string>flashlogWarningColor</string>
+					<string>flashlogTintColor</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -747,6 +754,86 @@
 						<reference key="destination" ref="1742062"/>
 					</object>
 					<int key="connectionID">102</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.flashlogTextColor</string>
+						<reference key="source" ref="334346093"/>
+						<reference key="destination" ref="332605031"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="334346093"/>
+							<reference key="NSDestination" ref="332605031"/>
+							<string key="NSLabel">value: values.flashlogTextColor</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.flashlogTextColor</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSUnarchiveFromData</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">105</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.flashlogExceptionColor</string>
+						<reference key="source" ref="604608864"/>
+						<reference key="destination" ref="332605031"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="604608864"/>
+							<reference key="NSDestination" ref="332605031"/>
+							<string key="NSLabel">value: values.flashlogExceptionColor</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.flashlogExceptionColor</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSUnarchiveFromData</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">109</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.flashlogWarningColor</string>
+						<reference key="source" ref="650068546"/>
+						<reference key="destination" ref="332605031"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="650068546"/>
+							<reference key="NSDestination" ref="332605031"/>
+							<string key="NSLabel">value: values.flashlogWarningColor</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.flashlogWarningColor</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSUnarchiveFromData</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">110</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.flashlogTintColor</string>
+						<reference key="source" ref="651898102"/>
+						<reference key="destination" ref="332605031"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="651898102"/>
+							<reference key="NSDestination" ref="332605031"/>
+							<string key="NSLabel">value: values.flashlogTintColor</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.flashlogTintColor</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSUnarchiveFromData</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">111</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1230,7 +1317,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">103</int>
+			<int key="maxID">111</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

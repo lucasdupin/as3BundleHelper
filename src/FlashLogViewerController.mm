@@ -51,8 +51,21 @@
 - (IBAction) separate: (id)sender
 {
 	if([field string] != nil){
-		[field setString:[[field string] stringByAppendingString: @"\n\n"]];
-		[field scrollPageDown:self];
+		
+		//Getting the color
+		NSData * colorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTintColor"];
+		NSColor * theColor = [NSUnarchiver unarchiveObjectWithData:colorData];
+		
+		//Getting the string
+		NSMutableAttributedString * text = [[[NSMutableAttributedString alloc]
+											  initWithString: [field string]] autorelease];
+		//Setting attributes
+		[text addAttribute:NSFontAttributeName value:[field font] range:NSMakeRange(0, [text length])];
+		[text addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [text length])];
+		
+		//Setting string
+		[[field textStorage] setAttributedString: text];
+		
 	}
 }
 

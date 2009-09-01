@@ -14,6 +14,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A0283D49104D6473003268BF /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0283D48104D6473003268BF /* LogView.m */; };
 		A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A0B60582104AF35E0046B2DA /* TB_Run.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6057D104AF35E0046B2DA /* TB_Run.png */; };
@@ -68,6 +69,8 @@
 		72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlphaPanel.h; path = src/AlphaPanel.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0283D47104D6473003268BF /* LogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogView.h; path = src/LogView.h; sourceTree = "<group>"; };
+		A0283D48104D6473003268BF /* LogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogView.m; path = src/LogView.m; sourceTree = "<group>"; };
 		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
 		A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; name = as3BundleHelper.sdef; path = applescript/as3BundleHelper.sdef; sourceTree = "<group>"; };
 		A0B6057D104AF35E0046B2DA /* TB_Run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Run.png; path = Resources/icons/debugger/TB_Run.png; sourceTree = "<group>"; };
@@ -79,8 +82,8 @@
 		A0B6059C104AF5200046B2DA /* DebuggerView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DebuggerView.png; path = Resources/icons/preferences/DebuggerView.png; sourceTree = "<group>"; };
 		A0B605A0104AF5470046B2DA /* LogViewer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LogViewer.png; path = Resources/icons/preferences/LogViewer.png; sourceTree = "<group>"; };
 		A0B605A1104AF5470046B2DA /* LogViewer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = LogViewer.icns; path = Resources/icons/preferences/LogViewer.icns; sourceTree = "<group>"; };
-		A0B605A4104AF6D90046B2DA /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		A0B605A5104AF6D90046B2DA /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		A0B605A4104AF6D90046B2DA /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesController.h; path = src/PreferencesController.h; sourceTree = "<group>"; };
+		A0B605A5104AF6D90046B2DA /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesController.m; path = src/PreferencesController.m; sourceTree = "<group>"; };
 		A0B60687104B0C900046B2DA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/FlashLogViewer.xib; sourceTree = "<group>"; };
 		A0B606F5104B0FDE0046B2DA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DebuggingView.xib; sourceTree = "<group>"; };
 		A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DebuggingViewController.mm; path = src/DebuggingViewController.mm; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				72B3C1880FF65052004C58DC /* FlashLogViewerController.h */,
 				72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */,
 				A0B60686104B0C900046B2DA /* FlashLogViewer.xib */,
+				A0283D47104D6473003268BF /* LogView.h */,
+				A0283D48104D6473003268BF /* LogView.m */,
 			);
 			name = LogViewer;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */,
 				A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */,
 				A0B605A6104AF6D90046B2DA /* PreferencesController.m in Sources */,
+				A0283D49104D6473003268BF /* LogView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

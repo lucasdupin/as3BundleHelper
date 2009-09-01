@@ -15,7 +15,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = A01E3C920FFE29CD00139E8B /* as3BundleHelper */;
 		activeTarget = 8D1107260486CEB800E47090 /* as3BundleHelper */;
 		addToTargets = (
@@ -51,7 +51,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					590,
+					637,
 					20,
 					48,
 					43,
@@ -114,17 +114,68 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 273464811;
-			PBXWorkspaceStateSaveDate = 273464811;
+			PBXPerProjectTemplateStateSaveDate = 273507054;
+			PBXWorkspaceStateSaveDate = 273507054;
 		};
 		perUserProjectItems = {
-			A00C3095104CBDEC0068871A /* PBXTextBookmark */ = A00C3095104CBDEC0068871A /* PBXTextBookmark */;
-			A00C30C5104CBE0C0068871A /* PBXTextBookmark */ = A00C30C5104CBE0C0068871A /* PBXTextBookmark */;
-			A00C30C8104CBEA30068871A /* PBXTextBookmark */ = A00C30C8104CBEA30068871A /* PBXTextBookmark */;
-			A00C30D1104CC00D0068871A /* PBXTextBookmark */ = A00C30D1104CC00D0068871A /* PBXTextBookmark */;
-			A00C30E2104CC09B0068871A /* PBXTextBookmark */ = A00C30E2104CC09B0068871A /* PBXTextBookmark */;
-			A00C30F2104CC36B0068871A /* PBXTextBookmark */ = A00C30F2104CC36B0068871A /* PBXTextBookmark */;
+			A00C3095104CBDEC0068871A = A00C3095104CBDEC0068871A /* PBXTextBookmark */;
+			A00C30C5104CBE0C0068871A = A00C30C5104CBE0C0068871A /* PBXTextBookmark */;
+			A00C30C8104CBEA30068871A = A00C30C8104CBEA30068871A /* PBXTextBookmark */;
+			A00C30D1104CC00D0068871A = A00C30D1104CC00D0068871A /* PBXTextBookmark */;
+			A00C30E2104CC09B0068871A = A00C30E2104CC09B0068871A /* PBXTextBookmark */;
+			A00C30F2104CC36B0068871A = A00C30F2104CC36B0068871A /* PBXTextBookmark */;
 			A01F47C510422E4B00CB6822 = A01F47C510422E4B00CB6822 /* PBXTextBookmark */;
+			A0283D40104D62F0003268BF /* PBXTextBookmark */ = A0283D40104D62F0003268BF /* PBXTextBookmark */;
+			A0283D53104D6547003268BF /* PBXTextBookmark */ = A0283D53104D6547003268BF /* PBXTextBookmark */;
+			A0283D54104D6547003268BF /* PBXTextBookmark */ = A0283D54104D6547003268BF /* PBXTextBookmark */;
+			A0283D57104D654D003268BF /* PBXTextBookmark */ = A0283D57104D654D003268BF /* PBXTextBookmark */;
+			A0283D58104D654D003268BF /* PBXTextBookmark */ = A0283D58104D654D003268BF /* PBXTextBookmark */;
+			A0283D59104D654D003268BF /* PBXTextBookmark */ = A0283D59104D654D003268BF /* PBXTextBookmark */;
+			A0283D5A104D654D003268BF /* PBXTextBookmark */ = A0283D5A104D654D003268BF /* PBXTextBookmark */;
+			A0283D5B104D654D003268BF /* PBXTextBookmark */ = A0283D5B104D654D003268BF /* PBXTextBookmark */;
+			A0283D5C104D654D003268BF /* PBXTextBookmark */ = A0283D5C104D654D003268BF /* PBXTextBookmark */;
+			A0283D5D104D654D003268BF /* PBXTextBookmark */ = A0283D5D104D654D003268BF /* PBXTextBookmark */;
+			A0283D5E104D654D003268BF /* PBXTextBookmark */ = A0283D5E104D654D003268BF /* PBXTextBookmark */;
+			A0283D5F104D654D003268BF /* PBXTextBookmark */ = A0283D5F104D654D003268BF /* PBXTextBookmark */;
+			A0283D60104D654D003268BF /* PBXTextBookmark */ = A0283D60104D654D003268BF /* PBXTextBookmark */;
+			A0283D61104D654D003268BF /* PBXTextBookmark */ = A0283D61104D654D003268BF /* PBXTextBookmark */;
+			A0283D62104D654D003268BF /* PBXTextBookmark */ = A0283D62104D654D003268BF /* PBXTextBookmark */;
+			A0283D63104D654D003268BF /* PBXTextBookmark */ = A0283D63104D654D003268BF /* PBXTextBookmark */;
+			A0283D64104D654D003268BF /* PBXTextBookmark */ = A0283D64104D654D003268BF /* PBXTextBookmark */;
+			A0283D65104D654D003268BF /* PBXTextBookmark */ = A0283D65104D654D003268BF /* PBXTextBookmark */;
+			A0283D6A104D65FF003268BF /* PBXTextBookmark */ = A0283D6A104D65FF003268BF /* PBXTextBookmark */;
+			A0283D72104D6678003268BF /* PBXTextBookmark */ = A0283D72104D6678003268BF /* PBXTextBookmark */;
+			A0283D73104D6678003268BF /* PBXTextBookmark */ = A0283D73104D6678003268BF /* PBXTextBookmark */;
+			A0283D76104D6699003268BF /* PBXTextBookmark */ = A0283D76104D6699003268BF /* PBXTextBookmark */;
+			A0283D77104D6699003268BF /* PBXTextBookmark */ = A0283D77104D6699003268BF /* PBXTextBookmark */;
+			A0283D78104D6699003268BF /* PBXTextBookmark */ = A0283D78104D6699003268BF /* PBXTextBookmark */;
+			A0283D79104D6699003268BF /* PBXTextBookmark */ = A0283D79104D6699003268BF /* PBXTextBookmark */;
+			A0283D7A104D6699003268BF /* PBXTextBookmark */ = A0283D7A104D6699003268BF /* PBXTextBookmark */;
+			A0283D7B104D6699003268BF /* PBXTextBookmark */ = A0283D7B104D6699003268BF /* PBXTextBookmark */;
+			A0283D7F104D6887003268BF /* PBXTextBookmark */ = A0283D7F104D6887003268BF /* PBXTextBookmark */;
+			A0283D80104D6887003268BF /* PBXTextBookmark */ = A0283D80104D6887003268BF /* PBXTextBookmark */;
+			A0283D81104D6887003268BF /* PBXTextBookmark */ = A0283D81104D6887003268BF /* PBXTextBookmark */;
+			A0283D82104D6887003268BF /* PBXTextBookmark */ = A0283D82104D6887003268BF /* PBXTextBookmark */;
+			A0283D83104D6887003268BF /* PBXTextBookmark */ = A0283D83104D6887003268BF /* PBXTextBookmark */;
+			A0283D84104D6887003268BF /* PBXTextBookmark */ = A0283D84104D6887003268BF /* PBXTextBookmark */;
+			A0283D85104D6887003268BF /* PBXTextBookmark */ = A0283D85104D6887003268BF /* PBXTextBookmark */;
+			A0283D86104D68AB003268BF /* PBXTextBookmark */ = A0283D86104D68AB003268BF /* PBXTextBookmark */;
+			A0283D87104D68CC003268BF /* PBXTextBookmark */ = A0283D87104D68CC003268BF /* PBXTextBookmark */;
+			A0283D88104D68CC003268BF /* PBXTextBookmark */ = A0283D88104D68CC003268BF /* PBXTextBookmark */;
+			A0283D89104D68CC003268BF /* PBXTextBookmark */ = A0283D89104D68CC003268BF /* PBXTextBookmark */;
+			A0283D8A104D68CC003268BF /* PBXTextBookmark */ = A0283D8A104D68CC003268BF /* PBXTextBookmark */;
+			A0283D8B104D68CC003268BF /* PBXTextBookmark */ = A0283D8B104D68CC003268BF /* PBXTextBookmark */;
+			A0283D8C104D68CC003268BF /* PBXTextBookmark */ = A0283D8C104D68CC003268BF /* PBXTextBookmark */;
+			A0283D8D104D68CC003268BF /* PBXTextBookmark */ = A0283D8D104D68CC003268BF /* PBXTextBookmark */;
+			A0283D94104D69A2003268BF /* PBXTextBookmark */ = A0283D94104D69A2003268BF /* PBXTextBookmark */;
+			A0283D95104D69A2003268BF /* PBXTextBookmark */ = A0283D95104D69A2003268BF /* PBXTextBookmark */;
+			A0283D96104D69A2003268BF /* PBXTextBookmark */ = A0283D96104D69A2003268BF /* PBXTextBookmark */;
+			A0283D97104D69A2003268BF /* PBXTextBookmark */ = A0283D97104D69A2003268BF /* PBXTextBookmark */;
+			A0283D98104D69A2003268BF /* PBXTextBookmark */ = A0283D98104D69A2003268BF /* PBXTextBookmark */;
+			A0283D99104D69A2003268BF /* PBXTextBookmark */ = A0283D99104D69A2003268BF /* PBXTextBookmark */;
+			A0283D9A104D69A2003268BF /* PBXTextBookmark */ = A0283D9A104D69A2003268BF /* PBXTextBookmark */;
+			A0283D9D104D69C2003268BF /* PBXTextBookmark */ = A0283D9D104D69C2003268BF /* PBXTextBookmark */;
+			A0283DA2104D6C38003268BF /* PBXTextBookmark */ = A0283DA2104D6C38003268BF /* PBXTextBookmark */;
 			A0340747103301D700BFE89D = A0340747103301D700BFE89D /* PBXTextBookmark */;
 			A0A5B0761044D0E500A5949E = A0A5B0761044D0E500A5949E /* PBXTextBookmark */;
 			A0A5B0941044D2A800A5949E = A0A5B0941044D2A800A5949E /* PBXTextBookmark */;
@@ -557,25 +608,25 @@
 	};
 	72B3C1880FF65052004C58DC /* FlashLogViewerController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 494}}";
+			sepNavIntBoundsRect = "{{0, 0}, {815, 532}}";
 			sepNavSelRange = "{741, 0}";
-			sepNavVisRange = "{209, 538}";
+			sepNavVisRange = "{137, 605}";
 			sepNavWindowFrame = "{{61, 173}, {750, 558}}";
 		};
 	};
 	72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 2210}}";
-			sepNavSelRange = "{1709, 0}";
-			sepNavVisRange = "{1408, 802}";
+			sepNavIntBoundsRect = "{{0, 0}, {858, 2450}}";
+			sepNavSelRange = "{1608, 0}";
+			sepNavVisRange = "{899, 882}";
 			sepNavWindowFrame = "{{107, 96}, {923, 682}}";
 		};
 	};
 	72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 806}}";
+			sepNavIntBoundsRect = "{{0, 0}, {815, 854}}";
 			sepNavSelRange = "{617, 0}";
-			sepNavVisRange = "{0, 514}";
+			sepNavVisRange = "{0, 547}";
 		};
 	};
 	72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */ = {
@@ -604,7 +655,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 23";
 		rLen = 0;
-		rLoc = 548;
+		rLoc = 512;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 307;
@@ -614,7 +665,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 50";
 		rLen = 0;
-		rLoc = 1452;
+		rLoc = 1716;
 		rType = 0;
 		vrLen = 576;
 		vrLoc = 1351;
@@ -624,7 +675,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 138";
 		rLen = 0;
-		rLoc = 4813;
+		rLoc = 5077;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 3467;
@@ -634,7 +685,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 126";
 		rLen = 0;
-		rLoc = 4320;
+		rLoc = 4584;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 3467;
@@ -644,7 +695,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 139";
 		rLen = 0;
-		rLoc = 4890;
+		rLoc = 5154;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 3467;
@@ -654,7 +705,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 57";
 		rLen = 0;
-		rLoc = 1709;
+		rLoc = 1973;
 		rType = 0;
 		vrLen = 802;
 		vrLoc = 1408;
@@ -670,9 +721,6 @@
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
-		dataTipCustomDataFormattersEnabled = 1;
-		dataTipShowTypeColumn = 1;
-		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -685,7 +733,6 @@
 		name = as3BundleHelper;
 		savedGlobals = {
 		};
-		showTypeColumn = 0;
 		sourceDirectories = (
 		);
 		variableFormatDictionary = {
@@ -722,6 +769,538 @@
 		vrLen = 1164;
 		vrLoc = 0;
 	};
+	A0283D40104D62F0003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 1408;
+	};
+	A0283D47104D6473003268BF /* LogView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {815, 388}}";
+			sepNavSelRange = "{186, 0}";
+			sepNavVisRange = "{0, 195}";
+		};
+	};
+	A0283D48104D6473003268BF /* LogView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {815, 392}}";
+			sepNavSelRange = "{400, 194}";
+			sepNavVisRange = "{0, 604}";
+			sepNavWindowFrame = "{{285, 207}, {933, 623}}";
+		};
+	};
+	A0283D53104D6547003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: syntax error at 'OTHER' token";
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	A0283D54104D6547003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 14";
+		rLen = 0;
+		rLoc = 174;
+		rType = 0;
+		vrLen = 200;
+		vrLoc = 126;
+	};
+	A0283D57104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */;
+		name = "AlphaPanel.m: 33";
+		rLen = 0;
+		rLoc = 617;
+		rType = 0;
+		vrLen = 547;
+		vrLoc = 0;
+	};
+	A0283D58104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 137;
+	};
+	A0283D59104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 0;
+	};
+	A0283D5A104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D5B104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: syntax error at 'OTHER' token";
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	A0283D5C104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 861;
+		vrLoc = 1349;
+	};
+	A0283D5D104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */;
+		name = "AlphaPanel.m: 33";
+		rLen = 0;
+		rLoc = 617;
+		rType = 0;
+		vrLen = 547;
+		vrLoc = 0;
+	};
+	A0283D5E104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 137;
+	};
+	A0283D5F104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D60104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 13";
+		rLen = 0;
+		rLoc = 598;
+		rType = 0;
+		vrLen = 178;
+		vrLoc = 0;
+	};
+	A0283D61104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D62104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 15";
+		rLen = 0;
+		rLoc = 203;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	A0283D63104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 0;
+	};
+	A0283D64104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D65104D654D003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 15";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	A0283D6A104D65FF003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 18";
+		rLen = 0;
+		rLoc = 594;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	A0283D72104D6678003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D73104D6678003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D74104D6678003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D74104D6678003268BF /* LogView.h */ = {
+		isa = PBXFileReference;
+		name = LogView.h;
+		path = /Users/lucas/src/lucas/as3BundleHelper/LogView.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {815, 388}}";
+			sepNavSelRange = "{186, 0}";
+			sepNavVisRange = "{0, 195}";
+		};
+	};
+	A0283D76104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A5104AF6D90046B2DA /* PreferencesController.m */;
+		name = "PreferencesController.m: 17";
+		rLen = 30;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 453;
+		vrLoc = 148;
+	};
+	A0283D77104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A4104AF6D90046B2DA /* PreferencesController.h */;
+		name = "PreferencesController.h: 20";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 0;
+	};
+	A0283D78104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A5104AF6D90046B2DA /* PreferencesController.m */;
+		name = "PreferencesController.m: 17";
+		rLen = 30;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 450;
+		vrLoc = 151;
+	};
+	A0283D79104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A4104AF6D90046B2DA /* PreferencesController.h */;
+		name = "PreferencesController.h: 20";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 0;
+	};
+	A0283D7A104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A5104AF6D90046B2DA /* PreferencesController.m */;
+		name = "PreferencesController.m: 17";
+		rLen = 30;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 453;
+		vrLoc = 148;
+	};
+	A0283D7B104D6699003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A4104AF6D90046B2DA /* PreferencesController.h */;
+		name = "PreferencesController.h: 20";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 0;
+	};
+	A0283D7F104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A4104AF6D90046B2DA /* PreferencesController.h */;
+		name = "PreferencesController.h: 11";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 0;
+	};
+	A0283D80104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 1434;
+	};
+	A0283D81104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 20";
+		rLen = 0;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	A0283D82104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B605A4104AF6D90046B2DA /* PreferencesController.h */;
+		name = "PreferencesController.h: 11";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 467;
+		vrLoc = 0;
+	};
+	A0283D83104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 20";
+		rLen = 0;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	A0283D84104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 1434;
+	};
+	A0283D85104D6887003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 16";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 565;
+		vrLoc = 0;
+	};
+	A0283D86104D68AB003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 21";
+		rLen = 0;
+		rLoc = 398;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A0283D87104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D88104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 22";
+		rLen = 194;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A0283D89104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 137;
+	};
+	A0283D8A104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 21";
+		rLen = 0;
+		rLoc = 398;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A0283D8B104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D47104D6473003268BF /* LogView.h */;
+		name = "LogView.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 0;
+	};
+	A0283D8C104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0283D48104D6473003268BF /* LogView.m */;
+		name = "LogView.m: 22";
+		rLen = 194;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A0283D8D104D68CC003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 137;
+	};
+	A0283D94104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 137;
+	};
+	A0283D95104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 294";
+		rLen = 65;
+		rLoc = 9093;
+		rType = 0;
+		vrLen = 909;
+		vrLoc = 1093;
+	};
+	A0283D96104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 1128;
+		vrLoc = 81;
+	};
+	A0283D97104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1880FF65052004C58DC /* FlashLogViewerController.h */;
+		name = "FlashLogViewerController.h: 36";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 137;
+	};
+	A0283D98104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 57";
+		rLen = 0;
+		rLoc = 1973;
+		rType = 0;
+		vrLen = 1128;
+		vrLoc = 81;
+	};
+	A0283D99104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 294";
+		rLen = 65;
+		rLoc = 9093;
+		rType = 0;
+		vrLen = 909;
+		vrLoc = 1093;
+	};
+	A0283D9A104D69A2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 42";
+		rLen = 0;
+		rLoc = 1609;
+		rType = 0;
+		vrLen = 1199;
+		vrLoc = 489;
+	};
+	A0283D9D104D69C2003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 45";
+		rLen = 0;
+		rLoc = 1612;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 489;
+	};
+	A0283DA2104D6C38003268BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
+		name = "FlashLogViewerController.mm: 43";
+		rLen = 0;
+		rLoc = 1608;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 899;
+	};
 	A0340747103301D700BFE89D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
@@ -746,7 +1325,6 @@
 		ignoreCount = 0;
 		lineNumber = 51;
 		modificationTime = 273027472.944905;
-		originalNumberOfMultipleMatches = 0;
 		state = 0;
 	};
 	A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {
@@ -886,7 +1464,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 39";
 		rLen = 0;
-		rLoc = 1452;
+		rLoc = 1716;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 978;
@@ -901,7 +1479,7 @@
 		);
 		name = /Users/lucas/src/as3BundleHelper/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 4294967295;
 	};
 	A0B60588104AF3730046B2DA /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -913,7 +1491,7 @@
 		);
 		name = /Users/lucas/src/as3BundleHelper/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 4294967295;
 	};
 	A0B60589104AF3730046B2DA /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -962,7 +1540,7 @@
 		comments = "Expected ']' before 'scrollPageDown'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 1;
-		rLoc = 152;
+		rLoc = 155;
 		rType = 1;
 	};
 	A0B6059B104AF51A0046B2DA /* PBXTextBookmark */ = {
@@ -970,23 +1548,23 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 78";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 291;
 		vrLoc = 2183;
 	};
 	A0B605A4104AF6D90046B2DA /* PreferencesController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 336}}";
-			sepNavSelRange = "{335, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {815, 388}}";
+			sepNavSelRange = "{177, 0}";
 			sepNavVisRange = "{0, 467}";
 		};
 	};
 	A0B605A5104AF6D90046B2DA /* PreferencesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 455}}";
-			sepNavSelRange = "{311, 30}";
-			sepNavVisRange = "{152, 449}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 490}}";
+			sepNavSelRange = "{292, 0}";
+			sepNavVisRange = "{89, 512}";
 			sepNavWindowFrame = "{{38, 194}, {750, 558}}";
 		};
 	};
@@ -995,7 +1573,7 @@
 		comments = "Expected ']' before 'scrollPageDown'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 1;
-		rLoc = 152;
+		rLoc = 155;
 		rType = 1;
 	};
 	A0B605AF104AFCF70046B2DA /* PBXBookmark */ = {
@@ -1057,7 +1635,7 @@
 		comments = "Expected ']' before 'scrollPageDown'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 1;
-		rLoc = 152;
+		rLoc = 155;
 		rType = 1;
 	};
 	A0B605B6104AFCF70046B2DA /* PBXTextBookmark */ = {
@@ -1065,7 +1643,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 77";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 1673;
@@ -1075,7 +1653,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 76";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 1371;
@@ -1085,7 +1663,7 @@
 		comments = "Expected ']' before 'scrollPageDown'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 1;
-		rLoc = 152;
+		rLoc = 155;
 		rType = 1;
 	};
 	A0B605BB104AFE660046B2DA /* PBXTextBookmark */ = {
@@ -1093,7 +1671,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 77";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 241;
 		vrLoc = 2183;
@@ -1103,7 +1681,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 77";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 241;
 		vrLoc = 2183;
@@ -1131,7 +1709,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 77";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 5157;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 1673;
@@ -1849,7 +2427,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "TraceController.m: 13";
 		rLen = 12;
-		rLoc = 509;
+		rLoc = 473;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 0;
@@ -1957,7 +2535,7 @@
 		rLen = 0;
 		rLoc = 265;
 		rType = 0;
-		vrLen = 615;
+		vrLen = 610;
 		vrLoc = 137;
 	};
 	A0B606A3104B0DE70046B2DA /* PBXTextBookmark */ = {
@@ -1997,7 +2575,7 @@
 		rLen = 0;
 		rLoc = 234;
 		rType = 0;
-		vrLen = 621;
+		vrLen = 610;
 		vrLoc = 137;
 	};
 	A0B606A7104B0E200046B2DA /* PBXTextBookmark */ = {
@@ -2047,7 +2625,7 @@
 		rLen = 0;
 		rLoc = 234;
 		rType = 0;
-		vrLen = 621;
+		vrLen = 610;
 		vrLoc = 137;
 	};
 	A0B606B3104B0E530046B2DA /* PBXTextBookmark */ = {
@@ -2055,7 +2633,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 20";
 		rLen = 0;
-		rLoc = 763;
+		rLoc = 727;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 0;
@@ -2075,7 +2653,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 16";
 		rLen = 0;
-		rLoc = 383;
+		rLoc = 347;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -2095,7 +2673,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 13";
 		rLen = 0;
-		rLoc = 308;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -2105,7 +2683,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 13";
 		rLen = 0;
-		rLoc = 308;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -2123,7 +2701,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 13";
 		rLen = 0;
-		rLoc = 308;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -2251,7 +2829,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 36";
 		rLen = 0;
-		rLoc = 1348;
+		rLoc = 1612;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 226;
@@ -2281,7 +2859,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 27";
 		rLen = 0;
-		rLoc = 1103;
+		rLoc = 1067;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 226;
@@ -2431,7 +3009,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 27";
 		rLen = 0;
-		rLoc = 1103;
+		rLoc = 1067;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 228;
@@ -2455,7 +3033,7 @@
 		);
 		name = /Users/lucas/src/as3BundleHelper/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 4294967295;
 	};
 	A0B6071D104B11900046B2DA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2476,7 +3054,7 @@
 		);
 		name = /Users/lucas/src/as3BundleHelper/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 4294967295;
 	};
 	A0B60725104B11B80046B2DA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2865,7 +3443,7 @@
 		rLen = 0;
 		rLoc = 208;
 		rType = 0;
-		vrLen = 549;
+		vrLen = 538;
 		vrLoc = 209;
 	};
 	A0B607A2104B17F00046B2DA /* PBXTextBookmark */ = {
@@ -2987,7 +3565,7 @@
 		);
 		name = /Users/lucas/src/as3BundleHelper/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 4294967295;
 	};
 	A0B607C7104B1B0E0046B2DA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3322,7 +3900,7 @@
 		rLen = 0;
 		rLoc = 445;
 		rType = 0;
-		vrLen = 407;
+		vrLen = 374;
 		vrLoc = 227;
 	};
 	A0B6080F104B1E2D0046B2DA /* PBXTextBookmark */ = {
@@ -3390,7 +3968,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 20";
 		rLen = 0;
-		rLoc = 757;
+		rLoc = 721;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 37;
@@ -3430,7 +4008,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 16";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 81;
@@ -4039,9 +4617,9 @@
 	};
 	A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1307, 5096}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 5334}}";
 			sepNavSelRange = "{9093, 65}";
-			sepNavVisRange = "{8611, 831}";
+			sepNavVisRange = "{1093, 909}";
 			sepNavWindowFrame = "{{224, 24}, {933, 623}}";
 		};
 	};
@@ -4094,7 +4672,7 @@
 		comments = "'NSString' may not respond to '-addAttribute:value:range:'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 0;
-		rLoc = 151;
+		rLoc = 154;
 		rType = 1;
 	};
 	A0D7A476104CB21F0088C72F /* PBXTextBookmark */ = {
@@ -4112,7 +4690,7 @@
 		comments = "'NSString' may not respond to '-addAttribute:value:range:'";
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		rLen = 0;
-		rLoc = 151;
+		rLoc = 154;
 		rType = 1;
 	};
 	A0D7A478104CB21F0088C72F /* PBXTextBookmark */ = {
@@ -4120,7 +4698,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 99";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 2218;
@@ -4130,7 +4708,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 97";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 1912;
@@ -4140,7 +4718,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 2218;
@@ -4150,7 +4728,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 96";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 1912;
@@ -4160,7 +4738,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 2753;
@@ -4170,7 +4748,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 2218;
@@ -4180,7 +4758,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 1912;
@@ -4190,7 +4768,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 2753;
@@ -4200,7 +4778,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 2218;
@@ -4210,7 +4788,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 80";
 		rLen = 0;
-		rLoc = 2823;
+		rLoc = 3087;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 1912;
@@ -4220,7 +4798,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 595;
 		vrLoc = 2252;
@@ -4230,7 +4808,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 2218;
@@ -4240,7 +4818,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 2073;
@@ -4250,7 +4828,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 2252;
@@ -4260,7 +4838,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 2218;
@@ -4270,7 +4848,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2073;
@@ -4280,7 +4858,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 2218;
@@ -4290,7 +4868,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 89";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 2073;
@@ -4300,7 +4878,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 2252;
@@ -4310,7 +4888,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 2218;
@@ -4320,7 +4898,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 89";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 2073;
@@ -4330,7 +4908,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 568;
 		vrLoc = 2252;
@@ -4340,7 +4918,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 100";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 2218;
@@ -4350,7 +4928,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 84";
 		rLen = 0;
-		rLoc = 2937;
+		rLoc = 3201;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 2073;
@@ -4360,7 +4938,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 2218;
@@ -4370,7 +4948,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 2073;
@@ -4380,7 +4958,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 589;
 		vrLoc = 2252;
@@ -4390,7 +4968,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 2218;
@@ -4400,7 +4978,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1128;
 		vrLoc = 2073;
@@ -4410,7 +4988,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 580;
 		vrLoc = 2252;
@@ -4420,7 +4998,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 580;
 		vrLoc = 2252;
@@ -4430,7 +5008,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 2218;
@@ -4440,7 +5018,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 92";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 972;
 		vrLoc = 2218;
@@ -4450,7 +5028,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 102";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 2410;
@@ -4460,7 +5038,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 104";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 684;
 		vrLoc = 2535;
@@ -4470,7 +5048,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 102";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 2105;
@@ -4480,7 +5058,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 91";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 2105;
@@ -4490,7 +5068,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 93";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 2105;
@@ -4500,7 +5078,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 91";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 2105;
@@ -4510,7 +5088,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 91";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2105;
@@ -4520,7 +5098,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 92";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 2105;
@@ -4540,7 +5118,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 91";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 2105;
@@ -4550,7 +5128,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 94";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 2199;
@@ -4560,7 +5138,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 103";
 		rLen = 0;
-		rLoc = 4892;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 2314;
@@ -4570,7 +5148,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 102";
 		rLen = 0;
-		rLoc = 3360;
+		rLoc = 3624;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 2494;
@@ -4580,7 +5158,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 101";
 		rLen = 0;
-		rLoc = 3323;
+		rLoc = 3587;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 2494;
@@ -4590,7 +5168,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 102";
 		rLen = 0;
-		rLoc = 3365;
+		rLoc = 3629;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 2471;
@@ -4600,7 +5178,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 87";
 		rLen = 0;
-		rLoc = 2876;
+		rLoc = 3140;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 2106;
@@ -4610,7 +5188,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 110";
 		rLen = 0;
-		rLoc = 3616;
+		rLoc = 3880;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 2690;
@@ -4620,7 +5198,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 111";
 		rLen = 0;
-		rLoc = 3616;
+		rLoc = 3880;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 2690;
@@ -4630,7 +5208,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 121";
 		rLen = 0;
-		rLoc = 4037;
+		rLoc = 4301;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 3255;
@@ -4640,7 +5218,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 124";
 		rLen = 0;
-		rLoc = 4307;
+		rLoc = 4571;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 2964;
@@ -4650,7 +5228,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 134";
 		rLen = 0;
-		rLoc = 4593;
+		rLoc = 4857;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 3454;
@@ -4660,7 +5238,7 @@
 		fRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */;
 		name = "FlashLogViewerController.mm: 23";
 		rLen = 0;
-		rLoc = 548;
+		rLoc = 512;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 307;
@@ -4690,7 +5268,6 @@
 		lineNumber = 114;
 		location = as3Debugger;
 		modificationTime = 273027472.606443;
-		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
 	A0DF81811029FD6D00843A8E /* DebuggingViewController.mm:152 */ = {
@@ -4708,7 +5285,6 @@
 		lineNumber = 152;
 		location = as3Debugger;
 		modificationTime = 273027472.60646;
-		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
 	A0DF8189102A008400843A8E /* DebuggingViewController.mm:157 */ = {
@@ -4725,7 +5301,6 @@
 		ignoreCount = 0;
 		lineNumber = 157;
 		modificationTime = 273027472.928995;
-		originalNumberOfMultipleMatches = 0;
 		state = 0;
 	};
 	A0E0EDA1104AE353006BA6F1 /* PBXTextBookmark */ = {

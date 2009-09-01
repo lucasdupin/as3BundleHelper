@@ -14,9 +14,8 @@
 	
 }
 
-- (void)awakeFromNib
+- (void)windowDidLoad
 {
-	NSLog(@"Tracer awaken %@", window);
 	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
@@ -38,7 +37,11 @@
 	//Setting auto-aulpha
 	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
 	
-	NSLog(@"done starting");
+	//Setting the font of the TextView
+	if([[NSUserDefaults standardUserDefaults] stringForKey: @"flashlogFontName"] != nil){
+		field.font = [NSFont	fontWithName:	[[NSUserDefaults standardUserDefaults] stringForKey:@"flashlogFontName"]
+								size:			[[NSUserDefaults standardUserDefaults] floatForKey:@"flashlogFontSize"]];
+	}
 }
 
 //Clear the text field

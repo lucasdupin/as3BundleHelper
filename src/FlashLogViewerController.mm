@@ -85,7 +85,7 @@
 	
 	//Retrieving from userDefaults
 	NSColor * theColor;
-	NSData * colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
+	NSData * colorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
 	
 	//Do we get an empty value?
 	//Let's fill our user defaults
@@ -106,21 +106,36 @@
 		 forKey:@"flashlogWarningColor"];
 	}
 	
-	if ([output rangeOfString:ERROR_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
-		colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogExceptionColor"];
-	} else if ([output rangeOfString:WARNING_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
-		colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogWarningColor"];
-	}
-	
-	if (colorData != nil) {
-		theColor = (NSColor *)[NSUnarchiver unarchiveObjectWithData:colorData];
-	}
+	NSArray * lines = [output componentsSeparatedByString:@"\n"];
+	NSString * line;
+	for (int i=0; i<[lines count]; ++i) {
+		//Getting the line
+		if(i < [lines count] -1){
+			line = [NSString stringWithFormat:@"%@\n",[lines objectAtIndex:i]];
+		} else {
+			line = [lines objectAtIndex:i];
+		}
+		
+		if ([line rangeOfString:ERROR_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
+			colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogExceptionColor"];
+		} else if ([line rangeOfString:WARNING_MESSAGE options: NSCaseInsensitiveSearch].location != NSNotFound) {
+			colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogWarningColor"];
+		} else {
+			colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
+		}
 
-	NSMutableAttributedString * toAdd = [[[NSMutableAttributedString alloc]
-								 initWithString: output] autorelease];
-	[toAdd addAttribute:NSFontNameAttribute value:[field font] range:NSMakeRange(0, [toAdd length])];
-	[toAdd addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [toAdd length])];
-    [[field textStorage] appendAttributedString: toAdd];
+		
+		if (colorData != nil) {
+			theColor = (NSColor *)[NSUnarchiver unarchiveObjectWithData:colorData];
+		}
+		
+		NSMutableAttributedString * toAdd = [[[NSMutableAttributedString alloc]
+											  initWithString: line] autorelease];
+		[toAdd addAttribute:NSFontAttributeName value:[field font] range:NSMakeRange(0, [toAdd length])];
+		[toAdd addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [toAdd length])];
+		[[field textStorage] appendAttributedString: toAdd];
+
+	}
 
 }
 

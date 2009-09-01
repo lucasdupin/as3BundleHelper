@@ -20,7 +20,7 @@
 	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
-	if(![[NSFileManager defaultManager] fileExistsAtPath: flashlog]) {
+	if(flashlog == nil || ![[NSFileManager defaultManager] fileExistsAtPath: flashlog]) {
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
 	}

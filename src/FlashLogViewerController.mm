@@ -124,7 +124,6 @@
 			colorData= [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
 		}
 
-		
 		if (colorData != nil) {
 			theColor = (NSColor *)[NSUnarchiver unarchiveObjectWithData:colorData];
 		}
@@ -134,10 +133,10 @@
 		[toAdd addAttribute:NSFontAttributeName value:[field font] range:NSMakeRange(0, [toAdd length])];
 		[toAdd addAttribute:NSForegroundColorAttributeName value:theColor range:NSMakeRange(0, [toAdd length])];
 		[[field textStorage] appendAttributedString: toAdd];
-		
-		[field scrollPageDown:self];
 
 	}
+	
+	[field scrollRangeToVisible:NSMakeRange([[field string] length]-1, 0)];
 
 }
 

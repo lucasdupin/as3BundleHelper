@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A00C30C8104CBEA30068871A</string>
+										<string>A00C30E2104CC09B0068871A</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -556,6 +556,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>A00C30E3104CC09B0068871A</string>
+		<string>A00C30DA104CC00D0068871A</string>
+		<string>A00C30DB104CC00D0068871A</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A01E3CAB0FFE33DE00139E8B</string>
 		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
@@ -757,13 +762,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>A0D7A47C104CB21F0088C72F</string>
+				<string>A00C30D2104CC00D0068871A</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>A0D7A47D104CB21F0088C72F</string>
-				<string>A0D7A47E104CB21F0088C72F</string>
-				<string>A0D7A47F104CB21F0088C72F</string>
-				<string>A0D7A480104CB21F0088C72F</string>
-				<string>A0D7A481104CB21F0088C72F</string>
+				<string>A00C30D3104CC00D0068871A</string>
+				<string>A00C30D4104CC00D0068871A</string>
+				<string>A00C30D5104CC00D0068871A</string>
+				<string>A00C30D6104CC00D0068871A</string>
+				<string>A00C30D7104CC00D0068871A</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -890,8 +895,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -927,7 +930,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>A0D7A482104CB21F0088C72F</string>
+				<string>A00C30D8104CC00D0068871A</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

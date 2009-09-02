@@ -169,7 +169,7 @@
 										<object class="NSTextView" id="368185686">
 											<reference key="NSNextResponder" ref="520543496"/>
 											<int key="NSvFlags">2322</int>
-											<string key="NSFrameSize">{489, 16}</string>
+											<string key="NSFrameSize">{482, 16}</string>
 											<reference key="NSSuperview" ref="520543496"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="457806398">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -310,7 +310,7 @@
 													<nil key="NSDelegate"/>
 												</object>
 												<reference key="NSTextView" ref="368185686"/>
-												<double key="NSWidth">4.890000e+02</double>
+												<double key="NSWidth">4.820000e+02</double>
 												<int key="NSTCFlags">1</int>
 											</object>
 											<object class="NSTextViewSharedData" key="NSSharedData">
@@ -371,7 +371,7 @@
 											<nil key="NSDelegate"/>
 										</object>
 									</object>
-									<string key="NSFrameSize">{489, 262}</string>
+									<string key="NSFrameSize">{482, 257}</string>
 									<reference key="NSSuperview" ref="63375800"/>
 									<reference key="NSNextKeyView" ref="368185686"/>
 									<reference key="NSDocView" ref="368185686"/>
@@ -404,7 +404,7 @@
 									<double key="NSPercent">9.456522e-01</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{1, 36}, {489, 262}}</string>
+							<string key="NSFrame">{{7.60938, 36}, {481.821, 256.871}}</string>
 							<reference key="NSSuperview" ref="414615268"/>
 							<reference key="NSNextKeyView" ref="520543496"/>
 							<int key="NSsFlags">528</int>

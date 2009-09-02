@@ -19,7 +19,8 @@
 	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
-	if(flashlog == nil || ![[NSFileManager defaultManager] fileExistsAtPath: flashlog]) {
+	if(![[NSFileManager defaultManager] fileExistsAtPath: [NSString stringWithFormat:@"%@", flashlog]]) {
+		NSLog(@"nil value");
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
 	}
@@ -98,6 +99,8 @@
 		return;
 		//Nothing to do here
 	}
+	
+	NSLog(@"from tail: %@",output);
 	
 	//Retrieving from userDefaults
 	NSColor * theColor;

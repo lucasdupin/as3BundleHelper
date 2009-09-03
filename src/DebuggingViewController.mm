@@ -11,13 +11,14 @@
 #pragma mark FDB Responses
 
 //Connecting
-#define FDB_WAITING_CONNECT				@"Waiting for Player to connect"
-#define FDB_CONNECTION_FAILED			@"Failed to connect; session timed out."
-#define FDB_INSERT_BREAKPOINTS			@"Set breakpoints and then type 'continue' to resume the session."
-#define FDB_ALREADY_RUNNING				@"Another Flash debugger is probably running"
+#define FDB_WAITING_CONNECT					@"Waiting for Player to connect"
+#define FDB_CONNECTION_FAILED				@"Failed to connect; session timed out."
+#define FDB_INSERT_BREAKPOINTS				@"Set breakpoints and then type 'continue' to resume the session."
+#define FDB_INSERT_ADDITIONAL_BREAKPOINTS	@"Set additional breakpoints as desired, and then type 'continue'."
+#define FDB_ALREADY_RUNNING					@"Another Flash debugger is probably running"
 //Breakpointing
-#define FDB_REACH_BREAKPOINT			@"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n"
-#define FDB_NEXT_BREAKPOINT				@"^ (?<line>\\d+)"
+#define FDB_REACH_BREAKPOINT				@"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n"
+#define FDB_NEXT_BREAKPOINT					@"^(.*\\n)* (?<line>\\d+)[\\t+| +]"
 
 
 #pragma mark Application states
@@ -203,6 +204,7 @@
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
 	[fdbTask sendData: @"continue \n"];
+	[self setState: ST_WAITING_FOR_PLAYER_OR_FDB];
 }
 - (IBAction) dettach: (id)sender
 {
@@ -234,7 +236,7 @@
 			//Replace highlight line number
 			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
 			
-			NSLog(@"%@", htmlFileContents);
+			//NSLog(@"%@", htmlFileContents);
 			break;
 		}
 		
@@ -255,6 +257,8 @@
 	
 	currentState = state;
 	[[window toolbar] validateVisibleItems];
+	
+	NSLog(@"state changed to: %@", state);
 }
 //Menu item validation
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
@@ -300,7 +304,8 @@
 		[self dettach: self];
 		
 	//Connected and waiting for breakpoints
-	} else if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
+	} else if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound || //Insert breakpoints
+		[output rangeOfString:FDB_INSERT_ADDITIONAL_BREAKPOINTS].location != NSNotFound) //Loaded another swf
 	{
 		//Time to set Breakpoints
 		NSLog(@"Setting %d breakpoints", [breakpoints count]);

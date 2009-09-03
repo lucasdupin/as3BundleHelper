@@ -14,11 +14,6 @@
 
 - (void)viewDidMoveToWindow {
 	
-//	//Prepare for animations
-//	CAAnimation *anim = [CABasicAnimation animation];
-//    [anim setDelegate:self];
-//	[self.window setAnimations:[NSDictionary dictionaryWithObject:anim forKey:@"alphaValue"]];
-	
 }
 
 - (void)setFrame:(NSRect)frame {
@@ -36,6 +31,7 @@
 - (void)mouseExited:(NSEvent *)theEvent
 {
 	//NSLog(@"Mouse Exit");
+	BOOL autoAlpha = [[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"flashLogAutoAlpha"] intValue] == 1;
 	if(autoAlpha)
 		[[[self window] animator] setAlphaValue:0.3];
 	
@@ -50,11 +46,6 @@
 	
     [self removeTrackingRect:rectTag];
 	rectTag = [self addTrackingRect:trackRect owner:self userData:NULL assumeInside:NO];
-}
-
-- (void) setAutoAlpha: (BOOL)value
-{
-	autoAlpha = value;
 }
 
 @end

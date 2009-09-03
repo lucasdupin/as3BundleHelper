@@ -35,9 +35,6 @@
 	
 	[self startTask];
 	
-	//Setting auto-aulpha
-	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
-	
 	//Setting the font of the TextView
 	if([[NSUserDefaults standardUserDefaults] stringForKey: @"flashlogFontName"] != nil){
 		field.font = [NSFont	fontWithName:	[[NSUserDefaults standardUserDefaults] stringForKey:@"flashlogFontName"]

@@ -421,28 +421,16 @@
 				<string key="NSFrameAutosaveName">logViewer</string>
 			</object>
 			<object class="NSUserDefaultsController" id="907520288">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>flashLogAutoAlpha</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.flashLogPath</string>
-						<reference key="source" ref="187624900"/>
-						<reference key="destination" ref="907520288"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="187624900"/>
-							<reference key="NSDestination" ref="907520288"/>
-							<string key="NSLabel">value: values.flashLogPath</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.flashLogPath</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">24</int>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">alphaPanel</string>
@@ -498,6 +486,22 @@
 						<reference key="destination" ref="631229400"/>
 					</object>
 					<int key="connectionID">32</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.flashLogAutoAlpha</string>
+						<reference key="source" ref="187624900"/>
+						<reference key="destination" ref="907520288"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="187624900"/>
+							<reference key="NSDestination" ref="907520288"/>
+							<string key="NSLabel">value: values.flashLogAutoAlpha</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.flashLogAutoAlpha</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">33</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -694,7 +698,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">32</int>
+			<int key="maxID">33</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

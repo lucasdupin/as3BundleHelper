@@ -10,6 +10,7 @@
 #import "TaskWrapper.h"
 #import <RegexKit/RegexKit.h>
 #import <WebKit/WebKit.h>
+#import "Variable.h"
 
 //C
 #include <sys/xattr.h>
@@ -19,6 +20,7 @@
 @interface DebuggingViewController : NSWindowController <TaskWrapperController> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
+	IBOutlet NSTreeController *variablesTree;
 	
 	//Path of the .as files
 	NSString *projectPath;

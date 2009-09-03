@@ -15,6 +15,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A0283D49104D6473003268BF /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0283D48104D6473003268BF /* LogView.m */; };
+		A05C69FE1050779F00E63E33 /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C69FD1050779F00E63E33 /* Variable.m */; };
 		A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A0B60582104AF35E0046B2DA /* TB_Run.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6057D104AF35E0046B2DA /* TB_Run.png */; };
@@ -71,6 +72,8 @@
 		8D1107320486CEB800E47090 /* as3Debugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = as3Debugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0283D47104D6473003268BF /* LogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogView.h; path = src/LogView.h; sourceTree = "<group>"; };
 		A0283D48104D6473003268BF /* LogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogView.m; path = src/LogView.m; sourceTree = "<group>"; };
+		A05C69FC1050779F00E63E33 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Variable.h; path = src/Variable.h; sourceTree = "<group>"; };
+		A05C69FD1050779F00E63E33 /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Variable.m; path = src/Variable.m; sourceTree = "<group>"; };
 		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
 		A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; name = as3BundleHelper.sdef; path = applescript/as3BundleHelper.sdef; sourceTree = "<group>"; };
 		A0B6057D104AF35E0046B2DA /* TB_Run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Run.png; path = Resources/icons/debugger/TB_Run.png; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 		72443CD2101CCF93000D76CE /* DebuggingView */ = {
 			isa = PBXGroup;
 			children = (
+				A05C69FB1050776800E63E33 /* Variables */,
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
 				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
@@ -238,6 +242,15 @@
 				A0B60577104AF34B0046B2DA /* debugger */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		A05C69FB1050776800E63E33 /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				A05C69FC1050779F00E63E33 /* Variable.h */,
+				A05C69FD1050779F00E63E33 /* Variable.m */,
+			);
+			name = Variables;
 			sourceTree = "<group>";
 		};
 		A0B60577104AF34B0046B2DA /* debugger */ = {
@@ -357,6 +370,7 @@
 				A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */,
 				A0B605A6104AF6D90046B2DA /* PreferencesController.m in Sources */,
 				A0283D49104D6473003268BF /* LogView.m in Sources */,
+				A05C69FE1050779F00E63E33 /* Variable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,6 +70,9 @@
 	}
 	connected = false;
 	
+	NSMutableArray * content = [[NSMutableArray alloc] initWithObjects:
+								[[Variable alloc] init], [[Variable alloc] init], [[Variable alloc] init], nil];
+	[variablesTree setContent:content];
 }
 
 

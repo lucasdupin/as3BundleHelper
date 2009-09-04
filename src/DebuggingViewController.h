@@ -56,10 +56,14 @@
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
 
+//Breakpoints
 - (void) lookAfterBreakpoints;
 - (void) findASFilesInPath: (NSString*)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
-- (void) parseVarsForString: (NSString *)inputString;
+
+//Vars outliner management
+- (void) parseVarsForString: (NSString *)inputString ignoringFirstLine: (BOOL) ignoreFirstLine;
+- (void) clearVarsList;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

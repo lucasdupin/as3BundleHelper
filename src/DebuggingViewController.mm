@@ -21,15 +21,17 @@
 #define FDB_NEXT_BREAKPOINT					@"^(.*\\n)* (?<line>\\d+)[\\t+| +]"
 //Reading vars
 #define FDB_VARIABLE_LIST					@"^\\$\\d+ = this = \\[(.+) \\d+, class=\\'(?<class>.+)\\'\\]"
+#define FDB_VARIABLE_LIST_ENDING			@"\\(fdb\\)\\s$"
 #define FDB_GET_VARIABLE_VALUE				@"^\\s(?<name>.+)\\s=\\s(?<value>.+)$"
 
 
 #pragma mark Application states
 //Debugger states
-#define ST_NO_PROJECT_PATH				@"no_project_path"
-#define ST_DISCONNECTED					@"disconnected"
-#define ST_WAITING_FOR_PLAYER_OR_FDB	@"waiting_for_player_to_connect"
-#define ST_REACH_BREAKPOINT				@"reach_breakpoint"
+#define ST_NO_PROJECT_PATH					@"no_project_path"
+#define ST_DISCONNECTED						@"disconnected"
+#define ST_WAITING_FOR_PLAYER_OR_FDB		@"waiting_for_player_to_connect"
+#define ST_REACH_BREAKPOINT					@"reach_breakpoint"
+#define ST_REACH_BREAKPOINT__READING_VARS	@"reading_vars"
 
 
 @implementation DebuggingViewController
@@ -79,7 +81,7 @@
 }
 
 
-#pragma mark Breakpoints an Files search methods
+#pragma mark Breakpoints and Files search methods
 //Searches fo breakpoints in files
 - (void) lookAfterBreakpoints
 {
@@ -251,24 +253,28 @@
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
-- (void) parseVarsForString: (NSString *)inputString
+- (void) clearVarsList
 {
-	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
+	[variablesTree setContent:[[[NSMutableArray alloc] init] autorelease]];
+}
+- (void) parseVarsForString: (NSString *)inputString ignoringFirstLine: (BOOL) ignoreFirstLine
+{
+	NSMutableArray * result = [variablesTree content];
 	NSArray * lines = [inputString componentsSeparatedByString:@"\n"];
 	NSString * line;
 	
 	NSLog(@"PARSING VARS FROM FDB");
 
 	//Not first line, it's not a var
-	for (int i=1; i<[lines count]; ++i) {
+	int i = 0;
+	if(ignoreFirstLine) i=1;
+	while (i<[lines count]) {
 		//Getting the line
 		line = [lines objectAtIndex:i];
 		
 		NSLog(@"PARSING %@", line);
 		
 		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
-			
-			NSLog(@"PARSING %@", line);
 			
 			Variable * var = [[Variable alloc] init];
 			
@@ -283,6 +289,8 @@
 			
 			[result addObject:var];
 		}
+		
+		++i;
 	}
 	
 	[variablesTree setContent:result];
@@ -317,7 +325,7 @@
 		if([item action] == @selector(connect:)) {
 			return YES;
 		}
-	} else if([currentState isEqual:ST_REACH_BREAKPOINT]){
+	} else if([currentState isEqual:ST_REACH_BREAKPOINT] || [currentState isEqual:ST_REACH_BREAKPOINT__READING_VARS]){
 		if([item action] == @selector(dettach:) || [item action] == @selector(step:) || [item action] == @selector(stepOut:) || [item action] == @selector(continueTilNextBreakPoint:)) {
 			return YES;
 		}
@@ -328,6 +336,9 @@
 }
 
 #pragma mark Task management
+/*******
+ this method received all fdb output from the pipe
+ *******/
 - (void)appendOutput:(NSString *)output
 {
 	//NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
@@ -406,7 +417,21 @@
 		[fdbTask sendData:@"print this.\n"];
 		
 	} else if ([output isMatchedByRegex:FDB_VARIABLE_LIST]) {
-		[self parseVarsForString: output];
+		//Parsing output
+		[self clearVarsList];
+		[self parseVarsForString: output ignoringFirstLine: YES];
+		
+		//Check if it's the end of the list or if we're going to receive more output
+		if(![output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
+			[self setState:ST_REACH_BREAKPOINT__READING_VARS];
+		}
+	} else if ([currentState isEqual:ST_REACH_BREAKPOINT__READING_VARS]) {
+		[self parseVarsForString: output ignoringFirstLine: NO];
+		
+		//Reach the end?
+		if([output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING])
+			[self setState:ST_REACH_BREAKPOINT];
+
 	} else {
 		
 		//Dont; know what you're saying

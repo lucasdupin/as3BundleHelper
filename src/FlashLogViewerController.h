@@ -25,7 +25,6 @@
 
 - (IBAction) clear: (id)sender;
 - (IBAction) separate: (id)sender;
-- (IBAction) setAutoAlpha: (id)sender;
 
 
 - (void)processStarted;

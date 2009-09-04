@@ -13,9 +13,6 @@
 
 -(id) init
 {
-	name = @"Minha var";
-	value = @"77";
-	
 	return self;
 }
 
@@ -28,16 +25,7 @@
 	return child;
 }
 
--(void) setName:(NSString *) newName
-{
-	name = newName;
-}
--(NSString *) name
-{
-	NSLog(@"Reading name %@", name);
-	return name;
-}
-
+@synthesize name;
 @synthesize value;
 
 @end

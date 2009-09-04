@@ -18,7 +18,7 @@
 
 @property (assign) NSMutableArray * child;
 
-@property (readonly) NSString * name;
-@property (assign) id value;
+@property (copy) NSString * name;
+@property (copy) id value;
 
 @end

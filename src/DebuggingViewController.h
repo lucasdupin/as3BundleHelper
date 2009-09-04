@@ -59,6 +59,7 @@
 - (void) lookAfterBreakpoints;
 - (void) findASFilesInPath: (NSString*)path;
 - (NSArray *) getBookmarksForFile: (NSString*)path;
+- (void) parseVarsForString: (NSString *)inputString;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

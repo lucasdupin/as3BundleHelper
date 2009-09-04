@@ -19,6 +19,9 @@
 //Breakpointing
 #define FDB_REACH_BREAKPOINT				@"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n"
 #define FDB_NEXT_BREAKPOINT					@"^(.*\\n)* (?<line>\\d+)[\\t+| +]"
+//Reading vars
+#define FDB_VARIABLE_LIST					@"^\\$\\d+ = this = \\[(.+) \\d+, class=\\'(?<class>.+)\\'\\]"
+#define FDB_GET_VARIABLE_VALUE				@"^\\s(?<name>.+)\\s=\\s(?<value>.+)$"
 
 
 #pragma mark Application states
@@ -216,7 +219,7 @@
 	[self setState: ST_DISCONNECTED];
 }
 
-#pragma mark Code presentation
+#pragma mark Code and vars presentation
 //Show file with highlighted number in codeView
 - (void) showFile: (NSString*)file at: (int)line
 {
@@ -246,6 +249,43 @@
 	}
 	
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
+}
+
+- (void) parseVarsForString: (NSString *)inputString
+{
+	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
+	NSArray * lines = [inputString componentsSeparatedByString:@"\n"];
+	NSString * line;
+	
+	NSLog(@"PARSING VARS FROM FDB");
+
+	//Not first line, it's not a var
+	for (int i=1; i<[lines count]; ++i) {
+		//Getting the line
+		line = [lines objectAtIndex:i];
+		
+		NSLog(@"PARSING %@", line);
+		
+		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
+			
+			NSLog(@"PARSING %@", line);
+			
+			Variable * var = [[Variable alloc] init];
+			
+			NSString * name;
+			NSString * value;
+			 [line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &name, @"${value}", &value, nil];
+			
+			var.name = name;
+			var.value = value;
+			
+			NSLog(@"Found var: %@ -> %@", name, value);
+			
+			[result addObject:var];
+		}
+	}
+	
+	[variablesTree setContent:result];
 }
 
 #pragma mark State changing
@@ -290,7 +330,7 @@
 #pragma mark Task management
 - (void)appendOutput:(NSString *)output
 {
-	NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
+	//NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
 	
 	
 	/*******
@@ -346,6 +386,9 @@
 		
 		//Showing file
 		[self showFile: currentFile at: [line intValue]];
+		
+		//Asking for vars
+		[fdbTask sendData:@"print this.\n"];
 
 	//Continuing in breakpoint (updating line number)
 	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [output isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
@@ -359,9 +402,15 @@
 		
 		[self setState: ST_REACH_BREAKPOINT];
 		
+		//Asking for vars
+		[fdbTask sendData:@"print this.\n"];
+		
+	} else if ([output isMatchedByRegex:FDB_VARIABLE_LIST]) {
+		[self parseVarsForString: output];
 	} else {
 		
 		//Dont; know what you're saying
+		NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
 		//[self alert:output];
 	}
 

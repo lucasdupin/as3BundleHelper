@@ -253,22 +253,16 @@
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
-- (void) clearVarsList
+- (void) parseVarsForString: (NSString *)inputString
 {
-	[variablesTree setContent:[[[NSMutableArray alloc] init] autorelease]];
-}
-- (void) parseVarsForString: (NSString *)inputString ignoringFirstLine: (BOOL) ignoreFirstLine
-{
-	NSMutableArray * result = [variablesTree content];
+	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
 	NSArray * lines = [inputString componentsSeparatedByString:@"\n"];
 	NSString * line;
 	
 	NSLog(@"PARSING VARS FROM FDB");
 
 	//Not first line, it's not a var
-	int i = 0;
-	if(ignoreFirstLine) i=1;
-	while (i<[lines count]) {
+	for (int i=0; i < [lines count]; ++i) {
 		//Getting the line
 		line = [lines objectAtIndex:i];
 		
@@ -289,8 +283,6 @@
 			
 			[result addObject:var];
 		}
-		
-		++i;
 	}
 	
 	[variablesTree setContent:result];
@@ -418,19 +410,20 @@
 		
 	} else if ([output isMatchedByRegex:FDB_VARIABLE_LIST]) {
 		//Parsing output
-		[self clearVarsList];
-		[self parseVarsForString: output ignoringFirstLine: YES];
+		varsTruncatedOutput = output;
 		
 		//Check if it's the end of the list or if we're going to receive more output
 		if(![output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
 			[self setState:ST_REACH_BREAKPOINT__READING_VARS];
 		}
 	} else if ([currentState isEqual:ST_REACH_BREAKPOINT__READING_VARS]) {
-		[self parseVarsForString: output ignoringFirstLine: NO];
+		varsTruncatedOutput = [varsTruncatedOutput stringByAppendingString:output];
 		
 		//Reach the end?
-		if([output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING])
+		if([output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
+			[self parseVarsForString:varsTruncatedOutput];
 			[self setState:ST_REACH_BREAKPOINT];
+		}
 
 	} else {
 		

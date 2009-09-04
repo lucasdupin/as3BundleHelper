@@ -36,6 +36,9 @@
 	//Breakpoints in projet
 	NSMutableArray *breakpoints;
 	
+	//String representing fdb truncated output
+	NSString * varsTruncatedOutput;
+	
 	//File we're seeing
 	NSString *currentFile;
 	
@@ -62,8 +65,7 @@
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
 //Vars outliner management
-- (void) parseVarsForString: (NSString *)inputString ignoringFirstLine: (BOOL) ignoreFirstLine;
-- (void) clearVarsList;
+- (void) parseVarsForString: (NSString *)inputString;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

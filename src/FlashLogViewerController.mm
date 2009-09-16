@@ -91,9 +91,16 @@
 		//Nothing to do here
 	}
 	
-	NSLog(@"from tail: %@",output);
+	//Will we scroll the field?
+	BOOL shouldScroll = [[NSUserDefaults standardUserDefaults] boolForKey:@"flashlogAlwaysScroll"]; //Preference
+	if(!shouldScroll){
+		//The preference says we must check if we're going to auto-scroll
+		NSLog(@"Calculating shouldScroll bounds:%d total:%d", (int)NSMaxY([field bounds]), (int)NSMaxY([field visibleRect]));
+		shouldScroll = ((int)NSMaxY([field bounds]) == (int)NSMaxY([field visibleRect]));
+	}
 	
 	//Retrieving from userDefaults
+	
 	NSColor * theColor;
 	NSData * colorData = [[NSUserDefaults standardUserDefaults] dataForKey:@"flashlogTextColor"];
 	
@@ -146,7 +153,8 @@
 
 	}
 	
-	[field scrollRangeToVisible:NSMakeRange([[field string] length]-1, 0)];
+	if(shouldScroll)
+		[field scrollRangeToVisible:NSMakeRange([[field string] length], 0)];
 
 }
 

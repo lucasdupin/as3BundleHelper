@@ -10,15 +10,26 @@
 
 
 @interface Variable : NSObject {
+	//For output
 	NSString * name;
 	id value;
 	
+	//The real path in the FDB
+	NSString * fullName;
+	
+	//Delegate to update children
+	id delegate;
+	
 	NSMutableArray * child;
+
 }
 
-@property (assign) NSMutableArray * child;
+- (BOOL) leaf;
 
+@property (assign) id delegate;
+@property (assign) NSMutableArray * child;
 @property (copy) NSString * name;
+@property (copy) NSString * fullName;
 @property (copy) id value;
 
 @end

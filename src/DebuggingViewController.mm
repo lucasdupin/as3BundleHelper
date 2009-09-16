@@ -74,10 +74,6 @@
 		
 	}
 	connected = false;
-	
-	NSMutableArray * content = [[NSMutableArray alloc] initWithObjects:
-								[[Variable alloc] init], [[Variable alloc] init], [[Variable alloc] init], nil];
-	[variablesTree setContent:content];
 }
 
 
@@ -253,7 +249,7 @@
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
-- (void) parseVarsForString: (NSString *)inputString
+- (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) var
 {
 	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
 	NSArray * lines = [inputString componentsSeparatedByString:@"\n"];
@@ -266,11 +262,10 @@
 		//Getting the line
 		line = [lines objectAtIndex:i];
 		
-		NSLog(@"PARSING %@", line);
-		
 		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
 			
 			Variable * var = [[Variable alloc] init];
+			var.delegate = self;
 			
 			NSString * name;
 			NSString * value;
@@ -279,8 +274,7 @@
 			var.name = name;
 			var.value = value;
 			
-			NSLog(@"Found var: %@ -> %@", name, value);
-			
+			//NSLog(@"Found var: %@ -> %@", name, value);
 			[result addObject:var];
 		}
 	}
@@ -406,9 +400,10 @@
 		[self setState: ST_REACH_BREAKPOINT];
 		
 		//Asking for vars
+		currentInspectedVar = @"this";
 		[fdbTask sendData:@"print this.\n"];
 		
-	} else if ([output isMatchedByRegex:FDB_VARIABLE_LIST]) {
+	} else if ([output isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
 		//Parsing output
 		varsTruncatedOutput = output;
 		
@@ -421,14 +416,14 @@
 		
 		//Reach the end?
 		if([output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
-			[self parseVarsForString:varsTruncatedOutput];
+			[self parseVarsForString: varsTruncatedOutput atNode: nil];
 			[self setState:ST_REACH_BREAKPOINT];
 		}
 
 	} else {
 		
 		//Dont; know what you're saying
-		NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
+		NSLog(@"fdb: %@", output);
 		//[self alert:output];
 	}
 

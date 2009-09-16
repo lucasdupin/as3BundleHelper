@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="16"/>
+			<integer value="4"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -507,7 +507,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="705015021"/>
 																	<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
 																		<bool key="NSAscending">YES</bool>
@@ -562,7 +561,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 																</object>
 															</object>
 															<double key="NSRowHeight">2.000000e+01</double>
-															<int key="NSTvFlags">-767557632</int>
+															<int key="NSTvFlags">-1035993088</int>
 															<int key="NSColumnAutoresizingStyle">4</int>
 															<int key="NSDraggingSourceMaskForLocal">15</int>
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -774,6 +773,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				<bool key="NSPreservesSelection">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<string key="NSTreeContentChildrenKey">child</string>
+				<string key="NSTreeContentLeafKey">leaf</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1190,9 +1190,9 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{259, 221}, {667, 476}}</string>
+					<string>{{750, 66}, {667, 476}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{259, 221}, {667, 476}}</string>
+					<string>{{750, 66}, {667, 476}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{28, 701}, {617, 0}}</string>

@@ -38,6 +38,7 @@
 	
 	//String representing fdb truncated output
 	NSString * varsTruncatedOutput;
+	NSString * currentInspectedVar;
 	
 	//File we're seeing
 	NSString *currentFile;
@@ -65,7 +66,7 @@
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
 //Vars outliner management
-- (void) parseVarsForString: (NSString *)inputString;
+- (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) var;
 
 //TaskWrapperController
 - (void)appendOutput:(NSString *)output;

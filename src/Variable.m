@@ -22,10 +22,18 @@
 }
 -(NSMutableArray *) child
 {
+	NSLog(@"child of %@", fullName);
 	return child;
 }
 
+- (BOOL) leaf
+{
+	return [value rangeOfString:@"Object"].location == NSNotFound;
+}
+
 @synthesize name;
+@synthesize fullName;
 @synthesize value;
+@synthesize child;
 
 @end

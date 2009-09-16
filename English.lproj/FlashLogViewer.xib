@@ -169,7 +169,7 @@
 										<object class="NSTextView" id="368185686">
 											<reference key="NSNextResponder" ref="520543496"/>
 											<int key="NSvFlags">2322</int>
-											<string key="NSFrameSize">{482, 16}</string>
+											<string key="NSFrameSize">{492, 16}</string>
 											<reference key="NSSuperview" ref="520543496"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="457806398">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -310,7 +310,7 @@
 													<nil key="NSDelegate"/>
 												</object>
 												<reference key="NSTextView" ref="368185686"/>
-												<double key="NSWidth">4.820000e+02</double>
+												<double key="NSWidth">4.920000e+02</double>
 												<int key="NSTCFlags">1</int>
 											</object>
 											<object class="NSTextViewSharedData" key="NSSharedData">
@@ -371,7 +371,7 @@
 											<nil key="NSDelegate"/>
 										</object>
 									</object>
-									<string key="NSFrameSize">{482, 257}</string>
+									<string key="NSFrameSize">{492, 257}</string>
 									<reference key="NSSuperview" ref="63375800"/>
 									<reference key="NSNextKeyView" ref="368185686"/>
 									<reference key="NSDocView" ref="368185686"/>
@@ -404,7 +404,7 @@
 									<double key="NSPercent">9.456522e-01</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{7.60938, 36}, {481.821, 256.871}}</string>
+							<string key="NSFrame">{{8, 36}, {491.958, 256.871}}</string>
 							<reference key="NSSuperview" ref="414615268"/>
 							<reference key="NSNextKeyView" ref="520543496"/>
 							<int key="NSsFlags">528</int>
@@ -421,10 +421,6 @@
 				<string key="NSFrameAutosaveName">logViewer</string>
 			</object>
 			<object class="NSUserDefaultsController" id="907520288">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>flashLogAutoAlpha</string>
-				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -464,22 +460,6 @@
 					<int key="connectionID">29</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">separate:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="21265836"/>
-					</object>
-					<int key="connectionID">30</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">setAutoAlpha:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="187624900"/>
-					</object>
-					<int key="connectionID">31</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
 						<reference key="source" ref="1001"/>
@@ -502,6 +482,14 @@
 						</object>
 					</object>
 					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">separate:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="21265836"/>
+					</object>
+					<int key="connectionID">34</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -666,9 +654,9 @@
 					<string>com.brandonwalkin.BWToolkit</string>
 					<string>com.brandonwalkin.BWToolkit</string>
 					<string>com.brandonwalkin.BWToolkit</string>
-					<string>{{188, 391}, {511, 301}}</string>
+					<string>{{648, 312}, {511, 301}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{188, 391}, {511, 301}}</string>
+					<string>{{648, 312}, {511, 301}}</string>
 					<boolean value="YES"/>
 					<string>AlphaPanel</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -698,7 +686,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">34</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -736,11 +724,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
 							<string>separate:</string>
-							<string>setAutoAlpha:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>

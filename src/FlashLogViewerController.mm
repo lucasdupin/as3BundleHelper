@@ -92,10 +92,10 @@
 	}
 	
 	//Will we scroll the field?
-	BOOL shouldScroll = [[NSUserDefaults standardUserDefaults] boolForKey:@"flashlogAlwaysScroll"]; //Preference
+	BOOL shouldScroll = [[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashlogAlwaysScroll"] boolValue]; //Preference
+	NSLog(@"should scroll: %d", shouldScroll);
 	if(!shouldScroll){
 		//The preference says we must check if we're going to auto-scroll
-		NSLog(@"Calculating shouldScroll bounds:%d total:%d", (int)NSMaxY([field bounds]), (int)NSMaxY([field visibleRect]));
 		shouldScroll = ((int)NSMaxY([field bounds]) == (int)NSMaxY([field visibleRect]));
 	}
 	

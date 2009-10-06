@@ -73,7 +73,6 @@
 
 
 #pragma mark Breakpoints an Files search methods
-//Searches fo breakpoints in files
 - (void) lookAfterBreakpoints
 {
 	if(breakpoints != nil) [breakpoints release];
@@ -95,9 +94,7 @@
 	}
 }
 
-//Loops through the path and search for .as files in folders wich are not hidden
-//get the metadata of the files looking for a plist of breakpoints
-//(Textmate bookmarks)
+
 - (void) findASFilesInPath: (NSString*)path
 {
 	actionScriptFiles = [[NSMutableArray alloc] init];
@@ -132,7 +129,6 @@
 	}
 }
 
-//Gets the bookmark list for the file given
 - (NSArray*) getBookmarksForFile: (NSString*)path
 {
 	const char * key = "com.macromates.bookmarked_lines";
@@ -170,9 +166,9 @@
 }
 
 #pragma mark Toolbar methods
-//Starts FDB, find breakpoints in project path
 - (IBAction) connect: (id)sender
 {
+	//Stops the fdb if it's already running
 	if(fdbTask != nil)
 		[fdbTask stopProcess];
 	
@@ -184,12 +180,14 @@
 	[self findASFilesInPath:projectPath];
 	[self lookAfterBreakpoints];
 	
+	//Launch the fdb process
 	NSLog(@"FDB Command: %@", fdbCommandPath);
 	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
 	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
 	[fdbTask setLaunchPath: flexPath];
 	[fdbTask startProcess];
 	
+	//Tell it to start listening
 	[fdbTask sendData:@"run\n"];
 }
 - (IBAction) step: (id)sender
@@ -212,7 +210,6 @@
 }
 
 #pragma mark Code presentation
-//Show file with highlighted number in codeView
 - (void) showFile: (NSString*)file at: (int)line
 {
 	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
@@ -362,8 +359,6 @@
 - (void)processStarted{};
 - (void)processFinished{};
 
-//Stops task. Useful for quitting the program and not leaving
-//Something open
 - (void)stopTask {
 	[projectPath release];
 	[fdbCommandPath release];

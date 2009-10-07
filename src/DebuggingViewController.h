@@ -10,13 +10,14 @@
 #import "TaskWrapper.h"
 #import <RegexKit/RegexKit.h>
 #import <WebKit/WebKit.h>
+#import "FDBCommunicator.h"
 
 //C
 #include <sys/xattr.h>
 #include <zlib.h>
 #include <vector>
 
-@interface DebuggingViewController : NSWindowController <TaskWrapperController> {
+@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	
@@ -26,8 +27,7 @@
 	NSString *fdbCommandPath;
 	//SDK path
 	NSString *flexPath;
-	//Task wich we talk to
-	TaskWrapper *fdbTask;
+	
 	
 	//.as files in project path
 	NSMutableArray *actionScriptFiles;
@@ -42,6 +42,9 @@
 	
 	//Are we connected?
 	BOOL connected;
+	
+	//The FDB we're talking to
+	FDBCommunicator * fdbCommunicator;
 }
 
 @property (readonly) BOOL connected;
@@ -67,12 +70,6 @@
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
 
-/****
- TaskWrapperController
- ****/
-- (void)appendOutput:(NSString *)output; //Receives the output of the fdb
-- (void)processStarted;
-- (void)processFinished;
 //Stops task. Useful when quitting the program and not
 //leaving something open
 - (void)stopTask;

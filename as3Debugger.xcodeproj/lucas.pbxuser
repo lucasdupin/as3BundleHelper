@@ -133,6 +133,22 @@
 			A088A12B107C0CC500C568CA /* PBXTextBookmark */ = A088A12B107C0CC500C568CA /* PBXTextBookmark */;
 			A088A12D107C0D9300C568CA /* PBXTextBookmark */ = A088A12D107C0D9300C568CA /* PBXTextBookmark */;
 			A088A12E107C0D9300C568CA /* PBXTextBookmark */ = A088A12E107C0D9300C568CA /* PBXTextBookmark */;
+			A088A133107C0FCF00C568CA /* PBXBookmark */ = A088A133107C0FCF00C568CA /* PBXBookmark */;
+			A088A13B107C118300C568CA /* XCBuildMessageTextBookmark */ = A088A13B107C118300C568CA /* XCBuildMessageTextBookmark */;
+			A088A13C107C118300C568CA /* PBXTextBookmark */ = A088A13C107C118300C568CA /* PBXTextBookmark */;
+			A088A140107C128000C568CA /* PBXTextBookmark */ = A088A140107C128000C568CA /* PBXTextBookmark */;
+			A088A141107C128000C568CA /* PBXTextBookmark */ = A088A141107C128000C568CA /* PBXTextBookmark */;
+			A088A142107C128000C568CA /* PBXTextBookmark */ = A088A142107C128000C568CA /* PBXTextBookmark */;
+			A088A143107C128000C568CA /* PBXTextBookmark */ = A088A143107C128000C568CA /* PBXTextBookmark */;
+			A088A144107C128000C568CA /* PBXTextBookmark */ = A088A144107C128000C568CA /* PBXTextBookmark */;
+			A088A145107C128000C568CA /* PBXTextBookmark */ = A088A145107C128000C568CA /* PBXTextBookmark */;
+			A088A148107C128000C568CA /* PBXTextBookmark */ = A088A148107C128000C568CA /* PBXTextBookmark */;
+			A088A14B107C131E00C568CA /* PBXTextBookmark */ = A088A14B107C131E00C568CA /* PBXTextBookmark */;
+			A088A14C107C131E00C568CA /* PBXTextBookmark */ = A088A14C107C131E00C568CA /* PBXTextBookmark */;
+			A088A14D107C131E00C568CA /* PBXTextBookmark */ = A088A14D107C131E00C568CA /* PBXTextBookmark */;
+			A088A14E107C131E00C568CA /* PBXTextBookmark */ = A088A14E107C131E00C568CA /* PBXTextBookmark */;
+			A088A14F107C14C700C568CA /* PBXTextBookmark */ = A088A14F107C14C700C568CA /* PBXTextBookmark */;
+			A088A150107C14C700C568CA /* PBXTextBookmark */ = A088A150107C14C700C568CA /* PBXTextBookmark */;
 			A0A5B0761044D0E500A5949E = A0A5B0761044D0E500A5949E /* PBXTextBookmark */;
 			A0A5B0941044D2A800A5949E = A0A5B0941044D2A800A5949E /* PBXTextBookmark */;
 			A0B46E4010460BC3005BA640 = A0B46E4010460BC3005BA640 /* PBXBookmark */;
@@ -167,7 +183,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {2896, 1105}}";
 			sepNavSelRange = "{3305, 0}";
-			sepNavVisRange = "{2596, 1025}";
+			sepNavVisRange = "{2596, 1027}";
 		};
 	};
 	72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {
@@ -390,7 +406,7 @@
 		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
 		name = "DebuggingViewController.h: 56";
 		rLen = 0;
-		rLoc = 1156;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 1143;
@@ -420,7 +436,7 @@
 		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
 		name = "DebuggingViewController.h: 51";
 		rLen = 0;
-		rLoc = 991;
+		rLoc = 1040;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 729;
@@ -440,10 +456,177 @@
 		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
 		name = "DebuggingViewController.h: 73";
 		rLen = 0;
-		rLoc = 1718;
+		rLoc = 1657;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 1295;
+	};
+	A088A130107C0F6D00C568CA /* FDBCommunicator.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {691, 559}}";
+			sepNavSelRange = "{649, 0}";
+			sepNavVisRange = "{164, 898}";
+		};
+	};
+	A088A131107C0F6D00C568CA /* FDBCommunicator.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {815, 398}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 208}";
+		};
+	};
+	A088A133107C0FCF00C568CA /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A088A130107C0F6D00C568CA /* FDBCommunicator.h */;
+	};
+	A088A13B107C118300C568CA /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Method definition for '-gotMessage:forCommand:' not found";
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 385;
+		rType = 1;
+	};
+	A088A13C107C118300C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 386";
+		rLen = 0;
+		rLoc = 11653;
+		rType = 0;
+		vrLen = 267;
+		vrLoc = 11391;
+	};
+	A088A140107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A088A131107C0F6D00C568CA /* FDBCommunicator.m */;
+		name = "FDBCommunicator.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 208;
+		vrLoc = 0;
+	};
+	A088A141107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A088A130107C0F6D00C568CA /* FDBCommunicator.h */;
+		name = "FDBCommunicator.h: 16";
+		rLen = 0;
+		rLoc = 666;
+		rType = 0;
+		vrLen = 265;
+		vrLoc = 0;
+	};
+	A088A142107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 72B3C1860FF65052004C58DC /* TaskWrapper.h */;
+		name = "TaskWrapper.h: 57";
+		rLen = 0;
+		rLoc = 3305;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 2596;
+	};
+	A088A143107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 186";
+		rLen = 0;
+		rLoc = 5676;
+		rType = 0;
+		vrLen = 946;
+		vrLoc = 5195;
+	};
+	A088A144107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 20";
+		rLen = 0;
+		rLoc = 421;
+		rType = 0;
+		vrLen = 674;
+		vrLoc = 618;
+	};
+	A088A145107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 20";
+		rLen = 0;
+		rLoc = 421;
+		rType = 0;
+		vrLen = 674;
+		vrLoc = 618;
+	};
+	A088A148107C128000C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A088A130107C0F6D00C568CA /* FDBCommunicator.h */;
+		name = "FDBCommunicator.h: 30";
+		rLen = 0;
+		rLoc = 811;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 136;
+	};
+	A088A14B107C131E00C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 186";
+		rLen = 0;
+		rLoc = 5676;
+		rType = 0;
+		vrLen = 946;
+		vrLoc = 5195;
+	};
+	A088A14C107C131E00C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 20";
+		rLen = 0;
+		rLoc = 421;
+		rType = 0;
+		vrLen = 674;
+		vrLoc = 618;
+	};
+	A088A14D107C131E00C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 30";
+		rLen = 0;
+		rLoc = 619;
+		rType = 0;
+		vrLen = 598;
+		vrLoc = 278;
+	};
+	A088A14E107C131E00C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A088A130107C0F6D00C568CA /* FDBCommunicator.h */;
+		name = "FDBCommunicator.h: 23";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 715;
+		vrLoc = 44;
+	};
+	A088A14F107C14C700C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 47";
+		rLen = 0;
+		rLoc = 939;
+		rType = 0;
+		vrLen = 557;
+		vrLoc = 424;
+	};
+	A088A150107C14C700C568CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A088A130107C0F6D00C568CA /* FDBCommunicator.h */;
+		name = "FDBCommunicator.h: 27";
+		rLen = 0;
+		rLoc = 649;
+		rType = 0;
+		vrLen = 898;
+		vrLoc = 164;
 	};
 	A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {
 		uiCtxt = {
@@ -586,24 +769,24 @@
 		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
 		name = "DebuggingViewController.h: 59";
 		rLen = 0;
-		rLoc = 1606;
+		rLoc = 1655;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 853;
 	};
 	A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {915, 5122}}";
-			sepNavSelRange = "{11185, 0}";
-			sepNavVisRange = "{10938, 454}";
+			sepNavIntBoundsRect = "{{0, 0}, {873, 5226}}";
+			sepNavSelRange = "{5676, 0}";
+			sepNavVisRange = "{5195, 946}";
 			sepNavWindowFrame = "{{224, 24}, {933, 623}}";
 		};
 	};
 	A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1235}}";
-			sepNavSelRange = "{1718, 0}";
-			sepNavVisRange = "{1295, 985}";
+			sepNavIntBoundsRect = "{{0, 0}, {815, 1300}}";
+			sepNavSelRange = "{939, 0}";
+			sepNavVisRange = "{424, 557}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};

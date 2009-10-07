@@ -17,6 +17,7 @@
 		A0283D49104D6473003268BF /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0283D48104D6473003268BF /* LogView.m */; };
 		A05D6718103A096F00623928 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
 		A05D69C0103A112000623928 /* RegexKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A05D6717103A096F00623928 /* RegexKit.framework */; };
+		A088A132107C0F6D00C568CA /* FDBCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A088A131107C0F6D00C568CA /* FDBCommunicator.m */; };
 		A0B60582104AF35E0046B2DA /* TB_Run.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6057D104AF35E0046B2DA /* TB_Run.png */; };
 		A0B60583104AF35E0046B2DA /* TB_Step.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6057E104AF35E0046B2DA /* TB_Step.png */; };
 		A0B60584104AF35E0046B2DA /* TB_StepOver.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B6057F104AF35E0046B2DA /* TB_StepOver.png */; };
@@ -72,6 +73,8 @@
 		A0283D47104D6473003268BF /* LogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogView.h; path = src/LogView.h; sourceTree = "<group>"; };
 		A0283D48104D6473003268BF /* LogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogView.m; path = src/LogView.m; sourceTree = "<group>"; };
 		A05D6717103A096F00623928 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = lib/RegexKit.framework; sourceTree = "<group>"; };
+		A088A130107C0F6D00C568CA /* FDBCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDBCommunicator.h; sourceTree = "<group>"; };
+		A088A131107C0F6D00C568CA /* FDBCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDBCommunicator.m; sourceTree = "<group>"; };
 		A0A5B0211044BABC00A5949E /* as3BundleHelper.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; name = as3BundleHelper.sdef; path = applescript/as3BundleHelper.sdef; sourceTree = "<group>"; };
 		A0B6057D104AF35E0046B2DA /* TB_Run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Run.png; path = Resources/icons/debugger/TB_Run.png; sourceTree = "<group>"; };
 		A0B6057E104AF35E0046B2DA /* TB_Step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TB_Step.png; path = Resources/icons/debugger/TB_Step.png; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 			children = (
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
+				A088A130107C0F6D00C568CA /* FDBCommunicator.h */,
+				A088A131107C0F6D00C568CA /* FDBCommunicator.m */,
 				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
 			);
 			name = DebuggingView;
@@ -357,6 +362,7 @@
 				A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */,
 				A0B605A6104AF6D90046B2DA /* PreferencesController.m in Sources */,
 				A0283D49104D6473003268BF /* LogView.m in Sources */,
+				A088A132107C0F6D00C568CA /* FDBCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

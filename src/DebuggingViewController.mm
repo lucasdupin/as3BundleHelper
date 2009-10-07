@@ -48,26 +48,8 @@
 	//Enablig the toolbar based on the states
 	[[window toolbar] setDelegate:self];
 
-	/*
-	//Did we receive a project path?
-	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
-	
-	if([projectPath length] <= 0 || [flexPath length] <= 0) {
-		NSLog(@"No project, disabling window");
-		[self setState:ST_NO_PROJECT_PATH];
-	}
-	
-	//Checking if the flex path exists
-	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){
-		[self setState:ST_NO_PROJECT_PATH];
-	} else {
-		
-		//setting our state
-		[self setState:ST_DISCONNECTED];
-		
-	}
-	*/
 	connected = false;
+	[self setState:ST_DISCONNECTED];
 	
 	fdbCommunicator = [[FDBCommunicator alloc] init];
 	
@@ -180,6 +162,29 @@
 #pragma mark Toolbar methods
 - (IBAction) connect: (id)sender
 {	
+	//Did we receive a project path?
+	NSString * flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
+	NSString * projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];	
+	if([projectPath length] <= 0) {
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"No project path was set"];
+		
+		return;
+	}
+	if([flexPath length] <= 0) {
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"No SDK path was set"];
+		
+		return;
+	}
+	//Checking if the flex path exists
+	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"SDK does not exist in the path given"];
+		
+		return;
+	}
+		
 	//Finding source files in project path
 	NSArray *actionScriptFiles = [self findASFiles];
 	
@@ -259,14 +264,11 @@
 //Menu item validation
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
 	//	NSLog(@"validation done with state: %@", currentState);
-	if([currentState isEqual: ST_NO_PROJECT_PATH])
-	{
-		return NO;
-	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
+	if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
 		if([item action] == @selector(dettach:)) {
 			return YES;
 		}
-	} else if([currentState isEqual: ST_DISCONNECTED]) {
+	} else if([currentState isEqual: ST_DISCONNECTED] || [currentState isEqual: ST_NO_PROJECT_PATH ]) {
 		if([item action] == @selector(connect:)) {
 			return YES;
 		}

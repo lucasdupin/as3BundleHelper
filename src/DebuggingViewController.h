@@ -10,6 +10,7 @@
 #import "TaskWrapper.h"
 #import <RegexKit/RegexKit.h>
 #import <WebKit/WebKit.h>
+#import "FDBCommunicator.h"
 #import "Variable.h"
 
 //C
@@ -17,28 +18,10 @@
 #include <zlib.h>
 #include <vector>
 
-@interface DebuggingViewController : NSWindowController <TaskWrapperController> {
+@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	IBOutlet NSTreeController *variablesTree;
-	
-	//Path of the .as files
-	NSString *projectPath;
-	//Path of the fdbCommand
-	NSString *fdbCommandPath;
-	//SDK path
-	NSString *flexPath;
-	//Task wich we talk to
-	TaskWrapper *fdbTask;
-	
-	//.as files in project path
-	NSMutableArray *actionScriptFiles;
-	//Breakpoints in projet
-	NSMutableArray *breakpoints;
-	
-	//String representing fdb truncated output
-	NSString * varsTruncatedOutput;
-	NSString * currentInspectedVar;
 	
 	//File we're seeing
 	NSString *currentFile;
@@ -48,36 +31,51 @@
 	
 	//Are we connected?
 	BOOL connected;
+	
+	//The FDB we're talking to
+	FDBCommunicator * fdbCommunicator;
+	
+	NSArray * breakpoints;
+	
+	NSString * currentInspectedVar;
+	NSString * varsTruncatedOutput;
 }
 
 @property (readonly) BOOL connected;
 
 - (id)init;
 
+//Starts FDB, find breakpoints in project path
 - (IBAction) connect: (id)sender;
 - (IBAction) step: (id)sender;
 - (IBAction) stepOut: (id)sender;
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
 
-//Breakpoints
-- (void) lookAfterBreakpoints;
-- (void) findASFilesInPath: (NSString*)path;
+//Searches for breakpoints in all project files and populates the
+//breakpoints Array
+- (NSArray *) lookAfterBreakpointsInFiles: (NSArray *) actionScriptFiles;
+
+//Loops through the path and search for .as files in folders wich are not hidden
+//get the metadata of the files looking for a plist of breakpoints (Textmate bookmarks)
+- (NSArray *) findASFiles;
+
+//Gets the bookmark list for the file given
 - (NSArray *) getBookmarksForFile: (NSString*)path;
 
-//Vars outliner management
-- (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) var;
 
-//TaskWrapperController
-- (void)appendOutput:(NSString *)output;
-- (void)processStarted;
-- (void)processFinished;
+//Stops task. Useful when quitting the program and not
+//leaving something open
 - (void)stopTask;
 
-//Controlling the menu
+//Sets the current state of the application
+//This method is very important, because here we
+//Control all the behaviour of the application,
+//wheter it's waiting for connections or in the middle
+//of a breakpoint
 - (void)setState: (NSString *)state;
 
-//Controlling the codeView
+//Show file with highlighted number in the codeView
 - (void) showFile: (NSString*)file at: (int)line;
 
 //Default alert

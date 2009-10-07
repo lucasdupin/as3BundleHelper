@@ -31,7 +31,7 @@
 - (void)processFinished;
 - (void)appendOutput:(NSString *)output;
 
-- (void) startTask;
+- (void)startTask;
 - (void)stopTask;
 
 @end

@@ -53,38 +53,25 @@
 {
 	//Enablig the toolbar based on the states
 	[[window toolbar] setDelegate:self];
-	
-	//Did we receive a project path?
-	projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
-	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
-	
-	if([projectPath length] <= 0 || [flexPath length] <= 0) {
-		NSLog(@"No project, disabling window");
-		[self setState:ST_NO_PROJECT_PATH];
-	}
-	
-	
-	//Checking if the flex path exists
-	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){
-		[self setState:ST_NO_PROJECT_PATH];
-	} else {
-		
-		//setting our state
-		[self setState:ST_DISCONNECTED];
-		
-	}
+
 	connected = false;
+	[self setState:ST_DISCONNECTED];
+	
+	fdbCommunicator = [[FDBCommunicator alloc] init];
+	[fdbCommunicator setDelegate:self];
 }
 
 
-#pragma mark Breakpoints and Files search methods
-//Searches fo breakpoints in files
-- (void) lookAfterBreakpoints
+#pragma mark Breakpoints an Files search methods
+- (NSArray *) lookAfterBreakpointsInFiles: (NSArray *) actionScriptFiles
 {
-	if(breakpoints != nil) [breakpoints release];
-		breakpoints = [[NSMutableArray alloc] init];
+	//Return var
+	NSMutableArray * theBreakpoints = [[NSMutableArray alloc] init];
 	
-	NSLog(@"file loop?");
+	//Project path
+	NSString * projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
+	
+	//Loop
 	for (int i=0; i<[actionScriptFiles count]; ++i) {
 		
 		NSString* file = [[actionScriptFiles objectAtIndex:i] copy];
@@ -94,30 +81,33 @@
 		
 		//Adding breakpoints to the list
 		for(int j=0; j < [res count]; j++){
-			[breakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:j] intValue]+1]];
-			NSLog(@"Breakpoints in project: %@", [breakpoints objectAtIndex:[breakpoints count]-1]);
+			[theBreakpoints addObject:[[NSString alloc] initWithFormat:@"%@:%d", file, [[res objectAtIndex:j] intValue]+1]];
+			NSLog(@"Breakpoints in project: %@", [theBreakpoints objectAtIndex:[theBreakpoints count]-1]);
 		}
 	}
+	
+	return theBreakpoints;
 }
 
-//Loops through the path and search for .as files in folders wich are not hidden
-//get the metadata of the files looking for a plist of breakpoints
-//(Textmate bookmarks)
-- (void) findASFilesInPath: (NSString*)path
+
+- (NSArray *) findASFiles
 {
-	actionScriptFiles = [[NSMutableArray alloc] init];
+	//Return var
+	NSMutableArray * actionScriptFiles = [[NSMutableArray alloc] init];
+	
+	NSString *	path = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
 	
 	//Regexes
-	NSPredicate *regexHidden = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@"^[\\.].*"]; //Begins with .
-	NSPredicate *regexHiddenPath = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*/[\\.].*"]; //Contains a hidden path
-	NSPredicate *regexASFile = [NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"]; //.as file
+	NSPredicate * regexHidden =		[NSPredicate predicateWithFormat: @"SELF MATCHES %@",@"^[\\.].*"];		//Begins with .
+	NSPredicate * regexHiddenPath =	[NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*/[\\.].*"];	//Contains a hidden path
+	NSPredicate * regexASFile =		[NSPredicate predicateWithFormat: @"SELF MATCHES %@",@".*\\.as$"];		//.as file
 	
+	//Loop through files
 	NSFileHandle * file;
-	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:path];
+	NSDirectoryEnumerator * enumerator = [[NSFileManager defaultManager] enumeratorAtPath:path];
 	while (file = [enumerator nextObject])
 	{
 		//No hidden files, please
-		
 		if([regexHidden evaluateWithObject:file] == YES || [regexHiddenPath evaluateWithObject:file] == YES)
 			continue;
 		
@@ -135,9 +125,10 @@
 		}
 		[thisPath release];
 	}
+	
+	return actionScriptFiles;
 }
 
-//Gets the bookmark list for the file given
 - (NSArray*) getBookmarksForFile: (NSString*)path
 {
 	const char * key = "com.macromates.bookmarked_lines";
@@ -175,54 +166,68 @@
 }
 
 #pragma mark Toolbar methods
-//Starts FDB, find breakpoints in project path
 - (IBAction) connect: (id)sender
-{
-	if(fdbTask != nil)
-		[fdbTask stopProcess];
+{	
+	//Did we receive a project path?
+	NSString * flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
+	NSString * projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];	
+	if([projectPath length] <= 0) {
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"No project path was set"];
+		
+		return;
+	}
+	if([flexPath length] <= 0) {
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"No SDK path was set"];
+		
+		return;
+	}
+	//Checking if the flex path exists
+	if(![[NSFileManager defaultManager] fileExistsAtPath:flexPath]){
+		[self setState:ST_NO_PROJECT_PATH];
+		[self alert:@"SDK does not exist in the path given"];
+		
+		return;
+	}
+		
+	//Finding source files in project path
+	NSArray *actionScriptFiles = [self findASFiles];
 	
-	//Set commands
-	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
-	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingPathComponent: @"bin/fdb"] autorelease]];
+	//finding breakpoints
+	breakpoints = [self lookAfterBreakpointsInFiles: actionScriptFiles];
 	
-	//Reading breakpoints
-	[self findASFilesInPath:projectPath];
-	[self lookAfterBreakpoints];
+	//Start fdb
+	[fdbCommunicator start];
 	
-	NSLog(@"FDB Command: %@", fdbCommandPath);
-	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
-	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
-	[fdbTask setLaunchPath: flexPath];
-	[fdbTask startProcess];
-	
-	[fdbTask sendData:@"run\n"];
+	//Tell it to run
+	[fdbCommunicator sendCommand: @"run\n"];
 }
 - (IBAction) step: (id)sender
 {
-	[fdbTask sendData: @"next \n"];
+	[fdbCommunicator sendCommand: @"next \n"];
 }
 - (IBAction) stepOut: (id)sender
 {
-	[fdbTask sendData: @"finish \n"];
+	[fdbCommunicator sendCommand: @"finish \n"];
 }
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
-	[fdbTask sendData: @"continue \n"];
-	[self setState: ST_WAITING_FOR_PLAYER_OR_FDB];
+	[fdbCommunicator sendCommand: @"continue \n"];
 }
 - (IBAction) dettach: (id)sender
 {
-	[breakpoints release];
-	[fdbTask stopProcess];
+	[fdbCommunicator stop];
 	[self setState: ST_DISCONNECTED];
 }
 
-#pragma mark Code and vars presentation
-//Show file with highlighted number in codeView
+#pragma mark Code presentation
 - (void) showFile: (NSString*)file at: (int)line
 {
-	NSString* htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
-	NSString* htmlFileContents = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+	NSString * htmlPath =			[[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
+	NSString * htmlFileContents =	[NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+	NSString * projectPath =		[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
+	NSArray * actionScriptFiles =	[self findASFiles];
 	
 	NSLog(@"showing file %@ at line %d", file, line);
 	
@@ -264,18 +269,22 @@
 		
 		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
 			
-			Variable * var = [[Variable alloc] init];
+			/*
+			 Variable * var = [[Variable alloc] init];
 			var.delegate = self;
+			 */
 			
 			NSString * name;
 			NSString * value;
 			 [line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &name, @"${value}", &value, nil];
 			
+			/*
 			var.name = name;
 			var.value = value;
 			
 			//NSLog(@"Found var: %@ -> %@", name, value);
 			[result addObject:var];
+			 */
 		}
 	}
 	
@@ -300,14 +309,11 @@
 //Menu item validation
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
 	//	NSLog(@"validation done with state: %@", currentState);
-	if([currentState isEqual: ST_NO_PROJECT_PATH])
-	{
-		return NO;
-	} else if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
+	if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
 		if([item action] == @selector(dettach:)) {
 			return YES;
 		}
-	} else if([currentState isEqual: ST_DISCONNECTED]) {
+	} else if([currentState isEqual: ST_DISCONNECTED] || [currentState isEqual: ST_NO_PROJECT_PATH ]) {
 		if([item action] == @selector(connect:)) {
 			return YES;
 		}
@@ -322,52 +328,46 @@
 }
 
 #pragma mark Task management
-/*******
- this method received all fdb output from the pipe
- *******/
-- (void)appendOutput:(NSString *)output
+-(void) gotMessage:(NSString *)message forCommand:(NSString *)command
 {
-	//NSLog(@"%@", [@"fdb:" stringByAppendingString:output]);
-	
-	
 	/*******
 	 What did fdb mean?
 	 *******/
 	
 	//After 'run' command, fdb waits for player to connect
-	if([output rangeOfString:FDB_WAITING_CONNECT].location != NSNotFound) {
+	if([message rangeOfString:FDB_WAITING_CONNECT].location != NSNotFound) {
 		[self setState:ST_WAITING_FOR_PLAYER_OR_FDB];
 		
-	//Failed to connect to player
-	} else if([output rangeOfString:FDB_CONNECTION_FAILED].location != NSNotFound) {
-		[self alert: [NSString stringWithFormat: @"Failed to connect to player:\n\n%@", output]];
+		//Failed to connect to player
+	} else if([message rangeOfString:FDB_CONNECTION_FAILED].location != NSNotFound) {
+		[self alert: [NSString stringWithFormat: @"Failed to connect to player:\n\n%@", message]];
 		[self dettach: self];
 		
-	//Connected and waiting for breakpoints
-	} else if([output rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound || //Insert breakpoints
-		[output rangeOfString:FDB_INSERT_ADDITIONAL_BREAKPOINTS].location != NSNotFound) //Loaded another swf
+		//Connected and waiting for breakpoints
+	} else if([message rangeOfString:FDB_INSERT_BREAKPOINTS].location != NSNotFound)
 	{
 		//Time to set Breakpoints
 		NSLog(@"Setting %d breakpoints", [breakpoints count]);
 		//Adding breakpoints to the list
 		for(int i=0; i < [breakpoints count]; i++){
 			NSLog(@"%@", [breakpoints objectAtIndex:i]);
-			[fdbTask sendData:[@"b " stringByAppendingString:[[breakpoints objectAtIndex:i] lastPathComponent]]];//Set breakpoint
-			[fdbTask sendData:@"\n"]; //Done!
+			NSString * b = [NSString stringWithFormat: @"b %@\n", [[breakpoints objectAtIndex:i] lastPathComponent]];//Set breakpoint
+			[fdbCommunicator sendCommand:@"\n"]; //Done!
+			
+			[fdbCommunicator sendCommand: b];
 		}
 		
 		//Telling fdb we're done setting everything
-		[fdbTask sendData:@"continue\n"];
-	
-	//Another instance of FDB is already running
-	} else  if([output rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
+		[fdbCommunicator sendCommand:@"continue\n"];
+		
+		//Another instance of FDB is already running
+	} else  if([message rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
 		[self alert: @"fdb already running, please, close it."];
 		NSLog(@"FDB Already running");
-		[fdbTask stopProcess];
-		fdbTask = nil;
+		[fdbCommunicator stop];
 		
-	//Maybe he is saying something about breakpoints
-	} else if([output isMatchedByRegex:FDB_REACH_BREAKPOINT]){
+		//Maybe he is saying something about breakpoints
+	} else if([message isMatchedByRegex:FDB_REACH_BREAKPOINT]){
 		//NSLog(@"REACH BREAKPOINT");
 		
 		//Found a breakpoint. Now we are going to set the toolbar state,
@@ -379,20 +379,17 @@
 		
 		//Getting filename and line
 		NSString *line;
-		[output getCapturesWithRegexAndReferences: FDB_REACH_BREAKPOINT, @"${file}", &currentFile, @"${line}", &line, nil];
+		[message getCapturesWithRegexAndReferences: FDB_REACH_BREAKPOINT, @"${file}", &currentFile, @"${line}", &line, nil];
 		
 		//Showing file
 		[self showFile: currentFile at: [line intValue]];
 		
-		//Asking for vars
-		[fdbTask sendData:@"print this.\n"];
-
-	//Continuing in breakpoint (updating line number)
-	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [output isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
+		//Continuing in breakpoint (updating line number)
+	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [message isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
 		
 		//Getting filename and line
 		NSString *line;
-		[output getCapturesWithRegexAndReferences: FDB_NEXT_BREAKPOINT, @"${line}", &line, nil];
+		[message getCapturesWithRegexAndReferences: FDB_NEXT_BREAKPOINT, @"${line}", &line, nil];
 		
 		//Showing file
 		[self showFile: currentFile at: [line intValue]];
@@ -401,21 +398,21 @@
 		
 		//Asking for vars
 		currentInspectedVar = @"this";
-		[fdbTask sendData:@"print this.\n"];
+		[fdbCommunicator sendCommand:@"print this.\n"];
 		
-	} else if ([output isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
+	} else if ([message isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
 		//Parsing output
-		varsTruncatedOutput = output;
+		varsTruncatedOutput = message;
 		
 		//Check if it's the end of the list or if we're going to receive more output
-		if(![output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
+		if(![message isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
 			[self setState:ST_REACH_BREAKPOINT__READING_VARS];
 		}
 	} else if ([currentState isEqual:ST_REACH_BREAKPOINT__READING_VARS]) {
-		varsTruncatedOutput = [varsTruncatedOutput stringByAppendingString:output];
+		varsTruncatedOutput = [varsTruncatedOutput stringByAppendingString:message];
 		
 		//Reach the end?
-		if([output isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
+		if([message isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
 			[self parseVarsForString: varsTruncatedOutput atNode: nil];
 			[self setState:ST_REACH_BREAKPOINT];
 		}
@@ -423,24 +420,14 @@
 	} else {
 		
 		//Dont; know what you're saying
-		NSLog(@"fdb: %@", output);
+		NSLog(@"fdb: %@", message);
 		//[self alert:output];
 	}
-
-
 }
-- (void)processStarted{};
-- (void)processFinished{};
 
-//Stops task. Useful for quitting the program and not leaving
-//Something open
 - (void)stopTask {
-	[projectPath release];
-	[fdbCommandPath release];
-	[flexPath release];
-	[fdbTask release];
-	
-	[breakpoints release];
+	[fdbCommunicator stop];
+	[fdbCommunicator release];
 }
 
 #pragma mark Helpers

@@ -13,9 +13,9 @@
 	IBOutlet NSTabView * tabView;
 	IBOutlet NSWindow * window;
 }
+@property (readonly) NSWindow * window;
 
 - (id)init;
-- (NSWindow *)getWindow;
 
 - (IBAction) selectGeneralTab: (id)sender;
 - (IBAction) selectLogTab: (id)sender;

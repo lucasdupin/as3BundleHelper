@@ -23,11 +23,6 @@
 	
 	//Path of the .as files
 	NSString *projectPath;
-	//Path of the fdbCommand
-	NSString *fdbCommandPath;
-	//SDK path
-	NSString *flexPath;
-	
 	
 	//.as files in project path
 	NSMutableArray *actionScriptFiles;

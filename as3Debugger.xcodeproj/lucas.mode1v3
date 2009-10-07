@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>A088A150107C14C700C568CA</string>
+						<string>A088A171107C1AFF00C568CA</string>
 						<key>history</key>
 						<array>
 							<string>A088A133107C0FCF00C568CA</string>
@@ -236,6 +236,46 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>515 272 750 502 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>A088A164107C167900C568CA</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>FDBCommunicator.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>A088A165107C167900C568CA</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>FDBCommunicator.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>A088A172107C1AFF00C568CA</string>
+						<key>history</key>
+						<array>
+							<string>A088A153107C15D900C568CA</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {750, 461}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>38 250 750 502 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -320,7 +360,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>8</integer>
 									<integer>6</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -364,7 +404,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.h</string>
+								<string>DebuggingViewController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -372,11 +412,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.h</string>
+										<string>DebuggingViewController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A088A14F107C14C700C568CA</string>
+										<string>A088A170107C1AFF00C568CA</string>
 										<key>history</key>
 										<array>
 											<string>A0340747103301D700BFE89D</string>
@@ -400,11 +440,11 @@
 											<string>A0283D88104D68CC003268BF</string>
 											<string>A0C6ECBC104F15560047B1CE</string>
 											<string>A088A123107C0CC500C568CA</string>
-											<string>A088A140107C128000C568CA</string>
-											<string>A088A141107C128000C568CA</string>
 											<string>A088A142107C128000C568CA</string>
-											<string>A088A14B107C131E00C568CA</string>
-											<string>A088A14C107C131E00C568CA</string>
+											<string>A088A16C107C1AFF00C568CA</string>
+											<string>A088A16D107C1AFF00C568CA</string>
+											<string>A088A16E107C1AFF00C568CA</string>
+											<string>A088A16F107C1AFF00C568CA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -601,8 +641,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>A01E3CAB0FFE33DE00139E8B</string>
-		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
+		<string>A088A164107C167900C568CA</string>
 		<string>A088A146107C128000C568CA</string>
+		<string>/Users/lucas/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>53 81 1084 680 0 0 1280 778 </string>

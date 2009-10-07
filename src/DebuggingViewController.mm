@@ -69,6 +69,8 @@
 	}
 	connected = false;
 	
+	fdbCommunicator = [[FDBCommunicator alloc] init];
+	
 }
 
 
@@ -167,28 +169,17 @@
 
 #pragma mark Toolbar methods
 - (IBAction) connect: (id)sender
-{
-	//Stops the fdb if it's already running
-	if(fdbTask != nil)
-		[fdbTask stopProcess];
-	
-	//Set commands
-	flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
-	fdbCommandPath = [[NSString alloc] initWithString:[[flexPath stringByAppendingPathComponent: @"bin/fdb"] autorelease]];
+{	
+	[fdbCommunicator connect];
 	
 	//Reading breakpoints
 	[self findASFilesInPath:projectPath];
 	[self lookAfterBreakpoints];
 	
-	//Launch the fdb process
-	NSLog(@"FDB Command: %@", fdbCommandPath);
-	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
-	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
-	[fdbTask setLaunchPath: flexPath];
-	[fdbTask startProcess];
-	
-	//Tell it to start listening
-	[fdbTask sendData:@"run\n"];
+	//Start fdb
+	[fdbCommunicator start];
+	//Tell it to run
+	[fdbCommunicator sendCommand: @"run\n"];
 }
 - (IBAction) step: (id)sender
 {

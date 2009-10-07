@@ -19,13 +19,12 @@
 
 @interface FDBCommunicator : NSObject <TaskWrapperController> {
 
-	TaskWrapper *fdbTask;						//Task wich we talk to
-	NSMutableArray * commandQueue;				//Commands waiting in line
+	TaskWrapper *		fdbTask;				//Task wich we talk to
+	NSMutableArray *	commandQueue;			//Commands waiting in line
+	
+	FDBCommunicator *	delegate;				//Delegate
+	NSArray *			breakpoints;			//Breakpoints of the project
 }
-
-@property (assign) FDBCommunicator * delegate;	//Delegate
-@property (copy) NSArray * breakpoints;			//Breakpoints of the project
-
 
 - (void) start;									//Starts the process
 - (void) stop;									//Kills the process
@@ -38,5 +37,7 @@
 - (void)processStarted;							//Called when the process has started
 - (void)processFinished;						//Called when the process finished
 
+@property (assign) FDBCommunicator * delegate;
+@property (copy) NSArray * breakpoints;
 
 @end

@@ -12,10 +12,10 @@
 @implementation FDBCommunicator
 
 @synthesize delegate;
-@synthesize breakpoints;
 
-- (void) start
+-(void) start
 {
+	
 	//Stops the fdb if it's already running
 	if(fdbTask != nil){
 		[fdbTask stopProcess];
@@ -33,9 +33,32 @@
 	[fdbTask setLaunchPath: flexPath];
 	[fdbTask startProcess];
 }
+
+-(void) sendCommand:(NSString *)command
+{
+	[fdbTask sendData:command];
+}
+
+- (void)appendOutput:(NSString *)output
+{
+	NSLog(@"fdb: %@", output);
+	
+	
+	if (delegate!=nil) {
+		[delegate gotMessage: output forCommand: nil];
+	}
+	
+	
+}
+- (void)processStarted{};
+- (void)processFinished{};
+
+
 -(void) stop
 {
-	
+	[fdbTask stopProcess];
+	[fdbTask release];
+	fdbTask = nil;
 }
 
 

@@ -21,14 +21,6 @@
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	
-	//Path of the .as files
-	NSString *projectPath;
-	
-	//.as files in project path
-	NSMutableArray *actionScriptFiles;
-	//Breakpoints in projet
-	NSMutableArray *breakpoints;
-	
 	//File we're seeing
 	NSString *currentFile;
 	
@@ -40,6 +32,8 @@
 	
 	//The FDB we're talking to
 	FDBCommunicator * fdbCommunicator;
+	
+	NSArray * breakpoints;
 }
 
 @property (readonly) BOOL connected;
@@ -55,11 +49,11 @@
 
 //Searches for breakpoints in all project files and populates the
 //breakpoints Array
-- (void) lookAfterBreakpoints;
+- (NSArray *) lookAfterBreakpointsInFiles: (NSArray *) actionScriptFiles;
 
 //Loops through the path and search for .as files in folders wich are not hidden
 //get the metadata of the files looking for a plist of breakpoints (Textmate bookmarks)
-- (void) findASFilesInPath: (NSString*)path;
+- (NSArray *) findASFiles;
 
 //Gets the bookmark list for the file given
 - (NSArray *) getBookmarksForFile: (NSString*)path;

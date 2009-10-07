@@ -25,14 +25,13 @@
 
 - (IBAction) clear: (id)sender;
 - (IBAction) separate: (id)sender;
-- (IBAction) setAutoAlpha: (id)sender;
 
 
 - (void)processStarted;
 - (void)processFinished;
 - (void)appendOutput:(NSString *)output;
 
-- (void) startTask;
+- (void)startTask;
 - (void)stopTask;
 
 @end

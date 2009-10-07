@@ -70,12 +70,6 @@
 	}
 }
 
-//Set auto alpha on Mouse Events
-- (IBAction) setAutoAlpha: (id)sender
-{
-	[alphaPanel setAutoAlpha: [autoAlphaButton state] == NSOnState];
-}
-
 - (void) startTask
 {
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];

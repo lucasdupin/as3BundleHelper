@@ -201,19 +201,19 @@
 	[fdbCommunicator start];
 	
 	//Tell it to run
-	[fdbCommunicator sendCommand: @"run\n"];
+	[fdbCommunicator sendCommand: @"run"];
 }
 - (IBAction) step: (id)sender
 {
-	[fdbCommunicator sendCommand: @"next \n"];
+	[fdbCommunicator sendCommand: @"next"];
 }
 - (IBAction) stepOut: (id)sender
 {
-	[fdbCommunicator sendCommand: @"finish \n"];
+	[fdbCommunicator sendCommand: @"finish"];
 }
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
-	[fdbCommunicator sendCommand: @"continue \n"];
+	[fdbCommunicator sendCommand: @"continue"];
 }
 - (IBAction) dettach: (id)sender
 {
@@ -351,14 +351,12 @@
 		//Adding breakpoints to the list
 		for(int i=0; i < [breakpoints count]; i++){
 			NSLog(@"%@", [breakpoints objectAtIndex:i]);
-			NSString * b = [NSString stringWithFormat: @"b %@\n", [[breakpoints objectAtIndex:i] lastPathComponent]];//Set breakpoint
-			[fdbCommunicator sendCommand:@"\n"]; //Done!
-			
+			NSString * b = [NSString stringWithFormat: @"b %@", [[breakpoints objectAtIndex:i] lastPathComponent]];//Set breakpoint
 			[fdbCommunicator sendCommand: b];
 		}
 		
 		//Telling fdb we're done setting everything
-		[fdbCommunicator sendCommand:@"continue\n"];
+		[fdbCommunicator sendCommand:@"continue"];
 		
 		//Another instance of FDB is already running
 	} else  if([message rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){
@@ -398,7 +396,7 @@
 		
 		//Asking for vars
 		currentInspectedVar = @"this";
-		[fdbCommunicator sendCommand:@"print this.\n"];
+		[fdbCommunicator sendCommand:@"print this."];
 		
 	} else if ([message isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
 		//Parsing output

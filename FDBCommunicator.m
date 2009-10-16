@@ -28,6 +28,7 @@
 	
 	//Launch the fdb process
 	NSLog(@"FDB Command: %@", fdbCommandPath);
+	
 	NSArray * command = [NSArray arrayWithObjects: fdbCommandPath, nil];
 	fdbTask = [[TaskWrapper alloc] initWithController:self arguments:command];
 	[fdbTask setLaunchPath: flexPath];
@@ -36,7 +37,7 @@
 
 -(void) sendCommand:(NSString *)command
 {
-	[fdbTask sendData:command];
+	[fdbTask sendData: [NSString stringWithFormat:@"%@\n", command]];
 }
 
 - (void)appendOutput:(NSString *)output

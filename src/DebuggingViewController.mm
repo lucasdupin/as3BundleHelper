@@ -201,7 +201,7 @@
 	[fdbCommunicator start];
 	
 	//Tell it to run
-	[fdbCommunicator sendCommand: @"run"];
+	[fdbCommunicator sendCommand: @"run" withDelimiter: nil];
 }
 - (IBAction) step: (id)sender
 {

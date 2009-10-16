@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <RegexKit/RegexKit.h>
 #import "TaskWrapper.h"
+#import "FDBCommand.h"
 
 //Protocol for receiving messages
 @protocol FDBCommunicatorClient
@@ -23,11 +25,15 @@
 	NSMutableArray *		commandQueue;				//Commands waiting in line
 	id	<FDBCommunicatorClient>delegate;				//Delegate
 	
+	NSString *				truncatedOutput;			//Output so far received from fdb
+	FDBCommand *			currentCommand;				//Command we're waiting to get the response
 }
 
 - (void) start;											//Starts the process
 - (void) stop;											//Kills the process
 - (void) sendCommand: (NSString *) command;				//Sends a command to fdb
+- (void) sendCommand:(NSString *)command 
+	   withDelimiter: (NSString *) delimiter;			//Same, but not using the default delimiter, useful for commands like run, wich doesn't end with an "(fdb) "
 
 /****
  TaskWrapperController

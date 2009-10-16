@@ -8,10 +8,21 @@
 
 #import "FDBCommunicator.h"
 
+#define DEFAULT_DELIMITER					@"\\(fdb\\) "
+#define MESSAGE_ENDING_REGEX				@"^(.*|\\n)+^%@$ "
+
 
 @implementation FDBCommunicator
 
 @synthesize delegate;
+
+-(id) init
+{
+	commandQueue = [[NSMutableArray alloc] init];
+	truncatedOutput = @"";
+	
+	return self;
+}
 
 -(void) start
 {
@@ -35,19 +46,57 @@
 	[fdbTask startProcess];
 }
 
+-(void) sendCommand:(NSString *)command withDelimiter: (NSString *) delimiter
+{
+	//Adding the message to the line
+	FDBCommand * cmd = [[FDBCommand alloc] init];
+	cmd.command =			command;
+	cmd.endingDelimiter =	delimiter;
+	
+	[commandQueue addObject:cmd];
+	
+	//Check if we're gonna need to wait
+	if([commandQueue count] <= 1) { //No need to wait
+		currentCommand = cmd;
+		[fdbTask sendData: [NSString stringWithFormat:@"%@\n", cmd.command]];
+	} else {
+		//Ops, waiting for an answer...
+	}
+}
+
 -(void) sendCommand:(NSString *)command
 {
-	[fdbTask sendData: [NSString stringWithFormat:@"%@\n", command]];
+	[self sendCommand: command withDelimiter: DEFAULT_DELIMITER];
 }
 
 - (void)appendOutput:(NSString *)output
 {
-	NSLog(@"fdb: %@", output);
+	truncatedOutput = [truncatedOutput stringByAppendingString:output];
 	
-	
-	if (delegate!=nil) {
-		[delegate gotMessage: output forCommand: nil];
+	//Check if we hit the end of the output
+	if(currentCommand.endingDelimiter == nil || [truncatedOutput isMatchedByRegex: [NSString stringWithFormat:MESSAGE_ENDING_REGEX, currentCommand.endingDelimiter]]){
+		
+		//Remove from queue
+		[commandQueue removeObject:currentCommand];
+		
+		//Send the message to the delegate
+		if (delegate!=nil) [delegate gotMessage: truncatedOutput forCommand: currentCommand.command];
+		
+		//Any other command in the list?
+		if([commandQueue count] > 0){
+			
+			truncatedOutput = @"";
+			currentCommand = [commandQueue objectAtIndex:0];
+			[fdbTask sendData: [NSString stringWithFormat:@"%@\n", currentCommand]];
+		}
+		
+	} else {
+		NSLog(@"truncated output received: %@\n", output);
 	}
+
+		
+	
+	
 	
 	
 }
@@ -62,5 +111,10 @@
 	fdbTask = nil;
 }
 
+-(void) dealloc
+{
+	[commandQueue release];
+	[super dealloc];
+}
 
 @end

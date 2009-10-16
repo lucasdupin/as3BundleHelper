@@ -11,9 +11,7 @@
 
 @interface PreferencesController : NSWindowController {
 	IBOutlet NSTabView * tabView;
-	IBOutlet NSWindow * window;
 }
-@property (readonly) NSWindow * window;
 
 - (id)init;
 

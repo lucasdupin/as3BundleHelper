@@ -1849,14 +1849,6 @@
 					<int key="connectionID">1066</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">showPreferences:</string>
-						<reference key="source" ref="967212077"/>
-						<reference key="destination" ref="609285721"/>
-					</object>
-					<int key="connectionID">1082</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1050"/>
@@ -1919,6 +1911,14 @@
 						<reference key="destination" ref="1028681800"/>
 					</object>
 					<int key="connectionID">1098</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showWindow:</string>
+						<reference key="source" ref="536928409"/>
+						<reference key="destination" ref="609285721"/>
+					</object>
+					<int key="connectionID">1099</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3458,7 +3458,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1098</int>
+			<int key="maxID">1099</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3536,11 +3536,13 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>codeView</string>
+							<string>variablesTree</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>WebView</string>
+							<string>NSTreeController</string>
 							<string>NSWindow</string>
 						</object>
 					</object>
@@ -3558,11 +3560,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clear:</string>
 							<string>separate:</string>
-							<string>setAutoAlpha:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>

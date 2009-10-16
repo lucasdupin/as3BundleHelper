@@ -11,8 +11,6 @@
 
 @implementation PreferencesController
 
-@synthesize window;
-
 - (id)init {
     return [super initWithWindowNibName:@"Preferences" owner: self];
 }

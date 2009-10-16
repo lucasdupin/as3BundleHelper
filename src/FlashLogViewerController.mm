@@ -121,6 +121,11 @@
 		 setObject:
 		 [NSArchiver archivedDataWithRootObject:[NSColor yellowColor]]
 		 forKey:@"flashlogWarningColor"];
+		
+		[[NSUserDefaults standardUserDefaults] 
+		 setObject:
+		 [NSArchiver archivedDataWithRootObject:[NSColor yellowColor]]
+		 forKey:@"flashlogTintColor"];
 	}
 	
 	NSArray * lines = [output componentsSeparatedByString:@"\n"];

@@ -75,7 +75,9 @@
 	for (int i=0; i<[actionScriptFiles count]; ++i) {
 		
 		NSString* file = [[actionScriptFiles objectAtIndex:i] copy];
+		NSLog(@"paths: %@", file);
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
+		NSLog(@"regex");
 		
 		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
 		
@@ -190,7 +192,7 @@
 		
 		return;
 	}
-		
+	
 	//Finding source files in project path
 	NSArray *actionScriptFiles = [self findASFiles];
 	
@@ -336,6 +338,7 @@
 	
 	//After 'run' command, fdb waits for player to connect
 	if([message rangeOfString:FDB_WAITING_CONNECT].location != NSNotFound) {
+		NSLog(@"WAITING::: %@=%@", command, message);
 		[self setState:ST_WAITING_FOR_PLAYER_OR_FDB];
 		
 		//Failed to connect to player

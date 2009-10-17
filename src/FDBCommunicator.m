@@ -48,6 +48,7 @@
 
 -(void) sendCommand:(NSString *)command withDelimiter: (NSString *) delimiter
 {
+	NSLog(@"Adding to queue: %@", command);
 	//Adding the message to the line
 	FDBCommand * cmd = [[FDBCommand alloc] init];
 	cmd.command =			command;
@@ -82,10 +83,12 @@
 		//Send the message to the delegate
 		if (delegate!=nil) [delegate gotMessage: truncatedOutput forCommand: currentCommand.command];
 		
+		//Clearing message
+		truncatedOutput = @"";
+		
 		//Any other command in the list?
 		if([commandQueue count] > 0){
-			
-			truncatedOutput = @"";
+
 			currentCommand = [commandQueue objectAtIndex:0];
 			[fdbTask sendData: [NSString stringWithFormat:@"%@\n", currentCommand]];
 		}

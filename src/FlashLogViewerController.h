@@ -14,7 +14,6 @@
 	IBOutlet NSTextView *field;
 	IBOutlet NSButton *autoAlphaButton;
 	IBOutlet AlphaPanel * alphaPanel;
-	IBOutlet NSPanel * window;
 	
 	TaskWrapper *tailTask;
 }

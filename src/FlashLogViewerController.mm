@@ -28,11 +28,17 @@
 	
 	//Telling wich file we're reading
 	[field setTextColor: [NSColor blackColor]];
-	[field setString: [@"Reading: " stringByAppendingString: flashlog]];
-	[field setString:[[field string] stringByAppendingString: @"\n"]];
+	[field setString: [NSString stringWithFormat: @"Reading: %@\n", flashlog]];
 	[field setUsesFontPanel:YES];
 	[field setEditable:NO];
 	
+	//Workaroud for bug in scrollview, where the scroll does no update when app starts
+	//Forcing redraw
+	NSRect frame = [[self window] frame];
+	frame.size.height += 1;
+	[[self window] setFrame:frame display:YES animate: YES];
+	
+	//Start to read file
 	[self startTask];
 	
 	//Setting the font of the TextView
@@ -93,7 +99,7 @@
 	
 	//Will we scroll the field?
 	BOOL shouldScroll = [[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashlogAlwaysScroll"] boolValue]; //Preference
-	NSLog(@"should scroll: %d", shouldScroll);
+	//NSLog(@"should scroll: %d", shouldScroll);
 	if(!shouldScroll){
 		//The preference says we must check if we're going to auto-scroll
 		shouldScroll = ((int)NSMaxY([field bounds]) == (int)NSMaxY([field visibleRect]));
@@ -161,11 +167,6 @@
 	if(shouldScroll)
 		[field scrollRangeToVisible:NSMakeRange([[field string] length], 0)];
 
-}
-
-- (NSPanel *)getWindow
-{
-	return window;
 }
 
 - (void) stopTask

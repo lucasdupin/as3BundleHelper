@@ -3,19 +3,21 @@
 
 @implementation FlashLogViewerController
 
-#define WARNING_MESSAGE		@"warning"
+#define WARNING_MESSAGE		@"warn"
 #define ERROR_MESSAGE		@"error"
 
 @synthesize field;
 
+- (id)init 
 /*
  Initialization
  Creating with the default nib file
  */
-- (id)init {
+{
     return [super initWithWindowNibName:@"FlashLogViewer" owner: self];	
 }
 
+- (void)windowDidLoad
 /*
  Runs after nib is initialized and the also window
  
@@ -25,7 +27,6 @@
  
  After that, we setup a tail task to read the file and set the user fonts and preferences
  */
-- (void)windowDidLoad
 {
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
@@ -66,14 +67,14 @@
 	}
 }
 
-//Clear the text field
 - (IBAction) clear: (id)sender
+//Clear the text field
 {
 	[field setString: @" "];
 }
 
-//Tint the text
 - (IBAction) separate: (id)sender
+//Tint the text
 {
 	if([field string] != nil){
 		
@@ -95,20 +96,25 @@
 }
 
 - (void) startTask
+/*
+ Creates a tail task to read the file
+ */
 {
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
 	
 	//Start reading
 	tailTask = [[TaskWrapper alloc] initWithController:self arguments:[NSArray arrayWithObjects:@"/usr/bin/tail", @"-f", flashlog, nil]];
 	[tailTask startProcess];
-	
 	[flashlog autorelease];
 }
 
-
+/* TaskWrapper protocol*/
 - (void)processStarted{}
 - (void)processFinished{}
 - (void)appendOutput:(NSString *)output
+/*
+ Receives text from tail, searches for known words and set color if needed
+ */
 {
 	if (output == nil) {
 		return;
@@ -188,6 +194,9 @@
 }
 
 - (void) stopTask
+/*
+ Kill tail
+ */
 {
 	[tailTask stopProcess];
     [[NSNotificationCenter defaultCenter] removeObserver:self];

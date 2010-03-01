@@ -16,13 +16,20 @@
 
 - (void)windowDidLoad
 {
-	
 	//Did we receive a flashlog variable in de commandline?
 	NSString * flashlog = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashLogPath"];
 	if(![[NSFileManager defaultManager] fileExistsAtPath: [NSString stringWithFormat:@"%@", flashlog]]) {
-		NSLog(@"nil value");
+		NSLog(@"nil log path value");
 		flashlog = [NSString stringWithUTF8String: strcat(getenv("HOME"), "/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt")];
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
+		
+		//Checking if the file does not exist because mm.cfg was not set up
+		if (![[NSFileManager defaultManager] fileExistsAtPath: @"/Library/Application Support/Macromedia/mm.cfg"]) {
+			NSLog(@"No mm.cfg indeed...");
+			//Ok, let's create it...
+			NSString *mmCfg = @"ErrorReportingEnable=1 \nTraceOutputFileEnable=1";
+			[mmCfg writeToFile:@"/Library/Application Support/Macromedia/mm.cfg" atomically:YES encoding: NSUTF8StringEncoding error:nil];
+		}
 	}
 	NSLog(@"%@", [@"Flashlog is : " stringByAppendingString: flashlog]);
 	

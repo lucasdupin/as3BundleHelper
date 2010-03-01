@@ -10,6 +10,7 @@
 
 #define DEFAULT_DELIMITER					@"\\(fdb\\) "
 #define MESSAGE_ENDING_REGEX				@"(.*|\\n)+.*%@$"
+#define IGNORE_REGEX						@"^\\[trace\\].*"
 
 
 @implementation FDBCommunicator
@@ -72,6 +73,10 @@
 
 - (void)appendOutput:(NSString *)output
 {
+	//Checking if this line is going to be ignored (trace)
+	if ([output isMatchedByRegex:IGNORE_REGEX])
+		return;
+	
 	truncatedOutput = [truncatedOutput stringByAppendingString:output];
 	
 	//Check if we hit the end of the output

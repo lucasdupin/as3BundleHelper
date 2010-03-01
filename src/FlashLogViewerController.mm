@@ -8,12 +8,23 @@
 
 @synthesize field;
 
+/*
+ Initialization
+ Creating with the default nib file
+ */
 - (id)init {
-	NSLog(@"flashlog init");
-    return [super initWithWindowNibName:@"FlashLogViewer" owner: self];
-	
+    return [super initWithWindowNibName:@"FlashLogViewer" owner: self];	
 }
 
+/*
+ Runs after nib is initialized and the also window
+ 
+ Firs of all, checking for the name of the flashlog file, later for it's presence
+ if it doesn't exsit verify if mm.cfg is there
+ when mm.cfg is not there, we try to create it.
+ 
+ After that, we setup a tail task to read the file and set the user fonts and preferences
+ */
 - (void)windowDidLoad
 {
 	//Did we receive a flashlog variable in de commandline?

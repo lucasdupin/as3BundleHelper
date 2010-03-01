@@ -10,7 +10,7 @@
 #import "AlphaPanel.h"
 #import "TaskWrapper.h"
 
-@interface FlashLogViewerController : NSWindowController <TaskWrapperController> {
+@interface FlashLogViewerController : NSWindowController <TaskWrapperController, NSToolbarDelegate> {
 	IBOutlet NSTextView *field;
 	IBOutlet NSButton *autoAlphaButton;
 	IBOutlet AlphaPanel * alphaPanel;

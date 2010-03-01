@@ -9,7 +9,7 @@
 #import "FDBCommunicator.h"
 
 #define DEFAULT_DELIMITER					@"\\(fdb\\) "
-#define MESSAGE_ENDING_REGEX				@"^(.*|\\n)+^%@$ "
+#define MESSAGE_ENDING_REGEX				@"(.*|\\n)+.*%@$"
 
 
 @implementation FDBCommunicator
@@ -90,11 +90,11 @@
 		if([commandQueue count] > 0){
 
 			currentCommand = [commandQueue objectAtIndex:0];
-			[fdbTask sendData: [NSString stringWithFormat:@"%@\n", currentCommand]];
+			[fdbTask sendData: [NSString stringWithFormat:@"%@\n", currentCommand.command]];
 		}
 		
 	} else {
-		NSLog(@"truncated output received: %@\n", output);
+		NSLog(@"[COMMUNICATOR] truncated output received: %@\n", output);
 	}
 
 		

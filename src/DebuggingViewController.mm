@@ -359,7 +359,7 @@
 		}
 		
 		//Telling fdb we're done setting everything
-		[fdbCommunicator sendCommand:@"continue"];
+		[fdbCommunicator sendCommand:@"continue" withDelimiter: nil];
 		
 		//Another instance of FDB is already running
 	} else  if([message rangeOfString:FDB_ALREADY_RUNNING].location != NSNotFound){

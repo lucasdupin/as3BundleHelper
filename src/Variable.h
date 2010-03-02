@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface Variable : NSObject {
+	
 	//For output
 	NSString * name;
 	id value;
@@ -24,6 +24,7 @@
 
 }
 
+- (id) init;
 - (BOOL) leaf;
 
 @property (assign) id delegate;

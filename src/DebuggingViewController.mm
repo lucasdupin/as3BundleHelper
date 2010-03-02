@@ -21,7 +21,6 @@
 #define FDB_NEXT_BREAKPOINT					@"^(.*\\n)* (?<line>\\d+)[\\t+| +]"
 //Reading vars
 #define FDB_VARIABLE_LIST					@"^\\$\\d+ = this = \\[(.+) \\d+, class=\\'(?<class>.+)\\'\\]"
-#define FDB_VARIABLE_LIST_ENDING			@"\\(fdb\\)\\s$"
 #define FDB_GET_VARIABLE_VALUE				@"^\\s(?<name>.+)\\s=\\s(?<value>.+)$"
 
 
@@ -75,9 +74,9 @@
 	for (int i=0; i<[actionScriptFiles count]; ++i) {
 		
 		NSString* file = [[actionScriptFiles objectAtIndex:i] copy];
-		NSLog(@"paths: %@", file);
+		//NSLog(@"paths: %@", file);
 		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &file, nil];
-		NSLog(@"regex");
+		//NSLog(@"regex");
 		
 		NSArray * res = [self getBookmarksForFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]]];
 		
@@ -169,7 +168,10 @@
 
 #pragma mark Toolbar methods
 - (IBAction) connect: (id)sender
-{	
+{
+	//Clear the code panel
+	[self showFile:nil at:0];
+	
 	//Did we receive a project path?
 	NSString * flexPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flexSDKPath"];
 	NSString * projectPath = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];	
@@ -207,18 +209,34 @@
 }
 - (IBAction) step: (id)sender
 {
+	//Clear the code panel
+	[self showFile:nil at:0];
+	
+	//Send command
 	[fdbCommunicator sendCommand: @"next"];
 }
 - (IBAction) stepOut: (id)sender
 {
+	//Clear the code panel
+	[self showFile:nil at:0];
+	
+	//Send command
 	[fdbCommunicator sendCommand: @"finish"];
 }
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
+	//Clear the code panel
+	[self showFile:nil at:0];
+	
+	//Send command
 	[fdbCommunicator sendCommand: @"continue"];
 }
 - (IBAction) dettach: (id)sender
 {
+	//Clear the code panel
+	[self showFile:nil at:0];
+	
+	//Send command
 	[fdbCommunicator stop];
 	[self setState: ST_DISCONNECTED];
 }
@@ -234,29 +252,34 @@
 	NSLog(@"showing file %@ at line %d", file, line);
 	
 	//Finding the file in the list
-	for (int i=0; i<[actionScriptFiles count]; ++i) {
-		
-		NSString* fileFound = [actionScriptFiles objectAtIndex:i];
-		[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &fileFound, nil];
-		
-		if([file isEqual: fileFound]){
-			//Opening code file
-			NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]] encoding: NSUTF8StringEncoding error:nil];
-			//Replacing code
-			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: code];
-			//Replace highlight line number
-			htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
+	if(file != nil)
+		for (int i=0; i<[actionScriptFiles count]; ++i) {
 			
-			//NSLog(@"%@", htmlFileContents);
-			break;
+			NSString* fileFound = [actionScriptFiles objectAtIndex:i];
+			[[actionScriptFiles objectAtIndex:i] getCapturesWithRegexAndReferences: @".*\\/(?<file>.*.as)", @"${file}", &fileFound, nil];
+			
+			if([file isEqual: fileFound]){
+				//Opening code file
+				NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]] encoding: NSUTF8StringEncoding error:nil];
+				//Replacing code
+				htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: code];
+				//Replace highlight line number
+				htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
+				
+				//NSLog(@"%@", htmlFileContents);
+				break;
+			}
+			
 		}
-		
+	else {
+		htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: @""];
 	}
+
 	
 	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
 }
 
-- (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) var
+- (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) fromVar
 {
 	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
 	NSArray * lines = [inputString componentsSeparatedByString:@"\n"];
@@ -270,23 +293,18 @@
 		line = [lines objectAtIndex:i];
 		
 		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
+			Variable * v = [[Variable alloc] init];
+
+			NSString *name;
+			NSString *value;
 			
-			/*
-			 Variable * var = [[Variable alloc] init];
-			var.delegate = self;
-			 */
+			[line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &name, @"${value}", &value, nil];
 			
-			NSString * name;
-			NSString * value;
-			 [line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &name, @"${value}", &value, nil];
+			v.name = name;
+			v.value = value;
 			
-			/*
-			var.name = name;
-			var.value = value;
-			
-			//NSLog(@"Found var: %@ -> %@", name, value);
-			[result addObject:var];
-			 */
+			//NSLog(@"Found var: %@ -> %@", v.name, v.value);
+			[result addObject:v];
 		}
 	}
 	
@@ -385,6 +403,10 @@
 		//Showing file
 		[self showFile: currentFile at: [line intValue]];
 		
+		//Asking for vars
+		currentInspectedVar = @"this";
+		[fdbCommunicator sendCommand:@"print this."];
+		
 		//Continuing in breakpoint (updating line number)
 	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [message isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
 		
@@ -402,21 +424,9 @@
 		[fdbCommunicator sendCommand:@"print this."];
 		
 	} else if ([message isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
-		//Parsing output
-		varsTruncatedOutput = message;
 		
-		//Check if it's the end of the list or if we're going to receive more output
-		if(![message isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
-			[self setState:ST_REACH_BREAKPOINT__READING_VARS];
-		}
-	} else if ([currentState isEqual:ST_REACH_BREAKPOINT__READING_VARS]) {
-		varsTruncatedOutput = [varsTruncatedOutput stringByAppendingString:message];
-		
-		//Reach the end?
-		if([message isMatchedByRegex: FDB_VARIABLE_LIST_ENDING]){
-			[self parseVarsForString: varsTruncatedOutput atNode: nil];
-			[self setState:ST_REACH_BREAKPOINT];
-		}
+		[self parseVarsForString: message atNode: nil];
+		[self setState:ST_REACH_BREAKPOINT];
 
 	} else {
 		

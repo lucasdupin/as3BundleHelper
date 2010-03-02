@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		72AC0571113C918E000B31BF /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C69FD1050779F00E63E33 /* Variable.m */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* FlashLogViewerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */; };
 		72CEA07B0FFFDA8200E24A1F /* AlphaPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */; };
@@ -379,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AC0571113C918E000B31BF /* Variable.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */,
 				72B3C18C0FF65052004C58DC /* FlashLogViewerController.mm in Sources */,

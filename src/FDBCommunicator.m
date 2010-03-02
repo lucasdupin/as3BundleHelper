@@ -8,8 +8,19 @@
 
 #import "FDBCommunicator.h"
 
+/*
+ default message received after a command is parsed by fdb
+ */
 #define DEFAULT_DELIMITER					@"\\(fdb\\) "
+/*
+ This is a format for matching the delimiter
+*/
 #define MESSAGE_ENDING_REGEX				@"(.*|\\n)+.*%@$"
+
+/*
+ There is some stuff I don't want know when
+ parsing the output (traces for example)
+ */
 #define IGNORE_REGEX						@"^\\[trace\\].*"
 
 

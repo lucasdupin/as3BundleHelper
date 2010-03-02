@@ -1,61 +1,52 @@
 /**
- * SyntaxHighlighter
- * http://alexgorbatchev.com/
+ * AS3 Syntax
+ * http://yourpalmark.com/
  *
- * SyntaxHighlighter is donationware. If you are using it, please donate.
- * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
- *
- * @version
- * 2.0.320 (May 03 2009)
- * 
- * @copyright
- * Copyright (C) 2004-2009 Alex Gorbatchev.
- *
- * @license
- * This file is part of SyntaxHighlighter.
- * 
- * SyntaxHighlighter is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * SyntaxHighlighter is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * @author
+ * Mark Walters
  */
 SyntaxHighlighter.brushes.AS3 = function()
 {
-	// Created by Peter Atoria @ http://iAtoria.com
+	var definitions =	'class interface package';
 	
-	var inits 	 =  'class interface function package';
-	
-	var keywords =	'-Infinity ...rest Array as AS3 Boolean break case catch const continue Date decodeURI ' + 
-					'decodeURIComponent default delete do dynamic each else encodeURI encodeURIComponent escape ' + 
-					'extends false final finally flash_proxy for get if implements import in include Infinity ' + 
-					'instanceof int internal is isFinite isNaN isXMLName label namespace NaN native new null ' + 
-					'Null Number Object object_proxy override parseFloat parseInt private protected public ' + 
-					'return set static String super switch this throw true try typeof uint undefined unescape ' + 
-					'use void while with'
-					;
+	var keywords =	'Array Boolean Date decodeURI decodeURIComponent encodeURI encodeURIComponent escape ' +
+					'int isFinite isNaN isXMLName Number Object parseFloat parseInt ' +
+					'String uint unescape XML XMLList ' + //global functions
+					
+					'Infinity -Infinity NaN undefined ' + //global constants
+					
+					'as delete instanceof is new typeof ' + //operators
+					
+					'break case catch continue default do each else finally for if in ' +
+					'label return super switch throw try while with ' + //statements
+					
+					'dynamic final internal native override private protected public static ' + //attributes
+					
+					'...rest const extends get implements namespace set ' + //definitions
+					
+					'import include use ' + //directives
+					
+					'AS3 flash_proxy object_proxy ' + //namespaces
+					
+					'false null this true ' + //expressions
+					
+					'void Null'; //types
 	
 	this.regexList = [
-		{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },		// one line comments
-		{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },		// multiline comments
-		{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },		// double quoted strings
-		{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },		// single quoted strings
-		{ regex: /\b([\d]+(\.[\d]+)?|0x[a-f0-9]+)\b/gi,				css: 'value' },			// numbers
-		{ regex: new RegExp(this.getKeywords(inits), 'gm'),			css: 'color3' },		// initializations
-		{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword' },		// keywords
-		{ regex: new RegExp('var', 'gm'),							css: 'variable' },		// variable
-		{ regex: new RegExp('trace', 'gm'),							css: 'color1' }			// trace
+		{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
+		{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'blockcomments' },		// multiline comments
+		{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// double quoted strings
+		{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// single quoted strings
+		{ regex: /\s*#.*/gm,										css: 'preprocessor' },		// preprocessor tags like #region and #endregion
+		{ regex: new RegExp(this.getKeywords(definitions), 'gm'),	css: 'definition' },		// definitions
+		{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword' },			// keywords
+		{ regex: new RegExp('var', 'gm'),							css: 'variable' },			// variable
+		{ regex: new RegExp('function', 'gm'),						css: 'function' },			// function
+		{ regex: new RegExp('trace', 'gm'),							css: 'trace' }				// trace
 		];
 	
 	this.forHtmlScript(SyntaxHighlighter.regexLib.scriptScriptTags);
 };
 
 SyntaxHighlighter.brushes.AS3.prototype	= new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.AS3.aliases	= ['actionscript3', 'as3'];
+SyntaxHighlighter.brushes.AS3.aliases	= ['as', 'actionscript', 'ActionScript', 'as3', 'AS3'];

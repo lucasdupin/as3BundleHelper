@@ -58,8 +58,27 @@
 	
 	fdbCommunicator = [[FDBCommunicator alloc] init];
 	[fdbCommunicator setDelegate:self];
+	
+//	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
+	
+//	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 1" andValue: @"true"] autorelease]];
+//	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 2" andValue: @"false"] autorelease]];
+//	[variablesTree addObject: [[[Variable alloc] initWithName: @"string 1" andValue: @"blaaaaa"] autorelease]];
+//	[variablesTree addObject: [[[Variable alloc] initWithName: @"num" andValue: @"0 (0x0)"] autorelease]];
 }
 
+-(void) tableView:(NSTableView*) aTableView
+willDisplayCell:(id) aCell
+forTableColumn:(NSTableColumn *) aTableColumn
+row:(int) rowIndex
+{
+	
+}
+
+- (NSCell *)tableView:(NSTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { 
+	NSLog(@"upa");
+	return [[NSCell alloc] init];
+}
 
 #pragma mark Breakpoints an Files search methods
 - (NSArray *) lookAfterBreakpointsInFiles: (NSArray *) actionScriptFiles
@@ -302,13 +321,43 @@
 			
 			v.name = name;
 			v.value = value;
+			v.delegate = self;
+			
+			if (fromVar != nil) {
+				v.fullName = [NSString stringWithFormat: @"%@.%@", fromVar.name, v.name];
+			} else {
+				v.fullName = [NSString stringWithFormat: @"this.%@", v.name];
+			}
+
 			
 			//NSLog(@"Found var: %@ -> %@", v.name, v.value);
 			[result addObject:v];
+			
+			[v autorelease];
 		}
 	}
 	
-	[variablesTree setContent:result];
+	if (fromVar == nil) {
+		[variablesTree setContent:result];
+	} else {
+		[fromVar setChild:result];
+	}
+
+	
+}
+
+#pragma mark Variable controlling
+- (void) variableWantsItsChildren: (id) sender
+// Asks FDB for variable content
+{
+	Variable *v = sender;
+	[fdbCommunicator sendCommand: [v printCommand]];
+}
+- (void) askedToReload: (id) sender
+// Reload variable in the variablesView
+{
+	Variable *v = sender;
+	[variablesView reloadItem:v reloadChildren:YES];
 }
 
 #pragma mark State changing

@@ -16,13 +16,38 @@
 	return self;
 }
 
+- (id) initWithName: (NSString*) n andValue: (NSString*) v
+{
+	self.name = n;
+	self.value = v;
+	
+	return self;
+}
+
+- (NSString *) printCommand
+// Command wich once sent
+// will return the vriable contents
+{
+	return [NSString stringWithFormat:@"print %@.", fullName];
+}
+
 -(void) setChild:(NSMutableArray *) newChild
 {
-	child = newChild;
+	if (newChild != child) {
+		[child release];
+		
+		child = newChild;
+		[child retain];
+		
+		[delegate askedToReload: self];
+	}
 }
 -(NSMutableArray *) child
 {
-	NSLog(@"child of %@", fullName);
+	NSLog(@"%@ says: I want my children back!", fullName);
+	//Let's reload the values, ok?
+	[delegate variableWantsItsChildren:self];
+	
 	return child;
 }
 
@@ -35,5 +60,6 @@
 @synthesize fullName;
 @synthesize value;
 @synthesize child;
+@synthesize delegate;
 
 @end

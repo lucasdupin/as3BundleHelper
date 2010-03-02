@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol VariableDelegate
+
+- (void) variableWantsItsChildren: (id) sender;
+- (void) askedToReload: (id) sender;
+
+@end
+
 @interface Variable : NSObject {
 	
 	//For output
@@ -25,9 +32,11 @@
 }
 
 - (id) init;
+- (id) initWithName: (NSString*) n andValue: (NSString*) v;
 - (BOOL) leaf;
+- (NSString *) printCommand;
 
-@property (assign) id delegate;
+@property (assign) id<VariableDelegate> delegate;
 @property (assign) NSMutableArray * child;
 @property (copy) NSString * name;
 @property (copy) NSString * fullName;

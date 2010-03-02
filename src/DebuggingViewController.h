@@ -12,16 +12,18 @@
 #import <WebKit/WebKit.h>
 #import "FDBCommunicator.h"
 #import "Variable.h"
+#import "DebuggerValueCell.h"
 
 //C
 #include <sys/xattr.h>
 #include <zlib.h>
 #include <vector>
 
-@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient> {
+@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient, VariableDelegate> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	IBOutlet NSTreeController *variablesTree;
+	IBOutlet NSOutlineView *variablesView;
 	
 	//File we're seeing
 	NSString *currentFile;

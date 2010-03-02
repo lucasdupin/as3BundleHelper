@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		72852414113D8F2C00369124 /* DebuggerValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72852413113D8F2C00369124 /* DebuggerValueCell.m */; };
 		72AC0571113C918E000B31BF /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C69FD1050779F00E63E33 /* Variable.m */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* FlashLogViewerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */; };
@@ -64,6 +65,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* as3Debugger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = as3Debugger_Prefix.pch; sourceTree = "<group>"; };
+		72852412113D8F2C00369124 /* DebuggerValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggerValueCell.h; sourceTree = "<group>"; };
+		72852413113D8F2C00369124 /* DebuggerValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggerValueCell.m; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* FlashLogViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashLogViewerController.h; path = src/FlashLogViewerController.h; sourceTree = "<group>"; };
@@ -126,7 +129,6 @@
 				72443CD2101CCF93000D76CE /* DebuggingView */,
 				72443CD1101CCF78000D76CE /* LogViewer */,
 				72B3C1860FF65052004C58DC /* TaskWrapper.h */,
-				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
 				A0B879B51039F3D20045DA0A /* ApplicationController.h */,
 				A0B879B61039F3D20045DA0A /* ApplicationController.mm */,
 			);
@@ -209,6 +211,7 @@
 		72443CD1101CCF78000D76CE /* LogViewer */ = {
 			isa = PBXGroup;
 			children = (
+				72B3C1870FF65052004C58DC /* TaskWrapper.m */,
 				72CEA0790FFFDA8200E24A1F /* AlphaPanel.m */,
 				72CEA07A0FFFDA8200E24A1F /* AlphaPanel.h */,
 				72B3C1880FF65052004C58DC /* FlashLogViewerController.h */,
@@ -228,6 +231,8 @@
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
 				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
+				72852412113D8F2C00369124 /* DebuggerValueCell.h */,
+				72852413113D8F2C00369124 /* DebuggerValueCell.m */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				A0283D49104D6473003268BF /* LogView.m in Sources */,
 				A0329ED310891A0300D025C1 /* FDBCommunicator.m in Sources */,
 				A0329EF6108930C800D025C1 /* FDBCommand.m in Sources */,
+				72852414113D8F2C00369124 /* DebuggerValueCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

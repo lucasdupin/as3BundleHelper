@@ -12,10 +12,12 @@
 
 
 @interface DebuggerValueCell : NSCell {
-	NSCell * childCell;
+	NSCell *childCell;
 }
 
 - (void)setObjectValue:(id)object;
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
+
+@property (nonatomic, copy) NSCell *childCell;
 
 @end

@@ -12,15 +12,14 @@
 #define BOOLEAN_FALSE_REGEX			@"^false$"
 #define NUMBER_REGEX				@"^(?<num>\\d+)\\s\\(0x.*\\)$"
 
-
 @implementation DebuggerValueCell
 
-- copyWithZone:(NSZone *)zone {
-	NSLog(@"copy");
-	
+@synthesize childCell;
+
+-(id) copyWithZone:(NSZone *)zone {
 	DebuggerValueCell *cell = (DebuggerValueCell *)[super copyWithZone:zone];
 	cell->childCell = nil;
-	
+	[cell setChildCell: childCell];
     return cell;
 }
 
@@ -30,42 +29,50 @@
 }
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
-	NSLog(@"draw vaaaaalue %@", [self objectValue]);
 	
 	NSString * value = [self objectValue];
 	
-	//Check if we're need to create the control
-	if (childCell == nil) {
+	[childCell release];
+	
+	//Wich type of control?
+	if ([value isMatchedByRegex:BOOLEAN_TRUE_REGEX] ||
+		 [value isMatchedByRegex:BOOLEAN_FALSE_REGEX]) {
 		
-		//Wich type of control?
-		if ([value isMatchedByRegex:BOOLEAN_TRUE_REGEX] ||
-			 [value isMatchedByRegex:BOOLEAN_FALSE_REGEX]) {
-			
-			NSButtonCell *b = [[[NSButtonCell alloc] init] autorelease];
-			[b setTitle:nil];
-			[b setButtonType:NSSwitchButton];
-			[b setState:[value isMatchedByRegex:BOOLEAN_TRUE_REGEX]];
-			
-			childCell = b;
-			
-		} else if ([value isMatchedByRegex:NUMBER_REGEX]) {
-			
-			//NSStp 
-			
-			NSString * numS;
-			[value getCapturesWithRegexAndReferences: NUMBER_REGEX, @"${num}", &numS, nil];
-		} else {
-			childCell = [[[NSTextFieldCell alloc] init] autorelease];
-			[childCell setEditable:YES];
-			[childCell setObjectValue:[self objectValue]];
-		}
+		/*
+		 Boolean
+		 */
+		NSButtonCell *b = [[NSButtonCell alloc] init];
+		[b setTitle:nil];
+		[b setButtonType:NSSwitchButton];
+		[b setState:[value isMatchedByRegex:BOOLEAN_TRUE_REGEX]];
+		
+		childCell = b;
+		
+	} else if ([value isMatchedByRegex:NUMBER_REGEX]) {
+		/*
+		 Numeric
+		 */
+		
+		NSString * numS;
+		[value getCapturesWithRegexAndReferences: NUMBER_REGEX, @"${num}", &numS, nil];
+	} else {
+		/*
+		 Text
+		 */
+		childCell = [[NSTextFieldCell alloc] init];
+		[childCell setEditable:YES];
+		[childCell setObjectValue:[self objectValue]];
 	}
+	
+	//Draw
 	[childCell drawWithFrame:cellFrame inView:controlView];
+	//Release
+	[childCell release];
+	
 }
 
 - (void)dealloc
 {
-	[childCell release];
 	[super dealloc];
 }
 @end

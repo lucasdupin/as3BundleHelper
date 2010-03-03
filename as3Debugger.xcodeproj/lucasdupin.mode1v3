@@ -278,14 +278,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>14</integer>
 									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 9}, {234, 756}}</string>
+							<string>{{0, 26}, {234, 756}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -304,7 +304,7 @@
 							<real>234</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>295 132 1172 815 0 0 1680 1028 </string>
+						<string>288 133 1172 815 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.mm</string>
+								<string>DebuggingViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.mm</string>
+										<string>DebuggingViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>724366DE113EE95800D405C6</string>
+										<string>72436786113EF7BF00D405C6</string>
 										<key>history</key>
 										<array>
 											<string>72B3C19C0FF6516E004C58DC</string>
@@ -363,11 +363,11 @@
 											<string>724364AD113EB1B600D405C6</string>
 											<string>72436578113EBBA800D405C6</string>
 											<string>724365A4113EC1BB00D405C6</string>
-											<string>72436640113EDB3D00D405C6</string>
-											<string>72436641113EDB3D00D405C6</string>
 											<string>72436696113EE28100D405C6</string>
 											<string>724366B0113EE3DF00D405C6</string>
-											<string>7243669D113EE2ED00D405C6</string>
+											<string>7243670D113EF09D00D405C6</string>
+											<string>72436785113EF7BF00D405C6</string>
+											<string>72436771113EF66500D405C6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -381,7 +381,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {916, 594}}</string>
 								<key>RubberWindowFrame</key>
-								<string>295 132 1172 815 0 0 1680 1028 </string>
+								<string>288 133 1172 815 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -401,7 +401,7 @@
 								<key>Frame</key>
 								<string>{{0, 599}, {916, 175}}</string>
 								<key>RubberWindowFrame</key>
-								<string>295 132 1172 815 0 0 1680 1028 </string>
+								<string>288 133 1172 815 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -563,6 +563,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>72436787113EF7BF00D405C6</string>
 		<string>72436620113ED68600D405C6</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>7243646B113EABEB00D405C6</string>
@@ -573,7 +574,7 @@
 		<string>/Users/lucasdupin/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>295 132 1172 815 0 0 1680 1028 </string>
+	<string>288 133 1172 815 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -589,8 +590,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -613,6 +612,8 @@
 							<string>490pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

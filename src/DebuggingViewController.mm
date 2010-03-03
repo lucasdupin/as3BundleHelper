@@ -69,19 +69,6 @@
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"num" andValue: @"0 (0x0)"] autorelease]];
 }
 
--(void) tableView:(NSTableView*) aTableView
-willDisplayCell:(id) aCell
-forTableColumn:(NSTableColumn *) aTableColumn
-row:(int) rowIndex
-{
-	
-}
-
-- (NSCell *)tableView:(NSTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { 
-	NSLog(@"upa");
-	return [[NSCell alloc] init];
-}
-
 #pragma mark Breakpoints an Files search methods
 - (NSArray *) lookAfterBreakpointsInFiles: (NSArray *) actionScriptFiles
 {
@@ -231,7 +218,7 @@ row:(int) rowIndex
 - (IBAction) step: (id)sender
 {
 	//Clear the code panel
-	[self showFile:nil at:0];
+	[self setState: ST_WAITING_FOR_PLAYER_OR_FDB];
 	
 	//Send command
 	[fdbCommunicator sendCommand: @"next"];
@@ -239,7 +226,7 @@ row:(int) rowIndex
 - (IBAction) stepOut: (id)sender
 {
 	//Clear the code panel
-	[self showFile:nil at:0];
+	[self setState: ST_WAITING_FOR_PLAYER_OR_FDB];
 	
 	//Send command
 	[fdbCommunicator sendCommand: @"finish"];
@@ -247,15 +234,13 @@ row:(int) rowIndex
 - (IBAction) continueTilNextBreakPoint: (id)sender
 {
 	//Clear the code panel
-	[self showFile:nil at:0];
+	[self setState: ST_WAITING_FOR_PLAYER_OR_FDB];
 	
 	//Send command
 	[fdbCommunicator sendCommand: @"continue"];
 }
 - (IBAction) dettach: (id)sender
 {
-	//Clear the code panel
-	[self showFile:nil at:0];
 	
 	//Send command
 	[fdbCommunicator stop];
@@ -293,7 +278,7 @@ row:(int) rowIndex
 			
 		}
 	else {
-		htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: @""];
+		htmlFileContents = @"";
 	}
 
 	
@@ -364,15 +349,45 @@ row:(int) rowIndex
 	[variablesView reloadItem:v reloadChildren:YES];
 }
 
+- (void) clearPanels
+{
+	[self showFile:nil at:0];
+	[variablesTree setContent:nil];
+}
+
 #pragma mark State changing
 //Application state
 - (void) setState:(NSString *)state
 {
+	/*
+	 Checking if we are connected, so the toolbar icons will be enabled (except the 'connect', of course
+	 */
 	if([state isEqual:ST_DISCONNECTED] || [state isEqual:ST_NO_PROJECT_PATH]){
 		connected = NO;
+		[self clearPanels];
 	} else {
 		connected = YES;
 	}
+	
+	/*
+	 Disable panels when we're waiting
+	 */
+	if ([state isEqual:ST_WAITING_FOR_PLAYER_OR_FDB]) {
+		[variablesView setEnabled:NO];
+		[[codeView animator] setAlphaValue: .5];
+	} else {
+		[variablesView setEnabled:YES];
+		[[codeView animator] setAlphaValue: 1];
+	}
+	
+	/*
+	 Clear panel when disconected
+	 */
+	if ([state isEqual:ST_DISCONNECTED]) {
+		[self clearPanels];
+	}
+
+	 
 	
 	currentState = state;
 	[[window toolbar] validateVisibleItems];
@@ -461,7 +476,7 @@ row:(int) rowIndex
 		[fdbCommunicator sendCommand:@"print this."];
 		
 		//Continuing in breakpoint (updating line number)
-	} else if([currentState isEqual:ST_REACH_BREAKPOINT] && [message isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
+	} else if([message isMatchedByRegex:FDB_NEXT_BREAKPOINT]) {
 		
 		//Getting filename and line
 		NSString *line;

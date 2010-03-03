@@ -49,6 +49,7 @@
 @property (readonly) BOOL connected;
 
 - (id)init;
+- (void) clearPanels;
 
 //Starts FDB, find breakpoints in project path
 - (IBAction) connect: (id)sender;

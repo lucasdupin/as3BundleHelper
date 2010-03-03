@@ -110,7 +110,7 @@
 		}
 		
 	} else {
-		NSLog(@"[COMMUNICATOR] truncated output received: %@\n", output);
+		//NSLog(@"[COMMUNICATOR] truncated output received: %@\n", output);
 	}
 
 		

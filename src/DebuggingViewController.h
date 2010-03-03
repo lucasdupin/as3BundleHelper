@@ -37,6 +37,9 @@
 	//The FDB we're talking to
 	FDBCommunicator * fdbCommunicator;
 	
+	//Variables waiting in line
+	NSMutableArray * queuedVars;
+	
 	NSArray * breakpoints;
 	
 	NSString * currentInspectedVar;

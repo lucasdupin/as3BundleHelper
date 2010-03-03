@@ -20,7 +20,7 @@
 #define FDB_REACH_BREAKPOINT				@"^Breakpoint \\d+,.* (?<file>.*):(?<line>\\d+)\\n"
 #define FDB_NEXT_BREAKPOINT					@"^(.*\\n)* (?<line>\\d+)[\\t+| +]"
 //Reading vars
-#define FDB_VARIABLE_LIST					@"^\\$\\d+ = this = \\[(.+) \\d+, class=\\'(?<class>.+)\\'\\]"
+#define FDB_VARIABLE_LIST					@"^\\$\\d+ = (?<word>\\w+) = \\[(.+) \\d+, class=\\'(?<class>.+)\\'\\]"
 #define FDB_GET_VARIABLE_VALUE				@"^\\s(?<name>.+)\\s=\\s(?<value>.+)$"
 
 
@@ -58,6 +58,8 @@
 	
 	fdbCommunicator = [[FDBCommunicator alloc] init];
 	[fdbCommunicator setDelegate:self];
+	
+	queuedVars = [[NSMutableArray alloc] init];
 	
 //	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
 	
@@ -351,12 +353,14 @@ row:(int) rowIndex
 // Asks FDB for variable content
 {
 	Variable *v = sender;
+	[queuedVars addObject: v];
 	[fdbCommunicator sendCommand: [v printCommand]];
 }
 - (void) askedToReload: (id) sender
 // Reload variable in the variablesView
 {
 	Variable *v = sender;
+	NSLog(@"time to reload %@", v.name);
 	[variablesView reloadItem:v reloadChildren:YES];
 }
 
@@ -471,10 +475,34 @@ row:(int) rowIndex
 		//Asking for vars
 		currentInspectedVar = @"this";
 		[fdbCommunicator sendCommand:@"print this."];
-		
+	
+	/*
+	 Got variable definitions
+	 */
 	} else if ([message isMatchedByRegex: [NSString stringWithFormat: FDB_VARIABLE_LIST, currentInspectedVar]]) {
 		
-		[self parseVarsForString: message atNode: nil];
+		Variable *v = nil;
+		
+		NSString* targetWord;
+		[message getCapturesWithRegexAndReferences: FDB_VARIABLE_LIST, @"${word}", &targetWord, nil];
+		
+		//It is.. search for it..
+		NSUInteger i, count = [queuedVars count];
+		for (i = 0; i < count; i++) {
+			
+			Variable * obj = [queuedVars objectAtIndex:i];
+			if ([[obj printCommand] isEqual: command]) {
+				
+				//Found!
+				v = obj;
+				[queuedVars removeObject:obj];
+				
+				break;
+			}
+			
+		}
+		
+		[self parseVarsForString: message atNode: v];
 		[self setState:ST_REACH_BREAKPOINT];
 
 	} else {

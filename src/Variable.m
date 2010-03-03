@@ -44,9 +44,12 @@
 }
 -(NSMutableArray *) child
 {
-	NSLog(@"%@ says: I want my children back!", fullName);
-	//Let's reload the values, ok?
-	[delegate variableWantsItsChildren:self];
+	//NSLog(@"%@ says: I want my children back!", fullName);
+	
+	if (child == nil) {
+		//Let's load the values, ok?
+		[delegate variableWantsItsChildren:self];
+	}
 	
 	return child;
 }

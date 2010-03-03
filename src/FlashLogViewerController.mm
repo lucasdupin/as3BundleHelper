@@ -36,12 +36,14 @@
 		[[[NSUserDefaultsController sharedUserDefaultsController] values] setValue:flashlog forKey: @"flashLogPath"];
 		
 		//Checking if the file does not exist because mm.cfg was not set up
-		if (![[NSFileManager defaultManager] fileExistsAtPath: @"/Library/Application Support/Macromedia/mm.cfg"]) {
-			NSLog(@"No mm.cfg indeed...");
+		NSString *mmCfg = [@"~/mm.cfg" stringByExpandingTildeInPath];
+		if (![[NSFileManager defaultManager] fileExistsAtPath: mmCfg]) {
+			NSLog(@"No mm.cfg indeed... will be created at: %@", mmCfg);
 			//Ok, let's create it...
-			NSString *mmCfg = @"ErrorReportingEnable=1 \nTraceOutputFileEnable=1";
-			[mmCfg writeToFile:@"/Library/Application Support/Macromedia/mm.cfg" atomically:YES encoding: NSUTF8StringEncoding error:nil];
+			NSString *mmCfgText = @"ErrorReportingEnable=1 \nTraceOutputFileEnable=1";
+			[mmCfgText writeToFile:mmCfg atomically:YES encoding: NSUTF8StringEncoding error:nil];
 		}
+		[@"" writeToFile:flashlog atomically:YES encoding: NSUTF8StringEncoding error:nil];
 	}
 	NSLog(@"%@", [@"Flashlog is : " stringByAppendingString: flashlog]);
 	

@@ -231,8 +231,6 @@
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
 				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
-				72852412113D8F2C00369124 /* DebuggerValueCell.h */,
-				72852413113D8F2C00369124 /* DebuggerValueCell.m */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -272,6 +270,8 @@
 			children = (
 				A05C69FC1050779F00E63E33 /* Variable.h */,
 				A05C69FD1050779F00E63E33 /* Variable.m */,
+				72852412113D8F2C00369124 /* DebuggerValueCell.h */,
+				72852413113D8F2C00369124 /* DebuggerValueCell.m */,
 			);
 			name = Variables;
 			sourceTree = "<group>";

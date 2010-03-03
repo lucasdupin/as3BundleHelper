@@ -17,6 +17,7 @@
 
 - (void)setObjectValue:(id)object;
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
+- copyWithZone:(NSZone *)zone;
 
 @property (nonatomic, copy) NSCell *childCell;
 

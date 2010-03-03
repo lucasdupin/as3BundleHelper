@@ -61,7 +61,7 @@
 	
 	queuedVars = [[NSMutableArray alloc] init];
 	
-//	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
+	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
 	
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 1" andValue: @"true"] autorelease]];
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 2" andValue: @"false"] autorelease]];

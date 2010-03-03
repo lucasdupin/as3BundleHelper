@@ -11,6 +11,14 @@
 
 @implementation Variable
 
+@synthesize name;
+@synthesize fullName;
+@synthesize value;
+@synthesize child;
+@synthesize delegate;
+
+#define VARIABLE_TYPE_BOOLEAN				@"^\\s(?<name>.+)\\s=\\s(?<value>.+)$"
+
 -(id) init
 {
 	return self;
@@ -44,8 +52,6 @@
 }
 -(NSMutableArray *) child
 {
-	//NSLog(@"%@ says: I want my children back!", fullName);
-	
 	if (child == nil) {
 		//Let's load the values, ok?
 		[delegate variableWantsItsChildren:self];
@@ -56,13 +62,7 @@
 
 - (BOOL) leaf
 {
-	return [value rangeOfString:@"Object"].location == NSNotFound;
+	return [value rangeOfString:@"[Object"].location == NSNotFound;
 }
-
-@synthesize name;
-@synthesize fullName;
-@synthesize value;
-@synthesize child;
-@synthesize delegate;
 
 @end

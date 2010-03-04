@@ -10,6 +10,8 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		72852414113D8F2C00369124 /* DebuggerValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72852413113D8F2C00369124 /* DebuggerValueCell.m */; };
 		729B7D5211404729005DF504 /* Console.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 729B7D5111404729005DF504 /* Console.tiff */; };
+		729B7D94114056AC005DF504 /* DebuggingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729B7D92114056AC005DF504 /* DebuggingView.xib */; };
+		729B7DDE114064A8005DF504 /* DPSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B7DDD114064A8005DF504 /* DPSplitView.m */; };
 		72AC0571113C918E000B31BF /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C69FD1050779F00E63E33 /* Variable.m */; };
 		72B3C18B0FF65052004C58DC /* TaskWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1870FF65052004C58DC /* TaskWrapper.m */; };
 		72B3C18C0FF65052004C58DC /* FlashLogViewerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 72B3C1890FF65052004C58DC /* FlashLogViewerController.mm */; };
@@ -35,7 +37,6 @@
 		A0B605A3104AF5470046B2DA /* LogViewer.icns in Resources */ = {isa = PBXBuildFile; fileRef = A0B605A1104AF5470046B2DA /* LogViewer.icns */; };
 		A0B605A6104AF6D90046B2DA /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B605A5104AF6D90046B2DA /* PreferencesController.m */; };
 		A0B60688104B0C900046B2DA /* FlashLogViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B60686104B0C900046B2DA /* FlashLogViewer.xib */; };
-		A0B606F6104B0FDE0046B2DA /* DebuggingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */; };
 		A0B879B41039F3C70045DA0A /* DebuggingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */; };
 		A0B879B71039F3D20045DA0A /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0B879B61039F3D20045DA0A /* ApplicationController.mm */; };
 		A0F45A47104200B700DE066E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F45A46104200B700DE066E /* WebKit.framework */; };
@@ -69,6 +70,9 @@
 		72852412113D8F2C00369124 /* DebuggerValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggerValueCell.h; sourceTree = "<group>"; };
 		72852413113D8F2C00369124 /* DebuggerValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggerValueCell.m; sourceTree = "<group>"; };
 		729B7D5111404729005DF504 /* Console.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Console.tiff; path = Resources/icons/debugger/Console.tiff; sourceTree = "<group>"; };
+		729B7D93114056AC005DF504 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DebuggingView.xib; sourceTree = "<group>"; };
+		729B7DDC114064A8005DF504 /* DPSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSplitView.h; sourceTree = "<group>"; };
+		729B7DDD114064A8005DF504 /* DPSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSplitView.m; sourceTree = "<group>"; };
 		72B3C1860FF65052004C58DC /* TaskWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskWrapper.h; path = src/TaskWrapper.h; sourceTree = "<group>"; };
 		72B3C1870FF65052004C58DC /* TaskWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskWrapper.m; path = src/TaskWrapper.m; sourceTree = "<group>"; };
 		72B3C1880FF65052004C58DC /* FlashLogViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashLogViewerController.h; path = src/FlashLogViewerController.h; sourceTree = "<group>"; };
@@ -100,7 +104,6 @@
 		A0B605A4104AF6D90046B2DA /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesController.h; path = src/PreferencesController.h; sourceTree = "<group>"; };
 		A0B605A5104AF6D90046B2DA /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesController.m; path = src/PreferencesController.m; sourceTree = "<group>"; };
 		A0B60687104B0C900046B2DA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/FlashLogViewer.xib; sourceTree = "<group>"; };
-		A0B606F5104B0FDE0046B2DA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DebuggingView.xib; sourceTree = "<group>"; };
 		A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DebuggingViewController.mm; path = src/DebuggingViewController.mm; sourceTree = "<group>"; };
 		A0B879B31039F3C70045DA0A /* DebuggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebuggingViewController.h; path = src/DebuggingViewController.h; sourceTree = "<group>"; };
 		A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationController.h; path = src/ApplicationController.h; sourceTree = "<group>"; };
@@ -228,11 +231,12 @@
 		72443CD2101CCF93000D76CE /* DebuggingView */ = {
 			isa = PBXGroup;
 			children = (
+				729B7DDA1140648C005DF504 /* Components */,
 				A0329EE11089275300D025C1 /* Communicator */,
 				A05C69FB1050776800E63E33 /* Variables */,
 				A0B879B31039F3C70045DA0A /* DebuggingViewController.h */,
 				A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */,
-				A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */,
+				729B7D92114056AC005DF504 /* DebuggingView.xib */,
 			);
 			name = DebuggingView;
 			sourceTree = "<group>";
@@ -245,6 +249,15 @@
 				A0B60597104AF4900046B2DA /* Preferences.xib */,
 			);
 			name = Prefences;
+			sourceTree = "<group>";
+		};
+		729B7DDA1140648C005DF504 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				729B7DDC114064A8005DF504 /* DPSplitView.h */,
+				729B7DDD114064A8005DF504 /* DPSplitView.m */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		72C1A9E2101CB2F600EAD900 /* Icons */ = {
@@ -361,8 +374,8 @@
 				A0B605A2104AF5470046B2DA /* LogViewer.png in Resources */,
 				A0B605A3104AF5470046B2DA /* LogViewer.icns in Resources */,
 				A0B60688104B0C900046B2DA /* FlashLogViewer.xib in Resources */,
-				A0B606F6104B0FDE0046B2DA /* DebuggingView.xib in Resources */,
 				729B7D5211404729005DF504 /* Console.tiff in Resources */,
+				729B7D94114056AC005DF504 /* DebuggingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +414,7 @@
 				A0329ED310891A0300D025C1 /* FDBCommunicator.m in Sources */,
 				A0329EF6108930C800D025C1 /* FDBCommand.m in Sources */,
 				72852414113D8F2C00369124 /* DebuggerValueCell.m in Sources */,
+				729B7DDE114064A8005DF504 /* DPSplitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +437,14 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		729B7D92114056AC005DF504 /* DebuggingView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				729B7D93114056AC005DF504 /* English */,
+			);
+			name = DebuggingView.xib;
+			sourceTree = "<group>";
+		};
 		A0B60597104AF4900046B2DA /* Preferences.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,14 +459,6 @@
 				A0B60687104B0C900046B2DA /* English */,
 			);
 			name = FlashLogViewer.xib;
-			sourceTree = "<group>";
-		};
-		A0B606F4104B0FDE0046B2DA /* DebuggingView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0B606F5104B0FDE0046B2DA /* English */,
-			);
-			name = DebuggingView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

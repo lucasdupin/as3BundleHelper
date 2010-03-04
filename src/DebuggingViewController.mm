@@ -256,6 +256,10 @@
 	[fdbCommunicator stop];
 	[self setState: ST_DISCONNECTED];
 }
+- (IBAction) toggleConsole: (id)sender
+{
+	[consoleSplitView toggleCollapse:nil];
+}
 
 #pragma mark Code presentation
 - (void) showFile: (NSString*)file at: (int)line
@@ -395,6 +399,12 @@
 //Menu item validation
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
 	//	NSLog(@"validation done with state: %@", currentState);
+	
+	//Console always enabled
+	if ([item tag] == 5) {
+		return YES;
+	}
+	
 	if([currentState isEqual: ST_WAITING_FOR_PLAYER_OR_FDB]) {
 		if([item action] == @selector(dettach:)) {
 			return YES;

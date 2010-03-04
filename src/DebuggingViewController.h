@@ -13,6 +13,7 @@
 #import "FDBCommunicator.h"
 #import "Variable.h"
 #import "DebuggerValueCell.h"
+#import <BWToolkitFramework/BWToolkitFramework.h>
 
 //C
 #include <sys/xattr.h>
@@ -20,10 +21,16 @@
 #include <vector>
 
 @interface DebuggingViewController : NSWindowController <FDBCommunicatorClient, VariableDelegate> {
+	
 	IBOutlet NSWindow *window;
+
+	//Code and variable tree
 	IBOutlet WebView *codeView;
 	IBOutlet NSTreeController *variablesTree;
+	
+	//Console stuff
 	IBOutlet NSOutlineView *variablesView;
+	IBOutlet BWSplitView *consoleSplitView;
 	
 	//File we're seeing
 	NSString *currentFile;
@@ -57,6 +64,7 @@
 - (IBAction) stepOut: (id)sender;
 - (IBAction) continueTilNextBreakPoint: (id)sender;
 - (IBAction) dettach: (id)sender;
+- (IBAction) toggleConsole: (id)sender;
 
 //Searches for breakpoints in all project files and populates the
 //breakpoints Array

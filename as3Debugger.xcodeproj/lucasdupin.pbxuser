@@ -18,10 +18,10 @@
 		breakpoints = (
 			72A487360FD4C6CB0041282B /* TraceController.m:11 */,
 			72C1AA07101CB7A400EAD900 /* TaskWrapper.m:17 */,
-			72AC0411113C5701000B31BF /* DebuggingViewController.mm:487 */,
+			72AC0411113C5701000B31BF /* DebuggingViewController.mm:491 */,
 			72852540113DACDB00369124 /* DebuggerValueCell.m:112 */,
-			729B7C811140140D005DF504 /* DebuggingViewController.mm:291 */,
-			729B7D0E11403EDC005DF504 /* DebuggingViewController.mm:73 */,
+			729B7C811140140D005DF504 /* DebuggingViewController.mm:295 */,
+			729B7D0E11403EDC005DF504 /* DebuggingViewController.mm:77 */,
 		);
 		codeSenseManager = 720B0D1E0FD4B7DF004FB299 /* Code sense */;
 		executables = (
@@ -289,6 +289,13 @@
 			729B7E5A114077BC005DF504 /* PBXTextBookmark */ = 729B7E5A114077BC005DF504 /* PBXTextBookmark */;
 			729B7E5D114077D0005DF504 /* PBXTextBookmark */ = 729B7E5D114077D0005DF504 /* PBXTextBookmark */;
 			729B7E5E114077D2005DF504 /* PBXTextBookmark */ = 729B7E5E114077D2005DF504 /* PBXTextBookmark */;
+			729B7E6911407982005DF504 /* PBXTextBookmark */ = 729B7E6911407982005DF504 /* PBXTextBookmark */;
+			729B7E6A11407982005DF504 /* PBXTextBookmark */ = 729B7E6A11407982005DF504 /* PBXTextBookmark */;
+			729B7E6B11407982005DF504 /* PBXTextBookmark */ = 729B7E6B11407982005DF504 /* PBXTextBookmark */;
+			729B7E6F1140798D005DF504 /* PBXTextBookmark */ = 729B7E6F1140798D005DF504 /* PBXTextBookmark */;
+			729B7E751140799D005DF504 /* PBXTextBookmark */ = 729B7E751140799D005DF504 /* PBXTextBookmark */;
+			729B7E7911407A45005DF504 /* PBXTextBookmark */ = 729B7E7911407A45005DF504 /* PBXTextBookmark */;
+			729B7E7E11407A98005DF504 /* PBXTextBookmark */ = 729B7E7E11407A98005DF504 /* PBXTextBookmark */;
 			72AC041C113C58A8000B31BF = 72AC041C113C58A8000B31BF /* PBXBookmark */;
 			72AC041E113C58A8000B31BF = 72AC041E113C58A8000B31BF /* PBXBookmark */;
 			72AC04DA113C8ABA000B31BF = 72AC04DA113C8ABA000B31BF /* PBXTextBookmark */;
@@ -439,7 +446,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = window;
 		rLen = 0;
-		rLoc = 11241;
+		rLoc = 11343;
 		rType = 0;
 		vrLen = 844;
 		vrLoc = 10773;
@@ -479,7 +486,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 379";
 		rLen = 0;
-		rLoc = 11805;
+		rLoc = 11907;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 11030;
@@ -678,7 +685,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 264";
 		rLen = 0;
-		rLoc = 8974;
+		rLoc = 9076;
 		rType = 0;
 		vrLen = 1802;
 		vrLoc = 7741;
@@ -688,7 +695,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2786;
+		rLoc = 2888;
 		rType = 0;
 		vrLen = 1788;
 		vrLoc = 1479;
@@ -702,7 +709,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2786;
+		rLoc = 2888;
 		rType = 0;
 		vrLen = 1788;
 		vrLoc = 1479;
@@ -752,7 +759,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9657;
+		rLoc = 9759;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 8382;
@@ -772,7 +779,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9650;
+		rLoc = 9752;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 8382;
@@ -787,7 +794,7 @@
 		vrLen = 1045;
 		vrLoc = 0;
 	};
-	729B7C811140140D005DF504 /* DebuggingViewController.mm:291 */ = {
+	729B7C811140140D005DF504 /* DebuggingViewController.mm:295 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -799,7 +806,7 @@
 		functionName = "-showFile:at:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 291;
+		lineNumber = 295;
 		location = as3Debugger;
 		modificationTime = 289422105.626011;
 		originalNumberOfMultipleMatches = 1;
@@ -810,7 +817,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9650;
+		rLoc = 9752;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 8382;
@@ -820,7 +827,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9650;
+		rLoc = 9752;
 		rType = 0;
 		vrLen = 1651;
 		vrLoc = 8382;
@@ -840,7 +847,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9650;
+		rLoc = 9752;
 		rType = 0;
 		vrLen = 1711;
 		vrLoc = 8382;
@@ -860,7 +867,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 283";
 		rLen = 0;
-		rLoc = 9650;
+		rLoc = 9752;
 		rType = 0;
 		vrLen = 1711;
 		vrLoc = 8382;
@@ -880,7 +887,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2156;
 		vrLoc = 1574;
@@ -900,7 +907,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 280";
 		rLen = 0;
-		rLoc = 9385;
+		rLoc = 9487;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 8283;
@@ -920,7 +927,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 280";
 		rLen = 0;
-		rLoc = 9385;
+		rLoc = 9487;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 8283;
@@ -940,7 +947,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 280";
 		rLen = 0;
-		rLoc = 9385;
+		rLoc = 9487;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 8283;
@@ -970,7 +977,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 280";
 		rLen = 0;
-		rLoc = 9385;
+		rLoc = 9487;
 		rType = 0;
 		vrLen = 1393;
 		vrLoc = 9069;
@@ -980,7 +987,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 318";
 		rLen = 0;
-		rLoc = 10603;
+		rLoc = 10705;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 9069;
@@ -991,7 +998,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 290;
+		rLoc = 294;
 		rType = 1;
 	};
 	729B7CC6114030F9005DF504 /* PBXTextBookmark */ = {
@@ -999,7 +1006,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9659;
+		rLoc = 9761;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 8464;
@@ -1060,7 +1067,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 290;
+		rLoc = 294;
 		rType = 1;
 	};
 	729B7CD31140311E005DF504 /* PBXTextBookmark */ = {
@@ -1068,7 +1075,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 285";
 		rLen = 0;
-		rLoc = 9567;
+		rLoc = 9669;
 		rType = 0;
 		vrLen = 1599;
 		vrLoc = 7918;
@@ -1078,7 +1085,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 285";
 		rLen = 0;
-		rLoc = 9554;
+		rLoc = 9656;
 		rType = 0;
 		vrLen = 1599;
 		vrLoc = 7918;
@@ -1108,7 +1115,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 259";
 		rLen = 1;
-		rLoc = 8526;
+		rLoc = 8628;
 		rType = 0;
 		vrLen = 1634;
 		vrLoc = 7918;
@@ -1118,7 +1125,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 70";
 		rLen = 0;
-		rLoc = 2479;
+		rLoc = 2581;
 		rType = 0;
 		vrLen = 1799;
 		vrLoc = 1476;
@@ -1128,7 +1135,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9554;
+		rLoc = 9656;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 8159;
@@ -1138,7 +1145,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9554;
+		rLoc = 9656;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 8159;
@@ -1148,7 +1155,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9490;
+		rLoc = 9592;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 8159;
@@ -1158,7 +1165,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9490;
+		rLoc = 9592;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 14902;
@@ -1168,7 +1175,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9490;
+		rLoc = 9592;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 14902;
@@ -1178,12 +1185,12 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 286";
 		rLen = 0;
-		rLoc = 9490;
+		rLoc = 9592;
 		rType = 0;
 		vrLen = 1581;
 		vrLoc = 8161;
 	};
-	729B7D0E11403EDC005DF504 /* DebuggingViewController.mm:73 */ = {
+	729B7D0E11403EDC005DF504 /* DebuggingViewController.mm:77 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1195,7 +1202,7 @@
 		functionName = "-windowDidLoad";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 73;
+		lineNumber = 77;
 		location = as3Debugger;
 		modificationTime = 289423069.989112;
 		originalNumberOfMultipleMatches = 1;
@@ -1216,7 +1223,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2166;
 		vrLoc = 1804;
@@ -1226,7 +1233,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2166;
 		vrLoc = 1804;
@@ -1236,7 +1243,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2192;
 		vrLoc = 1804;
@@ -1246,7 +1253,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2070;
 		vrLoc = 1804;
@@ -1256,7 +1263,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2648;
+		rLoc = 2750;
 		rType = 0;
 		vrLen = 2227;
 		vrLoc = 1804;
@@ -1266,7 +1273,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 71";
 		rLen = 0;
-		rLoc = 2607;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 2372;
 		vrLoc = 1804;
@@ -1276,7 +1283,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 71";
 		rLen = 0;
-		rLoc = 2545;
+		rLoc = 2647;
 		rType = 0;
 		vrLen = 2196;
 		vrLoc = 1804;
@@ -1286,7 +1293,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 72";
 		rLen = 0;
-		rLoc = 2607;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 2265;
 		vrLoc = 1804;
@@ -1296,7 +1303,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 289";
 		rLen = 0;
-		rLoc = 9659;
+		rLoc = 9761;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 9368;
@@ -1306,7 +1313,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 72";
 		rLen = 0;
-		rLoc = 2607;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 2419;
 		vrLoc = 1804;
@@ -1316,7 +1323,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2475;
 		vrLoc = 1825;
@@ -1360,7 +1367,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 73";
 		rLen = 0;
-		rLoc = 2766;
+		rLoc = 2868;
 		rType = 0;
 		vrLen = 2475;
 		vrLoc = 1825;
@@ -1370,7 +1377,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 401";
 		rLen = 0;
-		rLoc = 12275;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 11767;
@@ -1380,7 +1387,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 288";
 		rLen = 0;
-		rLoc = 9659;
+		rLoc = 9761;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 9342;
@@ -1390,7 +1397,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 401";
 		rLen = 0;
-		rLoc = 12275;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 11767;
@@ -1400,7 +1407,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 401";
 		rLen = 0;
-		rLoc = 12275;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 11767;
@@ -1410,7 +1417,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 401";
 		rLen = 0;
-		rLoc = 12275;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 11767;
@@ -1430,7 +1437,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 401";
 		rLen = 0;
-		rLoc = 12275;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 11767;
@@ -1440,7 +1447,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 7611;
@@ -1450,7 +1457,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 292";
 		rLen = 0;
-		rLoc = 9659;
+		rLoc = 9761;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 9390;
@@ -1460,7 +1467,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 7611;
@@ -1470,7 +1477,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 8003;
@@ -1501,7 +1508,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 261;
+		rLoc = 265;
 		rType = 1;
 	};
 	729B7DC011406095005DF504 /* PBXTextBookmark */ = {
@@ -1509,7 +1516,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 8136;
@@ -1529,7 +1536,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1330;
 		vrLoc = 7803;
@@ -1593,7 +1600,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 7494;
@@ -1603,7 +1610,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 7494;
@@ -1623,7 +1630,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1197;
 		vrLoc = 7803;
@@ -1713,7 +1720,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 405";
 		rLen = 0;
-		rLoc = 12269;
+		rLoc = 12371;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 11908;
@@ -1723,7 +1730,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 405";
 		rLen = 11;
-		rLoc = 12264;
+		rLoc = 12366;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 11908;
@@ -1733,7 +1740,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 405";
 		rLen = 11;
-		rLoc = 12264;
+		rLoc = 12366;
 		rType = 0;
 		vrLen = 1411;
 		vrLoc = 11908;
@@ -1783,7 +1790,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 7496;
@@ -1863,7 +1870,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 405";
 		rLen = 11;
-		rLoc = 12264;
+		rLoc = 12366;
 		rType = 0;
 		vrLen = 1411;
 		vrLoc = 11908;
@@ -1873,7 +1880,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 67";
 		rLen = 0;
-		rLoc = 2228;
+		rLoc = 2330;
 		rType = 0;
 		vrLen = 2273;
 		vrLoc = 1598;
@@ -1893,7 +1900,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 67";
 		rLen = 0;
-		rLoc = 2228;
+		rLoc = 2330;
 		rType = 0;
 		vrLen = 1661;
 		vrLoc = 144;
@@ -1903,7 +1910,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 69";
 		rLen = 0;
-		rLoc = 2228;
+		rLoc = 2330;
 		rType = 0;
 		vrLen = 2135;
 		vrLoc = 1479;
@@ -1913,7 +1920,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 69";
 		rLen = 0;
-		rLoc = 2228;
+		rLoc = 2330;
 		rType = 0;
 		vrLen = 2134;
 		vrLoc = 1479;
@@ -1923,7 +1930,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 69";
 		rLen = 0;
-		rLoc = 2228;
+		rLoc = 2330;
 		rType = 0;
 		vrLen = 2134;
 		vrLoc = 1479;
@@ -1933,7 +1940,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 260";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 7538;
@@ -1943,7 +1950,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 261";
 		rLen = 0;
-		rLoc = 8523;
+		rLoc = 8625;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 7742;
@@ -1973,7 +1980,7 @@
 		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
 		name = "DebuggingViewController.mm: 262";
 		rLen = 0;
-		rLoc = 8525;
+		rLoc = 8627;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 7620;
@@ -1987,6 +1994,76 @@
 		rType = 0;
 		vrLen = 1450;
 		vrLoc = 934;
+	};
+	729B7E6911407982005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B31039F3C70045DA0A /* DebuggingViewController.h */;
+		name = "DebuggingViewController.h: 71";
+		rLen = 0;
+		rLoc = 1633;
+		rType = 0;
+		vrLen = 1478;
+		vrLoc = 906;
+	};
+	729B7E6A11407982005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 67";
+		rLen = 0;
+		rLoc = 2326;
+		rType = 0;
+		vrLen = 2165;
+		vrLoc = 1404;
+	};
+	729B7E6B11407982005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 69";
+		rLen = 0;
+		rLoc = 2326;
+		rType = 0;
+		vrLen = 2012;
+		vrLoc = 1404;
+	};
+	729B7E6F1140798D005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 69";
+		rLen = 0;
+		rLoc = 2326;
+		rType = 0;
+		vrLen = 2012;
+		vrLoc = 1404;
+	};
+	729B7E751140799D005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 69";
+		rLen = 0;
+		rLoc = 2226;
+		rType = 0;
+		vrLen = 2011;
+		vrLoc = 1404;
+	};
+	729B7E7911407A45005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 70";
+		rLen = 0;
+		rLoc = 2323;
+		rType = 0;
+		vrLen = 2008;
+		vrLoc = 1404;
+	};
+	729B7E7E11407A98005DF504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */;
+		name = "DebuggingViewController.mm: 70";
+		rLen = 0;
+		rLoc = 2323;
+		rType = 0;
+		vrLen = 2040;
+		vrLoc = 1404;
 	};
 	72A4862A0FD4BBB30041282B /* TraceController.m */ = {
 		isa = PBXFileReference;
@@ -2014,7 +2091,7 @@
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
-	72AC0411113C5701000B31BF /* DebuggingViewController.mm:487 */ = {
+	72AC0411113C5701000B31BF /* DebuggingViewController.mm:491 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2026,7 +2103,7 @@
 		functionName = "-gotMessage:forCommand:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 487;
+		lineNumber = 491;
 		location = as3Debugger;
 		modificationTime = 289422034.263843;
 		originalNumberOfMultipleMatches = 1;
@@ -2236,9 +2313,9 @@
 	};
 	A0B879B21039F3C60045DA0A /* DebuggingViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {959, 7449}}";
-			sepNavSelRange = "{8525, 0}";
-			sepNavVisRange = "{7620, 1080}";
+			sepNavIntBoundsRect = "{{0, 0}, {1132, 6994}}";
+			sepNavSelRange = "{2323, 0}";
+			sepNavVisRange = "{1404, 2040}";
 			sepNavWindowFrame = "{{38, 276}, {877, 726}}";
 		};
 	};
@@ -2246,7 +2323,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1059, 1274}}";
 			sepNavSelRange = "{1633, 0}";
-			sepNavVisRange = "{934, 1450}";
+			sepNavVisRange = "{906, 1478}";
 		};
 	};
 	A0B879B51039F3D20045DA0A /* ApplicationController.h */ = {

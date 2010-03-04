@@ -281,7 +281,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
+									<integer>18</integer>
 									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -325,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DebuggingViewController.h</string>
+								<string>DebuggingViewController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DebuggingViewController.h</string>
+										<string>DebuggingViewController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>729B7E5E114077D2005DF504</string>
+										<string>729B7E7E11407A98005DF504</string>
 										<key>history</key>
 										<array>
 											<string>72B3C19C0FF6516E004C58DC</string>
@@ -373,8 +373,8 @@
 											<string>729B7E2F114074DA005DF504</string>
 											<string>729B7E30114074DA005DF504</string>
 											<string>729B7E31114074DA005DF504</string>
-											<string>729B7E58114077BC005DF504</string>
-											<string>729B7E59114077BC005DF504</string>
+											<string>729B7E6911407982005DF504</string>
+											<string>729B7E6A11407982005DF504</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -570,6 +570,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>729B7E7F11407A98005DF504</string>
 		<string>729B7C6E11401001005DF504</string>
 		<string>729B7C6F11401001005DF504</string>
 		<string>1CD10A99069EF8BA00B06720</string>

@@ -66,6 +66,10 @@
 	//Custom table cell for displaying checkboxes
 	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
 	
+	if (![consoleSplitView collapsibleSubviewCollapsed]) {
+		[consoleSplitView toggleCollapse:nil];
+	}
+	
 	//Html file (code view)
 	NSString * htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
 	NSString * htmlContent = [NSString stringWithContentsOfFile:htmlPath encoding: NSUTF8StringEncoding error: nil];

@@ -23,7 +23,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="5"/>
+			<integer value="107"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -397,7 +397,7 @@
 																		<object class="NSOutlineView" id="705015021">
 																			<reference key="NSNextResponder" ref="81693216"/>
 																			<int key="NSvFlags">256</int>
-																			<string key="NSFrameSize">{441, 474}</string>
+																			<string key="NSFrameSize">{441, 595}</string>
 																			<reference key="NSSuperview" ref="81693216"/>
 																			<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																			<bool key="NSEnabled">YES</bool>
@@ -549,7 +549,7 @@
 																			<float key="NSOutlineViewIndentationPerLevelKey">14</float>
 																		</object>
 																	</object>
-																	<string key="NSFrame">{{0, 17}, {441, 474}}</string>
+																	<string key="NSFrame">{{0, 17}, {441, 595}}</string>
 																	<reference key="NSSuperview" ref="471993650"/>
 																	<reference key="NSNextKeyView" ref="705015021"/>
 																	<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -595,7 +595,7 @@
 																</object>
 																<reference ref="1016292335"/>
 															</object>
-															<string key="NSFrame">{{0, 1}, {441, 491}}</string>
+															<string key="NSFrame">{{0, 1}, {441, 612}}</string>
 															<reference key="NSSuperview" ref="405009042"/>
 															<reference key="NSNextKeyView" ref="81693216"/>
 															<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -608,7 +608,7 @@
 															<bytes key="NSScrollAmts">QSAAAEEgAABBoAAAQaAAAA</bytes>
 														</object>
 													</object>
-													<string key="NSFrameSize">{441, 492}</string>
+													<string key="NSFrameSize">{441, 613}</string>
 													<reference key="NSSuperview" ref="1059672694"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
 													<string key="NSClassName">NSView</string>
@@ -642,7 +642,7 @@
 																	<string>public.url-name</string>
 																</object>
 															</object>
-															<string key="NSFrameSize">{997, 492}</string>
+															<string key="NSFrameSize">{997, 613}</string>
 															<reference key="NSSuperview" ref="953852208"/>
 															<reference key="NSNextKeyView"/>
 															<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -670,13 +670,13 @@
 															<bool key="AllowsUndo">YES</bool>
 														</object>
 													</object>
-													<string key="NSFrame">{{442, 0}, {997, 492}}</string>
+													<string key="NSFrame">{{442, 0}, {997, 613}}</string>
 													<reference key="NSSuperview" ref="1059672694"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
 													<string key="NSClassName">NSView</string>
 												</object>
 											</object>
-											<string key="NSFrame">{{-319, -136}, {1439, 492}}</string>
+											<string key="NSFrame">{{-319, -136}, {1439, 613}}</string>
 											<reference key="NSSuperview" ref="223497989"/>
 											<object class="NSDictionary" key="NSViewAnimations">
 												<string key="NS.key.0">subviews</string>
@@ -704,7 +704,7 @@
 											<string key="NSAutosaveName">debuggingViewVerticalSplit</string>
 										</object>
 									</object>
-									<string key="NSFrameSize">{801, 220}</string>
+									<string key="NSFrameSize">{801, 341}</string>
 									<reference key="NSSuperview" ref="721901267"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSClassName">NSView</string>
@@ -808,7 +808,7 @@
 																	<string>public.url</string>
 																</object>
 															</object>
-															<string key="NSFrameSize">{1439, 14}</string>
+															<string key="NSFrameSize">{1439, 100}</string>
 															<reference key="NSSuperview" ref="1000042101"/>
 															<int key="NSViewLayerContentsRedrawPolicy">2</int>
 															<object class="NSTextContainer" key="NSTextContainer" id="660548804">
@@ -888,7 +888,7 @@
 															<nil key="NSDelegate"/>
 														</object>
 													</object>
-													<string key="NSFrameSize">{1439, 607}</string>
+													<string key="NSFrameSize">{1439, 486}</string>
 													<reference key="NSSuperview" ref="905550976"/>
 													<reference key="NSNextKeyView" ref="64608587"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -927,7 +927,7 @@
 													<double key="NSPercent">0.94565218687057495</double>
 												</object>
 											</object>
-											<string key="NSFrame">{{-319, -193}, {1439, 607}}</string>
+											<string key="NSFrame">{{-319, -193}, {1439, 486}}</string>
 											<reference key="NSSuperview" ref="365488496"/>
 											<reference key="NSNextKeyView" ref="1000042101"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -937,7 +937,7 @@
 											<reference key="NSContentView" ref="1000042101"/>
 										</object>
 									</object>
-									<string key="NSFrame">{{0, 229}, {801, 221}}</string>
+									<string key="NSFrame">{{0, 350}, {801, 100}}</string>
 									<reference key="NSSuperview" ref="721901267"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSClassName">NSView</string>
@@ -949,11 +949,8 @@
 							<reference key="BWSVColor" ref="228850660"/>
 							<bool key="BWSVColorIsEnabled">NO</bool>
 							<object class="NSMutableDictionary" key="BWSVMinValues">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<reference key="dict.sortedKeys" ref="0"/>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-								</object>
+								<integer value="1" key="NS.key.0"/>
+								<integer value="100" key="NS.object.0"/>
 							</object>
 							<object class="NSMutableDictionary" key="BWSVMaxValues">
 								<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1533,7 +1530,7 @@
 					<string>{{363, 380}, {801, 470}}</string>
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{455, 623}, {617, 227}}</string>
+					<string>{{455, 850}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

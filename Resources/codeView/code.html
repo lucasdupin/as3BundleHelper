@@ -16,6 +16,8 @@
 			document.getElementById("code").innerHTML = "<pre class=\"brush: java;\" name=\"code\">" + escapeHTML(theCode) + "</pre>";
 			SyntaxHighlighter.defaults["highlight"] = lines;
 			SyntaxHighlighter.highlight();
+			
+			console.log(theCode, lines)
 		}
 		
 		function escapeHTML (str)

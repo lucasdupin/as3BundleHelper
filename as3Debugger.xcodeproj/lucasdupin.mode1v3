@@ -305,7 +305,7 @@
 							<real>234</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>136 103 1376 897 0 0 1680 1028 </string>
+						<string>137 103 1376 897 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>729B7CED11403679005DF504</string>
+										<string>729B7D431140437A005DF504</string>
 										<key>history</key>
 										<array>
 											<string>72B3C19C0FF6516E004C58DC</string>
@@ -361,7 +361,6 @@
 											<string>72436696113EE28100D405C6</string>
 											<string>7243678F113F22BF00D405C6</string>
 											<string>72436790113F22BF00D405C6</string>
-											<string>729B7C5511400FE5005DF504</string>
 											<string>729B7C5911400FE5005DF504</string>
 											<string>729B7C74114012F1005DF504</string>
 											<string>729B7CCD1140311E005DF504</string>
@@ -369,7 +368,8 @@
 											<string>729B7CD11140311E005DF504</string>
 											<string>729B7CEA11403679005DF504</string>
 											<string>729B7CEB11403679005DF504</string>
-											<string>729B7CEC11403679005DF504</string>
+											<string>729B7D1011403EE3005DF504</string>
+											<string>729B7D1111403EE3005DF504</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -383,7 +383,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1120, 671}}</string>
 								<key>RubberWindowFrame</key>
-								<string>136 103 1376 897 0 0 1680 1028 </string>
+								<string>137 103 1376 897 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -403,7 +403,7 @@
 								<key>Frame</key>
 								<string>{{0, 676}, {1120, 180}}</string>
 								<key>RubberWindowFrame</key>
-								<string>136 103 1376 897 0 0 1680 1028 </string>
+								<string>137 103 1376 897 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -565,16 +565,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>729B7CEE11403679005DF504</string>
+		<string>729B7D441140437A005DF504</string>
 		<string>729B7C6E11401001005DF504</string>
 		<string>729B7C6F11401001005DF504</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>720B0D140FD4B7DF004FB299</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/lucasdupin/src/as3BundleHelper/as3Debugger.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>136 103 1376 897 0 0 1680 1028 </string>
+	<string>137 103 1376 897 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -945,7 +945,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

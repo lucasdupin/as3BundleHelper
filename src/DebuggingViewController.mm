@@ -69,8 +69,8 @@
 	//Html file (code view)
 	NSString * htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
 	NSString * htmlContent = [NSString stringWithContentsOfFile:htmlPath encoding: NSUTF8StringEncoding error: nil];
-	[[codeView mainFrame] loadHTMLString:htmlContent baseURL:[NSURL URLWithString:htmlPath]];
-	
+	[[codeView mainFrame] loadHTMLString:htmlContent baseURL:[NSURL fileURLWithPath:[htmlPath stringByDeletingLastPathComponent]]];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject: [NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]]; 
 	[self showFile:nil at:0];
 	
 	//Debug stuff =)
@@ -283,7 +283,8 @@
 		htmlFileContents = @"";
 	}
 	
-	NSArray * args = [NSArray arrayWithObjects: htmlFileContents, [NSString stringWithFormat: @"[%i]", line], nil];
+	NSString *linesArr = [NSString stringWithFormat: @"[%d]", line];
+	NSArray * args = [NSArray arrayWithObjects: htmlFileContents, linesArr, nil];
 	[[codeView windowScriptObject] callWebScriptMethod:@"changeCode" withArguments: args];
 }
 

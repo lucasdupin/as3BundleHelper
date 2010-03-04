@@ -56,13 +56,24 @@
 	connected = false;
 	[self setState:ST_DISCONNECTED];
 	
+	//Create the fdb taks
 	fdbCommunicator = [[FDBCommunicator alloc] init];
 	[fdbCommunicator setDelegate:self];
 	
+	//List of variables beeing parsed
 	queuedVars = [[NSMutableArray alloc] init];
 	
+	//Custom table cell for displaying checkboxes
 	[[variablesView tableColumnWithIdentifier: @"valueColumn"] setDataCell: [[[DebuggerValueCell alloc] init] autorelease]];
 	
+	//Html file (code view)
+	NSString * htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
+	NSString * htmlContent = [NSString stringWithContentsOfFile:htmlPath encoding: NSUTF8StringEncoding error: nil];
+	[[codeView mainFrame] loadHTMLString:htmlContent baseURL:[NSURL URLWithString:htmlPath]];
+	
+	[self showFile:nil at:0];
+	
+	//Debug stuff =)
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 1" andValue: @"true"] autorelease]];
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 2" andValue: @"false"] autorelease]];
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"string 1" andValue: @"blaaaaa"] autorelease]];
@@ -250,12 +261,9 @@
 #pragma mark Code presentation
 - (void) showFile: (NSString*)file at: (int)line
 {
-	NSString * htmlPath =			[[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
-	NSString * htmlFileContents =	[NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+	NSString * htmlFileContents;
 	NSString * projectPath =		[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey: @"flashProjectPath"];
 	NSArray * actionScriptFiles =	[self findASFiles];
-	
-	NSLog(@"showing file %@ at line %d", file, line);
 	
 	//Finding the file in the list
 	if(file != nil)
@@ -266,13 +274,7 @@
 			
 			if([file isEqual: fileFound]){
 				//Opening code file
-				NSString* code = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]] encoding: NSUTF8StringEncoding error:nil];
-				//Replacing code
-				htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(code)s" withString: code];
-				//Replace highlight line number
-				htmlFileContents = [htmlFileContents stringByReplacingOccurrencesOfString:@"%(line)s" withString: [NSString stringWithFormat: @"%d", line]];
-				
-				//NSLog(@"%@", htmlFileContents);
+				htmlFileContents = [NSString stringWithContentsOfFile: [projectPath stringByAppendingPathComponent: [actionScriptFiles objectAtIndex:i]] encoding: NSUTF8StringEncoding error:nil];
 				break;
 			}
 			
@@ -280,9 +282,9 @@
 	else {
 		htmlFileContents = @"";
 	}
-
 	
-	[[codeView mainFrame] loadHTMLString:htmlFileContents baseURL: [NSURL URLWithString: htmlPath]];
+	NSArray * args = [NSArray arrayWithObjects: htmlFileContents, [NSString stringWithFormat: @"[%i]", line], nil];
+	[[codeView windowScriptObject] callWebScriptMethod:@"changeCode" withArguments: args];
 }
 
 - (void) parseVarsForString: (NSString *)inputString atNode: (Variable *) fromVar
@@ -293,34 +295,30 @@
 	
 	NSLog(@"PARSING VARS FROM FDB");
 
-	//Not first line, it's not a var
+	//Loop =)
 	for (int i=0; i < [lines count]; ++i) {
 		//Getting the line
 		line = [lines objectAtIndex:i];
 		
 		if([line isMatchedByRegex: FDB_GET_VARIABLE_VALUE]){
-			Variable * v = [[Variable alloc] init];
-
-			NSString *name;
-			NSString *value;
 			
-			[line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &name, @"${value}", &value, nil];
-			
-			v.name = name;
-			v.value = value;
+			//Create variable
+			Variable * v = [[[Variable alloc] init] autorelease];
+			//Set delegate
 			v.delegate = self;
+
+			//Fill with values
+			[line getCapturesWithRegexAndReferences: FDB_GET_VARIABLE_VALUE, @"${name}", &v->name, @"${value}", &v->value, nil];
 			
+			//Set full name
 			if (fromVar != nil) {
 				v.fullName = [NSString stringWithFormat: @"%@.%@", fromVar.name, v.name];
 			} else {
 				v.fullName = [NSString stringWithFormat: @"this.%@", v.name];
 			}
-
 			
-			//NSLog(@"Found var: %@ -> %@", v.name, v.value);
+			//Add to the list
 			[result addObject:v];
-			
-			[v autorelease];
 		}
 	}
 	

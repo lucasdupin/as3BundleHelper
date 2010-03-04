@@ -16,10 +16,14 @@
 @end
 
 @interface Variable : NSObject {
+
+@public
 	
 	//For output
 	NSString * name;
 	id value;
+	
+@protected
 	
 	//The real path in the FDB
 	NSString * fullName;

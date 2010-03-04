@@ -11,8 +11,20 @@
 	<script type="text/javascript">
 		//SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
 		SyntaxHighlighter.defaults['toolbar'] = false;
-		SyntaxHighlighter.all();
 		
+		function changeCode(theCode, lines){
+			document.getElementById("code").innerHTML = "<pre class=\"brush: java;\" name=\"code\">" + escapeHTML(theCode) + "</pre>";
+			SyntaxHighlighter.defaults["highlight"] = lines;
+			SyntaxHighlighter.highlight();
+		}
+		
+		function escapeHTML (str)
+		{
+		   var div = document.createElement('div');
+		   var text = document.createTextNode(str);
+		   div.appendChild(text);
+		   return div.innerHTML;
+		};
 	</script>
 	
 	<style type="text/css" media="screen">
@@ -22,9 +34,9 @@
 		}
 	</style>
 </head>
-
 <body>
-<pre class="brush: java; highlight: [%(line)s]" name="code">
-%(code)s
-</pre>
+	<div id="code">
+		
+	</div>
+</body>
 </html>

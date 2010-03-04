@@ -13,6 +13,7 @@
 		SyntaxHighlighter.defaults['toolbar'] = false;
 		
 		function changeCode(theCode, lines){
+			lines = eval(lines);
 			document.getElementById("code").innerHTML = "<pre class=\"brush: java;\" name=\"code\">" + escapeHTML(theCode) + "</pre>";
 			SyntaxHighlighter.defaults["highlight"] = lines;
 			SyntaxHighlighter.highlight();

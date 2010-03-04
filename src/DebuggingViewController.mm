@@ -70,8 +70,7 @@
 	NSString * htmlPath = [[NSBundle mainBundle] pathForResource: @"code" ofType: @"html" inDirectory: @"codeView"];
 	NSString * htmlContent = [NSString stringWithContentsOfFile:htmlPath encoding: NSUTF8StringEncoding error: nil];
 	[[codeView mainFrame] loadHTMLString:htmlContent baseURL:[NSURL fileURLWithPath:[htmlPath stringByDeletingLastPathComponent]]];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject: [NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]]; 
-	[self showFile:nil at:0];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject: [NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]];
 	
 	//Debug stuff =)
 //	[variablesTree addObject: [[[Variable alloc] initWithName: @"bool 1" andValue: @"true"] autorelease]];

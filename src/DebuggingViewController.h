@@ -19,7 +19,7 @@
 #include <zlib.h>
 #include <vector>
 
-@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient, VariableDelegate> {
+@interface DebuggingViewController : NSWindowController <FDBCommunicatorClient, VariableDelegate, NSToolbarDelegate> {
 	IBOutlet NSWindow *window;
 	IBOutlet WebView *codeView;
 	IBOutlet NSTreeController *variablesTree;

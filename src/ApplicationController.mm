@@ -13,7 +13,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults boolForKey: @"log"])
+        [self showLogViewer: self];
+
+    if([defaults boolForKey: @"debug"])
+        [self showDebuggingView: self];
 }
 
 - (void)applicationWillTerminate: (NSNotification *)note
